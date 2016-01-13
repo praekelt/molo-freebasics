@@ -1,0 +1,10 @@
+molo.core==2.6.2
+
+molo.profiles
+
+django-contrib-comments
+
+molo.commenting
+
+molo.yourwords
+
