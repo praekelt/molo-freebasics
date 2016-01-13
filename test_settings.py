@@ -1,9 +1,9 @@
-from gem.settings import *
+from freebasics.settings import *
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'gem_test.db',
+        'NAME': 'freebasics_test.db',
     }
 }
 
