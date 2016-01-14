@@ -1,0 +1,15 @@
+buildscript: freebasics/sideloader/build.sh
+postinstall: freebasics/sideloader/postinstall.sh
+pip:
+  - gunicorn
+  - psycopg2
+dependencies:
+  - nginx
+  - postgresql-server-dev-all
+  - libpq-dev
+  - libffi-dev
+  - postgresql
+  - redis-server
+  - libjpeg-dev
+  - zlib1g-dev
+  - gettext
