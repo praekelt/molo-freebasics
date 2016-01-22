@@ -21,7 +21,7 @@ PROJECT_ROOT = dirname(dirname(dirname(abspath(__file__))))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "u_s!&t$bdoys2p*uoo5iif9f%#=3la^ek1ihxt^4v(7%e0kc71"
+SECRET_KEY = "*8=)c1bg7c0^m3c_kibgt@(jk)=2v=pi05mu&@y%xgct&0q=qx"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,8 +47,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_extensions',
 
-    'compressor',
     'taggit',
     'modelcluster',
 
@@ -73,10 +73,10 @@ INSTALLED_APPS = (
     'molo.yourwords',
 
     'raven.contrib.django.raven_compat',
+    'django_cas_ng',
+    'compressor',
 )
-COMMENTS_APP = 'molo.commenting'
-COMMENTS_FLAG_THRESHHOLD = 3
-COMMENTS_HIDE_REMOVED = False
+
 SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
@@ -179,7 +179,6 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
 
 
 # Wagtail settings
-
 LOGIN_URL = 'wagtailadmin_login'
 LOGIN_REDIRECT_URL = 'wagtailadmin_home'
 
@@ -203,3 +202,5 @@ WAGTAIL_SITE_NAME = "base"
 # Whether to use face/feature detection to improve image
 # cropping - requires OpenCV
 WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = False
+
+ENABLE_SSO = False

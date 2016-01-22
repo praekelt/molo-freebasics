@@ -1,4 +1,4 @@
-molo.core==2.6.3
+molo.core==2.6.5
 
 molo.profiles
 
@@ -7,3 +7,5 @@ django-contrib-comments
 molo.commenting
 
 molo.yourwords
+
+django-extensions
