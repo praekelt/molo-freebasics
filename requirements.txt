@@ -9,3 +9,5 @@ molo.commenting
 molo.yourwords
 
 django-extensions
+gunicorn
+psycopg2
