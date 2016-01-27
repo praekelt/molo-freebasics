@@ -53,14 +53,23 @@ article {
 	}
 }
 .padding {
-	@include no-mp;
+	@include no-m;
 	padding: 0.5em;
 }
 .button {
 	@include no-mp;
 	padding: 1em;
 }
-.comments-container {
+.comments-container{
+  .post-comment{
+    @include no-m;
+    padding: 1em;
+  }
+  .comments-count {
+    @include no-m;
+    padding: 1em;
+    display: block;
+  }
   .more {
 		padding: 0 1em 1em 1em;
 	}
