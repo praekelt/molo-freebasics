@@ -21,7 +21,7 @@ PROJECT_ROOT = dirname(dirname(dirname(abspath(__file__))))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "*8=)c1bg7c0^m3c_kibgt@(jk)=2v=pi05mu&@y%xgct&0q=qx"
+SECRET_KEY = "+qjha14e^w1+41tqi$fhc=y(%iijt&q)0mw@kze!ewz)7($#4#"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,11 +85,11 @@ SITE_ID = 1
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'wagtail.wagtailcore.middleware.SiteMiddleware',
@@ -179,6 +179,7 @@ COMPRESS_PRECOMPILERS = (
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'molo.core.context_processors.locale',
+    'molo.profiles.context_processors.get_profile_data',
 )
 
 
