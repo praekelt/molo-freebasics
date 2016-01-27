@@ -68,7 +68,7 @@
         {% wagtailuserbar %}
 
         {% if languages %}
-        <ul>
+        <ul class="padding">
             {% trans "Site Language:" %}
             {% for language in languages %}
             <a href="{% url 'locale_set' language.code %}">{{language.title}} </a>

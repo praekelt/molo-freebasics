@@ -26,7 +26,7 @@
         {% include "comments/comment.html" %}
       {% endfor %}
   {% if comment_count > 5 %}
-    <div class="nav">
+    <div style="padding: 0 16px 10px;">
       <a href="{% url 'molo.commenting:more-comments' self.pk %}">{% trans "view more comments" %}</a>
     </div>
   {% endif %}

@@ -54,11 +54,16 @@ article {
 }
 .padding {
 	@include no-mp;
-	padding: 8px;
+	padding: 0.5em;
 }
 .button {
 	@include no-mp;
-	padding: 16px;
+	padding: 1em;
+}
+.comments-container {
+  .more {
+		padding: 0 1em 1em 1em;
+	}
 }
 .competition {
   a {
