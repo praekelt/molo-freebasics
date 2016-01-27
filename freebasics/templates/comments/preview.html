@@ -3,7 +3,7 @@
 {% block content %}
 {% get_comments_content_object for form as self %}
 
-<div class="title {{self.get_parent_section.get_effective_extra_style_hints}}">
+<div class="nav {{self.get_parent_section.get_effective_extra_style_hints}}">
 
   {% with parent_section=self.get_parent_section ancestor=self.get_parent_section.get_ancestors.last %}
     <div class="icon">
@@ -20,7 +20,7 @@
   {% endwith %}
 </div>
 
-<div class="block {{self.get_parent_section.get_effective_extra_style_hints}}">
+<div class="nav {{self.get_parent_section.get_effective_extra_style_hints}}">
   {% if messages %}
   <ul class="messages">
       {% for message in messages %}

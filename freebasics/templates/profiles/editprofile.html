@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-<div class="signin-form">
+<div class="padding">
 	<div class="block turq">
 		<form method="post" id="frmProfileEdit" action="{% url 'molo.profiles:edit_my_profile' %}">{% csrf_token %}
 			<p>{% trans "Type new display name:" %}</p>

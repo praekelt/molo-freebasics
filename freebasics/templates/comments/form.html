@@ -1,7 +1,7 @@
 {% load comments i18n wagtailcore_tags wagtailimages_tags %}
 
 
-<form action="{% url 'molo-comments-post' %}#comments-list" method="post">
+<form action="{% url 'molo.commenting:molo-comments-post' %}#comments-list" method="post" class="">
     {% csrf_token %}
     {% if form.errors %}
       <h1>{% blocktrans count counter=form.errors|length %}Please correct the error below{% plural %}Please correct the
@@ -10,8 +10,10 @@
 
     {% if form.comment.errors %}{{ form.comment.errors }}{% endif %}
     <p>{{ form.comment }}</p>
+    <div>
     <input type="submit" name="submit" value="Comment">
     <input type="submit" name="submit_anonymously" value="Add anonymously">
+    </div>
     {{ form.object_pk }}
 
     {{ form.content_type }}
