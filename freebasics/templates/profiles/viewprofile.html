@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="profile-style">
+<div class="padding">
 
   <h3>{% trans "Hello " %}{{ user.username }}</h3>
   <label class="label-wide">{% trans "Display Name: " %}{{ user.profile.alias | default:'Anonymous' }}</label>

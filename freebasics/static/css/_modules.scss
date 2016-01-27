@@ -52,7 +52,30 @@ article {
 		@include no-bull;
 	}
 }
-
+.padding {
+	@include no-mp;
+	padding: 8px;
+}
+.button {
+	@include no-mp;
+	padding: 16px;
+}
+.competition {
+  a {
+		padding: 0.5em 1.5em;
+		@include l-db;
+	}
+	h2, h3 {
+		@include no-m;
+		font-size: 1em;
+        padding-bottom: 0;
+	}
+	p {
+		@include no-m;
+        padding-left: 1.5em;
+        padding-top: 0;
+	}
+}
 .list-block {
 	@include no-mp;
 	> li {

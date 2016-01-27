@@ -76,17 +76,16 @@
         </ul>
         {% endif %}
 
-        <ul>
-          <span >{% trans "Menu:" %}</span >
+          <div class="list-header">{% trans "Menu:" %}</div >
+          <ul class="list-block">
           <li><a href="/"><span >{% trans "Home" %}</span ></a></li>
-          <li>
             {% if user.is_authenticated %}
-              <a href="{% url 'molo.profiles:view_my_profile' %}"><span >{% trans "Profile" %}</span ></a>
+              <li><a href="{% url 'molo.profiles:view_my_profile' %}"><span >{% trans "Profile" %}</span ></a></li>
             {% else %}
-              <a href="{% url 'molo.profiles:user_register' %}"><span >{% trans "Join" %}</span ></a>
+              <li><a href="{% url 'molo.profiles:user_register' %}"><span >{% trans "Join" %}</span ></a></li>
             {% endif %}
-          </li>
-        </ul>
+          </ul>
+
 
         {% breadcrumbs %}
 

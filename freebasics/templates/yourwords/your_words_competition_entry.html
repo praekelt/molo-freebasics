@@ -3,19 +3,19 @@
 
 {% block content %}
 
-<div class="title {{competition.get_effective_extra_style_hints}} {% if self.image %}feature-image{% endif %}">
+<div class="list-block">
   <div class="icon">
     {% if competition.thank_you_page.get_parent_page.get_effective_image %}
       {% image competition.thank_you_page.get_parent_page.get_effective_image width-98 as tmp_photo %}
       <img src="{{ tmp_photo.url }}" alt="{{ self.get_parent_page.get_effective_image.title }}"/>
     {% endif %}
   </div>
-  <h6><a href=""> {% trans "Share your story" %}</a></h6>
+  <div class="list-header"> {% trans "Share your story" %}</div>
 
 </div>
 
-<div class="block {{competition.get_effective_extra_style_hints}}">
-  <h3>{{competition.title}}</h3>
+<div class="padding">
+  <p>{{competition.title}}</p>
   <p>{{competition.description}}</p>
   <hr>
   <div class="yourwords centent">
@@ -59,6 +59,7 @@
         {% if form.story_text.errors %}
           <p class="alert-error" >* {{form.story_text.errors|join:' '}}</p>
         {% endif %}
+        <br><br>
         <label>{% trans "Tell us your story here" %}</label>
         {{ form.story_text }}
 
@@ -78,6 +79,5 @@
         <input type="submit" value="Submit Your Story" />
     </form>
   </div>
-    <a href="{{request.site.root_page.url}}" class="button inverted">{% trans "Home" %}</a>
 </div>
 {% endblock %}

@@ -12,7 +12,7 @@
   </div>
   <h6><a href="{% url 'molo.yourwords:competition_entry' self.slug %}"> {% trans "Share your story" %}</a></h6>
 </div>
-<div class="block {{self.get_effective_extra_style_hints}}">
+<div class="list-block">
   <h3>{{self.title}}</h3>
   <p>{{self.description}}</p>
   {% if request.user.is_authenticated %}

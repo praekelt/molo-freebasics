@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="block">
+<div class="padding">
   <h5>{% trans "Thank you for joining!" %}</h5>
   <h5>{% trans "Let us know your birthday to get access to exclusive content." %}</h5><br>
   <form method="post" action="{% url 'molo.profiles:registration_done' %}">{% csrf_token %}
