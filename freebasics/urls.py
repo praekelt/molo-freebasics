@@ -48,6 +48,11 @@ urlpatterns += patterns(
                 namespace='molo.yourwords',
                 app_name='molo.yourwords')),
 
+    url(r'^polls/',
+        include('molo.polls.urls',
+                namespace='molo.polls',
+                app_name='molo.polls')),
+
     url(r'', include('molo.core.urls')),
     url(r'', include(wagtail_urls)),
 )
