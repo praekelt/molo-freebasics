@@ -1,9 +1,9 @@
 molo.core==2.6.9
-molo.profiles
+molo.profiles==0.2.3
+molo.commenting==0.2.8
+molo.yourwords==0.0.3
+molo.polls==1.0.0
 django-contrib-comments
-molo.commenting
-molo.yourwords
-molo.polls
 django-extensions
 gunicorn
 psycopg2
