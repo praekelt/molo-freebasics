@@ -2,7 +2,7 @@ molo.core==2.6.10
 molo.profiles==0.2.3
 molo.commenting==0.2.8
 molo.yourwords==0.0.3
-molo.polls==1.0.0
+molo.polls==1.0.1
 django-contrib-comments
 django-extensions
 gunicorn
