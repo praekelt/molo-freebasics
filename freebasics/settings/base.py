@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 from os.path import abspath, dirname, join
+from os import environ
 from django.conf import global_settings
 from django.utils.translation import ugettext_lazy as _
 import dj_database_url
@@ -210,3 +211,8 @@ WAGTAIL_SITE_NAME = "base"
 WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = False
 
 ENABLE_SSO = False
+
+BANNER_BLOCK_POSITION = int(environ.get('BANNER_BLOCK_POSITION', 1))
+LATEST_BLOCK_POSITION = int(environ.get('LATEST_BLOCK_POSITION', 2))
+QUESTIONS_BLOCK_POSITION = int(environ.get('QUESTIONS_BLOCK_POSITION', 3))
+SECTIONS_BLOCK_POSITION = int(environ.get('SECTIONS_BLOCK_POSITION', 4))

@@ -38,10 +38,10 @@ class HomeView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super(HomeView, self).get_context_data(*args, **kwargs)
         blocks = [
-            ('blocks/banners.html', settings.BANNER_POSITION),
-            ('blocks/latest.html', settings.LATEST_POSITION),
-            ('blocks/questions.html', settings.QUESTIONS_POSITION),
-            ('blocks/sections.html', settings.SECTIONS_POSITION),
+            ('blocks/banners.html', settings.BANNER_BLOCK_POSITION),
+            ('blocks/latest.html', settings.LATEST_BLOCK_POSITION),
+            ('blocks/questions.html', settings.QUESTIONS_BLOCK_POSITION),
+            ('blocks/sections.html', settings.SECTIONS_BLOCK_POSITION),
         ]
         blocks.sort(key=lambda tup: tup[1])
         context.update({'blocks': blocks})
