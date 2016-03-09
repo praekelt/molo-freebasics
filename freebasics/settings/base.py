@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 """
 
 from os.path import abspath, dirname, join
+from os import environ
 from django.conf import global_settings
 from django.utils.translation import ugettext_lazy as _
 import dj_database_url
@@ -210,3 +211,9 @@ WAGTAIL_SITE_NAME = "base"
 WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = False
 
 ENABLE_SSO = False
+
+CUSTOM_BODY_BACKGROUND_COLOR = environ.get('CUSTOM_BODY_BACKGROUND_COLOR', "#ffffff")
+CUSTOM_BODY_FONT_COLOR = environ.get('CUSTOM_BODY_FONT_COLOR', "#f42323")
+CUSTOM_BODY_FONT = environ.get('CUSTOM_BODY_FONT', "Arial, Helvetica, sans-serif")
+CUSTOM_ACCENT_1 = environ.get('CUSTOM_ACCENT_1', "#738090")
+CUSTOM_ACCENT_2 = environ.get('CUSTOM_ACCENT_2', "#a8456d")
