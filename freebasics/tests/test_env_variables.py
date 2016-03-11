@@ -1,21 +1,19 @@
 from django.test import TestCase
-from django.test.client import Client
 from molo.core.tests.base import MoloTestCaseMixin
 from freebasics.views import HomeView
+from freebasics.templatetags import freebasics_tags
 
 
-class BlocksTestCase(TestCase, MoloTestCaseMixin):
+class EnvTestCase(TestCase, MoloTestCaseMixin):
 
     def setUp(self):
         self.mk_main()
-        self.client = Client()
 
     def test_block_ordering(self):
         with self.settings(BANNER_BLOCK_POSITION=4,
                            LATEST_BLOCK_POSITION=3,
                            QUESTIONS_BLOCK_POSITION=2,
                            SECTIONS_BLOCK_POSITION=1):
-            self.client.login(username='tester', password='tester')
             home = HomeView()
             context = home.get_context_data()
             self.assertEquals(context['blocks'][0], (
@@ -24,3 +22,10 @@ class BlocksTestCase(TestCase, MoloTestCaseMixin):
                 'blocks/questions.html', 2))
             self.assertEquals(context['blocks'][2], ('blocks/latest.html', 3))
             self.assertEquals(context['blocks'][3], ('blocks/banners.html', 4))
+
+    def test_css_vars(self):
+        with self.settings(CUSTOM_CSS_BLOCK_TEXT_TRANSFORM="lowercase",
+                           CUSTOM_CSS_ACCENT_2="red"):
+            styles = freebasics_tags.custom_css(context='')
+            self.assertEquals(styles['styles']['accent-2'], 'red')
+            self.assertEquals(styles['styles']['text-transform'], 'lowercase')
