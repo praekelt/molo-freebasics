@@ -4,7 +4,7 @@ from django.conf import settings
 register = Library()
 
 
-@register.template_tag('custom_css.html', takes_context=True)
+@register.inclusion_tag('custom_css.html', takes_context=True)
 def custom_css(context):
     styles = {
         "body-background-color": settings.CUSTOM_CSS_BASE_BACKGROUND_COLOR,
