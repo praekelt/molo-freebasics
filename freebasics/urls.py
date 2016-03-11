@@ -9,7 +9,7 @@ from wagtail.wagtailadmin import urls as wagtailadmin_urls
 from wagtail.wagtaildocs import urls as wagtaildocs_urls
 from wagtail.wagtailcore import urls as wagtail_urls
 
-from .views import search
+from .views import search, HomeView
 
 # implement CAS URLs in a production setting
 if settings.ENABLE_SSO:
@@ -53,7 +53,7 @@ urlpatterns += patterns(
         include('molo.polls.urls',
                 namespace='molo.polls',
                 app_name='molo.polls')),
-
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'', include('molo.core.urls')),
     url(r'', include(wagtail_urls)),
 )
