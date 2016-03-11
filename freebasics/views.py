@@ -1,5 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.conf import settings
 
 from molo.core.models import ArticlePage
 from wagtail.wagtailsearch.models import Query
@@ -28,3 +30,19 @@ def search(request, results_per_page=10):
         'search_results': search_results,
         'results': results,
     })
+
+
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(HomeView, self).get_context_data(*args, **kwargs)
+        blocks = [
+            ('blocks/banners.html', settings.BANNER_BLOCK_POSITION),
+            ('blocks/latest.html', settings.LATEST_BLOCK_POSITION),
+            ('blocks/questions.html', settings.QUESTIONS_BLOCK_POSITION),
+            ('blocks/sections.html', settings.SECTIONS_BLOCK_POSITION),
+        ]
+        blocks.sort(key=lambda tup: tup[1])
+        context.update({'blocks': blocks})
+        return context
