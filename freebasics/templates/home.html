@@ -10,5 +10,7 @@
   {% include template_name %}
   {% endfor %}
 
+  {% if language_page %}
   {% your_words_competition page=language_page %}
+  {% endif %}
 {% endblock %}
