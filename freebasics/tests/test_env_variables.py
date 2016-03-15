@@ -27,5 +27,5 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
         with self.settings(CUSTOM_CSS_BLOCK_TEXT_TRANSFORM="lowercase",
                            CUSTOM_CSS_ACCENT_2="red"):
             styles = freebasics_tags.custom_css(context='')
-            self.assertEquals(styles['styles']['accent-2'], 'red')
-            self.assertEquals(styles['styles']['text-transform'], 'lowercase')
+            self.assertEquals(styles['styles']['accent_2'], 'red')
+            self.assertEquals(styles['styles']['text_transform'], 'lowercase')
