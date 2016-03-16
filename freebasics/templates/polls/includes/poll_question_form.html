@@ -6,13 +6,17 @@
   <div>
     {% if not request.user.is_authenticated%}
       {% for choice in question.choices %}
-        <div>
+      <div class="form-group">
           {% if question.allow_multiple_choice%}
             <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
             <label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
           {% else %}
-            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-            <label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
+
+          <div class="radio">
+            <label for="choice{{ forloop.counter }}">{{ choice.title }}
+              <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+            </label>
+          </div>
           {% endif %}
         </div>
       {% endfor %}
@@ -20,13 +24,14 @@
       {% can_vote question as user_can_vote %}
       {% if user_can_vote %}
         {% for choice in question.choices %}
-          <div>
+        <div class="form-group">
             {% if question.allow_multiple_choice%}
               <input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
               <label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
             {% else %}
-              <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-              <label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
+              <label for="choice{{ forloop.counter }}">
+              <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+              {{ choice.title }}</label>
             {% endif %}
           </div>
         {% endfor %}
@@ -40,11 +45,11 @@
   {% if request.user.is_authenticated %}
     {% can_vote question as user_can_vote %}
     {% if user_can_vote %}
-      <input type="submit" value="{% trans "Vote" %}" />
+      <input type="submit" value="{% trans "Vote" %}" class="flatbutton" />
     {% elif question.show_results %}
-      <a href="{% url 'molo.polls:results' question.id %}">{% trans "Show Results" %}</a>
+      <a href="{% url 'molo.polls:results' question.id %}" class="flatbutton">{% trans "Show Results" %}</a>
     {% endif %}
   {% else %}
-    <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}">{% trans "Log in to vote" %}</a>
+    <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton">{% trans "Log in to vote" %}</a>
   {% endif %}
 </form>

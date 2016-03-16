@@ -7,12 +7,13 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-<div class="articles nav {{self.get_parent_section.get_effective_extra_style_hints}}">
-  <p><strong>{{self.title}}</strong></p>
-  <p>{{self.subtitle}}</p>
+<div class="block-article fb-body  fb-card {{self.get_parent_section.get_effective_extra_style_hints}}">
+  <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
   {% if self.image %}
-  <div class="banner">{% image self.image width-240 %}</div>
+  {% image self.image width-100 as tmp_photo %}
+  <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ self.image.title }}"/>
   {% endif %}
+  <h6 class="sub-heading">{{self.subtitle }}</h6>
 
 <article>
   {% for block in self.body %}
@@ -35,6 +36,7 @@
       {% endif %}
   {% endfor %}
 </article>
+{% include "comments/comment_block.html" %}
 </div>
 <div class="polls-article">
   {% has_questions self as questions %}
@@ -43,5 +45,4 @@
   {% endif %}
 </div>
 
-{% include "comments/comment_block.html" %}
 {% endblock %}

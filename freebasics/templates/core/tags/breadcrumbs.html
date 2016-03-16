@@ -2,14 +2,14 @@
 {% load wagtailcore_tags i18n %}
 
 {% if ancestors %}
-  <h4 class="padding">
-    <span><a href="/">{% trans "Home" %}</a></span> &gt;
+<div class="breadcrumbs fb-body">
+    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
     {% for ancestor in ancestors %}
       {% if forloop.last %}
         <span class="active">{{ ancestor }}</span>
       {% else %}
-        <span><a href="{% pageurl ancestor %}">{{ ancestor }}</a></span> &gt;
+        <span><a class="fb-accent-2" href="{% pageurl ancestor %}">{{ ancestor }}</a></span> &gt;
       {% endif %}
     {% endfor %}
-  </h4>
+</div>
 {% endif %}

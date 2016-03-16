@@ -71,7 +71,6 @@ INSTALLED_APPS = (
     'molo.profiles',
     'django_comments',
     'molo.commenting',
-    'molo.yourwords',
     'molo.polls',
 
     'raven.contrib.django.raven_compat',
