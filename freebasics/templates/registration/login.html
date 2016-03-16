@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+
 {% block content %}
 
-	<div class="padding">
-		<h3>{% trans "Sign in" %}</h3>
-		<div class="signin-form">
-			<h5>{% trans "LOGIN TO YOUR ACCOUNT!" %}</h5>
-			<p>{% trans "We’re excited to have you..." %}</p>
-	    <form method="post" action=".">{% csrf_token %}
-	        {% if form.errors %}
-	            <p class="error errorlist">{% trans "Your username and password does not match. Please try again." %}</p>
-	        {% endif %}
-					<p><strong>{% trans "Username" %}</strong></p>
-					{{form.username}}
-					<p><strong>{% trans "4-digit pin" %}</strong></p>
-					{{form.password}}
-					<br>
-					<input type="submit" value="{% trans 'Sign in' %}">
-					<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
-					<a href="{% url 'molo.profiles:user_register' %}" class="button inverted">{% trans "Not a member yet" %}</a>
-	    </form>
-		</div>
+<div class="block-default fb-body fb-card">
+	<h6 class="block-heading fb-accent-1">{% trans "Login to your account" %}</h6>
+	<div class="signin-form padding15 fb-body">
+		<p>{% trans "We're excited to have you..." %}</p>
+		<form method="post" action=".">{% csrf_token %}
+				{% if form.errors %}
+						<p class="error errorlist">{% trans "Your username and password does not match. Please try again." %}</p>
+				{% endif %}
+				<p><strong>{% trans "Username" %}</strong></p>
+				{{form.username}}
+				<p><strong>{% trans "4-digit pin" %}</strong></p>
+				{{form.password}}
+				<br>
+				<input class="flatbutton" type="submit" value="{% trans 'Sign in' %}">
+				<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
+				<a href="{% url 'molo.profiles:user_register' %}" class="button inverted">{% trans "Not a member yet" %}</a>
+		</form>
 	</div>
+</div>
 {% endblock %}

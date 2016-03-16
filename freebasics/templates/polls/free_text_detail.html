@@ -9,7 +9,7 @@
 			{% csrf_token %}
 			{{form.answer}}
 			<div>
-				<input type="submit" value="{% trans "Vote" %}"/>
+				<input class="flatbutton" type="submit" value="{% trans "Submit" %}"/>
 				<br>
 				<a href="{{request.site.root_page.url}}">{% trans "Home" %}</a>
 			</div>

@@ -84,10 +84,12 @@
       <li>
         <input type="checkbox" id="menu-toggle" />
         <ul class="menuinner fb-body">
-          <li><a class="fb-accent-2" href="/">Home</a></li>
-          <li><a class="fb-accent-2" href="export_article.html">Article Page</a></li>
-          <li><a class="fb-accent-2" href="export_category.html">Categories Page</a></li>
-          <li><a class="fb-accent-2" href="export_login.html">Login and Register</a></li>
+          <li><a class="fb-accent-2" href="/">{% trans "Home" %}</a></li>
+          {% if user.is_authenticated %}
+             <li><a href="{% url 'molo.profiles:view_my_profile' %}"><span >{% trans "Profile" %}</span ></a></li>
+           {% else %}
+           <li><a class="fb-accent-2" href="{% url 'molo.profiles:auth_login' %}">{% trans "Login or Register" %}</a></li>
+           {% endif %}
         </ul>
       </li>
     </ul>
