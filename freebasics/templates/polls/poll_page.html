@@ -3,7 +3,6 @@
 {% block content %}
 	{% if questions %}
 	<div class="block-poll fb-body fb-card">
-
 		{% for question in questions %}
 			{% if forloop.first%}
 			<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
@@ -16,7 +15,7 @@
 				{% else %}
 					{% include 'polls/includes/poll_question_form.html'%}
 				{% endif %}
-			</div>
+			</div><br>
 		{% endfor %}
 	</div>
 	{% endif %}

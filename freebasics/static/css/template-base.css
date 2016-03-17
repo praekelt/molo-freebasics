@@ -54,7 +54,7 @@ h6{
   position: relative;
   width: 30px;
   height: 30px;
-  background-image: url(../../../static/css/img/logo_temp.svg);
+  background-image: url(../../../static/img/logo_temp.svg);
   background-repeat: no-repeat;
   background-size: contain;
   overflow: visible;
@@ -154,13 +154,14 @@ h6{
   text-decoration: none;
   text-transform: capitalize;
 }
+
+.banner-container{
+  text-align: center;
+}
 .block-banner{
-  background-image: url(../../img/banner_palceholder_trans.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   width: auto;
   height: 130px;
-  background-position: 50%;
+  margin: 0 auto;
 }
 
 .block-search input[type="text"]{
@@ -214,6 +215,20 @@ h6{
 	padding: 8px 22px;
 	text-decoration:none;
 	border: none;
+}
+.flatbutton-input{
+	background-color:#69269d;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:20px;
+	display:inline;
+	cursor:pointer;
+	color:#fff;
+	font-size: 12px;
+	padding: 8px 22px;
+	text-decoration:none;
+	border: 15px;
+  text-align: center;
 }
 .flatbutton:hover {
 	background-color:#c736c0;

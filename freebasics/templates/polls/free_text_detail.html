@@ -2,17 +2,18 @@
 {% load static core_tags i18n %}
 
 {% block content %}
-	<div class="list-inline">
-		<h3>{{ question.title }}</h3>
+<div class="block-poll fb-body fb-card">
+	<h6 class="block-heading fb-accent-1">{{ question.title }}</h6><br>
 		{% if form.answer.errors %}<p><strong>{{form.answer.errors|join:", " }}</strong></p>{% endif %}
 		<form action="{% url 'molo.polls:free_text_vote' question.id %}" method="post">
 			{% csrf_token %}
 			{{form.answer}}
 			<div>
-				<input class="flatbutton" type="submit" value="{% trans "Submit" %}"/>
 				<br>
+				<input class="flatbutton-input" type="submit" value="{% trans "Submit" %}"/>
+				<br><br>
 				<a href="{{request.site.root_page.url}}">{% trans "Home" %}</a>
 			</div>
 		</form>
-	</div>
+</div>
 {% endblock %}

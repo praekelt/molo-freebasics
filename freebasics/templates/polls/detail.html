@@ -2,8 +2,10 @@
 {% load static core_tags i18n %}
 
 {% block content %}
-		{% if form.choice.errors %}<p><strong>{{form.choice.errors|join:", " }}</strong></p>{% endif %}
-		<h6 class="block-heading fb-accent-1">{{ question.title }}</h6>
+<div class="block-poll fb-body fb-card">
+
+	<h6 class="block-heading fb-accent-1">{{ question.title }}</h6>
+		{% if form.choice.errors %}<h3><strong>{{form.choice.errors|join:", " }}</strong></h3>{% endif %}
 		<form action="{% url 'molo.polls:vote' question.id %}" method="post">
 			{% csrf_token %}
 			{% for choice in question.choices %}
@@ -19,7 +21,8 @@
 				</div>
 			{% endfor %}
 			<div>
-				<input type="submit" value="{% trans "Vote" %}" class="flatbutton"/>
+				<input type="submit" value="{% trans "Vote" %}" class="flatbutton-input"/>
 			</div>
 		</form>
+	</div>
 {% endblock %}

@@ -6,16 +6,16 @@
 <div class="header">
   {% if homepage.banner %}
     {% if homepage.banner_link_page %}
-    <div class="block-banner no-fb-body fb-card">
+    <div class="no-fb-body fb-card banner-container">
       <a href="{% pageurl homepage.banner_link_page %}">
         {% image homepage.banner width-320 as tmp_photo %}
-        <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ homepage.banner.title }}"/>
+        <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ homepage.banner.title }}"/>
       </a>
     </div>
     {% else %}
-      <div class="block-banner no-fb-body fb-card">
+      <div class="no-fb-body fb-card banner-container">
         {% image homepage.banner width-320 as tmp_photo %}
-        <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ homepage.banner.title }}"/>
+        <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ homepage.banner.title }}"/>
       </div>
     {% endif %}
   {% endif %}
