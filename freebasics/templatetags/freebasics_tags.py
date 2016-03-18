@@ -16,3 +16,8 @@ def custom_css(context):
         "accent_2": settings.CUSTOM_CSS_ACCENT_2
     }
     return styles
+
+
+@register.simple_tag(takes_context=True)
+def get_site_name(context):
+    return settings.SITE_NAME
