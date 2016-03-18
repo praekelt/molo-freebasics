@@ -71,7 +71,6 @@ INSTALLED_APPS = (
     'molo.profiles',
     'django_comments',
     'molo.commenting',
-    'molo.yourwords',
     'molo.polls',
 
     'raven.contrib.django.raven_compat',
@@ -211,7 +210,6 @@ WAGTAIL_SITE_NAME = "base"
 WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = False
 
 ENABLE_SSO = False
-
 CUSTOM_CSS_BASE_BACKGROUND_COLOR = environ.get(
     'CUSTOM_CSS_BASE_BACKGROUND_COLOR', "#ffffff")
 CUSTOM_CSS_BODY_FONT_FAMILY = environ.get(
@@ -224,6 +222,7 @@ CUSTOM_CSS_BLOCK_TEXT_TRANSFORM = environ.get(
     'CUSTOM_CSS_BLOCK_TEXT_TRANSFORM', "uppercase")
 CUSTOM_CSS_ACCENT_1 = environ.get('CUSTOM_ACCENT_1', "#738090")
 CUSTOM_CSS_ACCENT_2 = environ.get('CUSTOM_ACCENT_2', "#a8456d")
+SITE_NAME = environ.get('SITE_NAME', "Molo Free Basics")
 
 BANNER_BLOCK_POSITION = int(environ.get('BLOCK_POSITION_BANNER', 1))
 LATEST_BLOCK_POSITION = int(environ.get('BLOCK_POSITION_LATEST', 2))

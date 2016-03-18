@@ -1,24 +1,16 @@
-
 {% load wagtailcore_tags wagtailimages_tags %}
 
 {% if sections %}
 {% for section in sections %}
-<div class="articles nav {{section.get_effective_extra_style_hints}}">
-  <h2 class="list-header">
-    <a href="{% pageurl section %}">{{section.title}}</a>
-  </h2>
+<div class="block-category fb-body fb-card {{section.get_effective_extra_style_hints}}">
+  <h6 class="block-heading fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></span></h6>
+  <ul>
   {% for article in section.featured_articles_in_homepage %}
-  <ul class="list-block">
     <li>
-      {% if article.image %}
-      <a href="{% pageurl article %}">{% image article.image width-60 %}</a>
-      {% endif %}
-      <h3><a href="{% pageurl article %}">{{article.title}}</a></h3>
-      <p>{{article.subtitle}}</p>
+      <h6><a class="fb-accent-2" href="{% pageurl article %}">{{article.title}}</a></h6>
     </li>
-  </ul>
   {% endfor %}
+</ul>
 </div>
 {% endfor%}
 {% endif %}
-

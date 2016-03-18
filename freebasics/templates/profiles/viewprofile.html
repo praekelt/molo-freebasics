@@ -3,14 +3,14 @@
 
 {% block content %}
 
-<div class="padding">
+<div class="block-default fb-body fb-card">
 
-  <h3>{% trans "Hello " %}{{ user.username }}</h3>
-  <label class="label-wide">{% trans "Display Name: " %}{{ user.profile.alias | default:'Anonymous' }}</label>
-  <label class="label-wide">{% trans "Date of Birth: " %}{{ user.profile.date_of_birth | date:"M d, Y" }}</label>
-  <a href="{% url 'molo.profiles:auth_logout' %}" class="btn btn-wide"><input type="button" value='{% trans "log out" %}' class="btn btn-wide" /></a>
-  <a href="{% url 'molo.profiles:edit_my_profile' %}" class="btn btn-wide"><input type="button" value='{% trans "Edit My Profile" %}' class="btn btn-wide" /></a>
-  <a href="{% url 'molo.profiles:profile_password_change' %}" class="btn btn-wide"><input type="button" value='{% trans "Change My Password" %}' class="btn btn-wide" /></a>
+  <h6 class="block-heading fb-accent-1">{% trans "Hello " %}{{ user.username }}</h6><br>
+  <label class="label-wide">{% trans "Display Name: " %}{{ user.profile.alias | default:'Anonymous' }}</label><br>
+  <label class="label-wide">{% trans "Date of Birth: " %}{{ user.profile.date_of_birth | date:"M d, Y" }}</label><br><br>
+  <a href="{% url 'molo.profiles:auth_logout' %}" class="btn btn-wide"><input type="button" value='{% trans "Logout" %}' class="flatbutton" /></a><br><br>
+  <a href="{% url 'molo.profiles:edit_my_profile' %}" class="btn btn-wide"><input type="button" value='{% trans "Edit My Profile" %}' class="flatbutton" /></a><br><br>
+  <a href="{% url 'molo.profiles:profile_password_change' %}" class="btn btn-wide"><input type="button" value='{% trans "Change My Password" %}' class="flatbutton" /></a>
 
 </div>
 

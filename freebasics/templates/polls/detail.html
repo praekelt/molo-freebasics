@@ -1,28 +1,36 @@
 {% extends "base.html" %}
 {% load static core_tags i18n %}
 
+{% block breadcrumbs %}
+<div class="breadcrumbs fb-body">
+    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
+    <span class="active">{{ question.title }}</span>
+</div>
+{% endblock %}
+
 {% block content %}
-	<div class="list-inline">
-		{% if form.choice.errors %}<p><strong>{{form.choice.errors|join:", " }}</strong></p>{% endif %}
-		<h3>{{ question.title }}</h3>
+<div class="block-poll fb-body fb-card">
+
+	<h6 class="block-heading fb-accent-1">{{ question.title }}</h6>
+		{% if form.choice.errors %}<h6 class="sub-heading">{{form.choice.errors|join:", " }}</h6>{% endif %}
 		<form action="{% url 'molo.polls:vote' question.id %}" method="post">
 			{% csrf_token %}
 			{% for choice in question.choices %}
-				{% if question.allow_multiple_choice%}
-					<input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-					<label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
-					<br>
-				{% else %}
-					<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-					<label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
-					<br>
-				{% endif %}
+			<div class="form-group">
+					{% if question.allow_multiple_choice%}
+						<input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+						<label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
+					{% else %}
+						<label for="choice{{ forloop.counter }}">
+						<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+						{{ choice.title }}</label>
+					{% endif %}
+				</div>
 			{% endfor %}
-			<div>
-				<input type="submit" value="{% trans "Vote" %}"/>
-				<br>
-				<a href="{{request.site.root_page.url}}">{% trans "Home" %}</a>
+			<div class="button-div">
+				<input type="submit" value="{% trans "Vote" %}" class="flatbutton-input"/>
 			</div>
+      <br/>
 		</form>
 	</div>
 {% endblock %}

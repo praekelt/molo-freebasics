@@ -2,11 +2,12 @@
 
 {% if self.is_commenting_enabled %}
 <div class="comments-container">
-<div>
+  <div class="padding15">
   {% if self.allow_commenting %}
     {% get_comment_count for self as comment_count %}
     {% if comment_count > 0 %}
-    <a href="#" class="comments-count">{{comment_count}} <span>{% trans "comment" %}{{comment_count|pluralize}}</span></a>
+    <a href="#" class="comments-count fb-accent-1">{{comment_count}} <span>{% trans "comment" %}{{comment_count|pluralize}}</span></a>
+    <br><br>
     {% endif %}
     <div class="post-comment">
     {% if request.user.is_authenticated %}
@@ -20,7 +21,8 @@
 	</div>
 </div>
 
-<div class="comments-section" id="comments-list">
+<div class="comments-section fb-body" id="comments-list">
+  <div class="nav">
   {% get_comment_count for self as comment_count %}
     {% get_molo_comments for self as comment_list %}
       {% for node in comment_list %}
@@ -31,6 +33,7 @@
       <a href="{% url 'molo.commenting:more-comments' self.pk %}">{% trans "view more comments" %}</a>
     </div>
   {% endif %}
+</div>
 </div>
 </div>
 {% endif %}

@@ -2,19 +2,20 @@
 {% load wagtailcore_tags wagtailimages_tags i18n %}
 
 {% if articles %}
-<div class="articles nav">
-  <h2 class="list-header">{% trans "Latest" %}</h2>
   {% for article in articles %}
-  <ul class="list-block">
-    <li>
-      {% if article.image %}
-      <a href="{% pageurl article %}">{% image article.image width-60 %}</a>
-      {% endif %}
-      <h3><a href="{% pageurl article %}">{{article.title}}</a></h3>
-      <p>{{article.subtitle}}</p>
-    </li>
-  </ul>
-  {% endfor %}
-</div>
-{% endif %}
+  <div class="block-article fb-body  fb-card">
+    <h6 class="block-heading fb-accent-1">Latest</h6>
+    {% if article.image %}
+    {% image article.image width-100 as tmp_photo %}
+    <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
+    {% endif %}
+    <h6 class="sub-heading">{{article.title }}</h6>
 
+    <p>{{article.subtitle}}
+    <br>
+    <br>
+    <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
+    </p>
+  </div>
+  {% endfor %}
+{% endif %}

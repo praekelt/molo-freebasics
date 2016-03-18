@@ -2,16 +2,17 @@
 {% load i18n %}
 
 {% block content %}
-<div class="padding">
+<div class="block-default fb-body fb-card">
 	<div class="block turq">
+		<h6 class="block-heading fb-accent-1">{% trans "Edit Profile" %}</h6><br>
 		<form method="post" id="frmProfileEdit" action="{% url 'molo.profiles:edit_my_profile' %}">{% csrf_token %}
 			<p>{% trans "Type new display name:" %}</p>
-			{{ form.alias }}
+			{{ form.alias }}<br><br>
       <p>{% trans "Update your date of birth:" %}</p>
 	      {{ form.date_of_birth }}
 				<br>
 				<br>
-			<input type="submit" value='{% trans "Update profile" %}' class="btn">
+			<input type="submit" value='{% trans "Update profile" %}' class="flatbutton">
 		</form>
 	</div>
 </div>

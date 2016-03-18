@@ -1,0 +1,312 @@
+@media screen{
+  html.template-base{
+    background-color: #333;
+    max-width: 35em;
+    margin: 0 auto;
+    font-size: 10px;
+    } }
+html.template-base screen and (min-device-width: 50em){
+  html{
+    max-width: 20em; } }
+
+html.template-base body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  line-height: 20px;
+  font-size: 12px;
+  background-color: #efefef;
+}
+html.template-base .block-header .container-fluid{
+  margin-right: -10px;
+  margin-left: -10px;
+}
+.row:after, .row:before, .container-fluid:after, .container-fluid:before{
+  display: table;
+  content: " ";
+}
+
+p,h6{
+  margin: 0
+}
+h6{
+  font-size:13px;
+}
+.fb-card{
+  margin: 7px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.no-fb-card{
+  background-color: #fff;
+}
+.block-header{
+  color: #000;
+  background-color: #fff;
+  border-bottom: 1px solid #eeeeee;
+  overflow: hidden;
+}
+.block-logo{
+  padding: 10px;
+}
+
+.block-logo span{
+  margin-left: 0;
+}
+.block-menu span{
+  border-left: 1px solid #eeeeee;
+  padding: 10px 0 10px 15px;
+  font-weight: 400
+}
+.block-footer{
+  color: #000;
+  background-color: #eeeeee;
+  padding: 1px 5px 5px 5px;
+}
+.block-footer p{
+  margin: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+.block-header .container-fluid{
+  padding-left: 20px;
+  padding-right: 26px;
+}
+.block-article p{
+  font-size: 12px;
+  line-height: 15px;
+  padding: 0px 15px 15px 15px;
+}
+.block-default p{
+  font-size: 12px;
+  line-height: 15px;
+}
+.block-img{
+  width: 100px;
+  height: auto;
+  float: right;
+  margin: 15px;
+}
+.block-heading{
+  padding: 10px 15px;
+  font-size: 15px;
+}
+.see-more{
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: initial;
+}
+.link-button{
+  margin-top: 10px;
+  font-size: 13px;
+  text-decoration: underline;
+}
+.sub-heading{
+  padding: 15px 15px 10px 15px;
+}
+.checkbox, .radio{
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.radio label{
+  font-weight: 300;
+  line-height: 22px;
+}
+.block-poll .form-group{
+  padding: 0px 15px 15px 15px;
+  margin-bottom: 0;
+}
+.block-poll p{
+  font-size: 12px;
+  line-height: 15px;
+}
+.post-comment textarea{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+}
+.block-category ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+.block-category li{
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 15px;
+}
+.block-category li:last-child{
+  border-bottom: none;
+}
+.block-category a{
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.banner-container{
+  text-align: center;
+}
+.block-banner{
+  width: 100%;
+}
+
+.block-search input[type="text"]{
+	width: 60%;
+	padding: 8px;
+	border: 1px solid #eeeeee;
+}
+.block-search ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+.block-search li{
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 15px;
+}
+.pull-right{
+  float:right!important;
+}
+.pull-left{
+  float:left!important;
+}
+
+/*default colors*/
+.fb-body .base-bcolor{
+  background-color: #efefef;
+  border: 1px solid #eeeeee;
+}
+.fb-body .block-heading{
+  background-color: #dfdfdf;
+  font-family:"Bangers", Helvetica, sans-serif;,
+  text-transform: uppercase;
+  border-radius: 3px 3px 0px 0px;
+}
+.fb-body .fb-accent-1{
+  color: #69269d;
+}
+.fb-body .fb-accent-2{
+  color: #c736c0;
+}
+.flatbutton{
+	background-color:#69269d;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font-size: 12px;
+	padding: 8px 22px;
+	text-decoration:none;
+	border: none;
+}
+.flatbutton-input{
+	background-color:#69269d;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	display:inherit;
+	cursor:pointer;
+	color:#fff;
+	font-size: 12px;
+	padding: 8px 22px;
+	text-decoration:none;
+	border: 15px;
+  text-align: center;
+}
+.flatbutton:hover {
+	background-color:#c736c0;
+}
+.flatbutton:active {
+	position:relative;
+	top:1px;
+}
+.fb-body, .fb-body *:not(.no-fb-body){
+  font-family: "Yanone Kaffeesatz", Helvetica, sans-serif;
+}
+///
+
+
+.comments-count{
+  padding-bottom:10px;
+}
+.breadcrumbs{
+  padding: 5px 10px 0px 10px;
+  font-size: 12px;
+}
+.block-menu label{
+  cursor: pointer;
+}
+.collapsmenu a{
+  font-size: 13px;
+  text-decoration: none;
+}
+.collapsmenu li > input + *{
+ display: none;
+}
+.collapsmenu li > input:checked + *{
+ display: block;
+}
+.collapsmenu li > input{
+ display: none;
+}
+.collapsmenu label{
+ cursor: pointer;
+}
+.collapsmenu li{
+  list-style: none;
+}
+.collapsmenu, .collapsmenu ul{
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.collapsmenu ul.menuinner{
+  margin-top: 40px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+.menuinner a {
+    margin-left: 15px;
+}
+.menuinner li{
+  line-height: 33px;
+  list-style: none;
+  border-top: 1px solid #eee;
+}
+.post-comment p{
+  padding: 0;
+}
+.padding15{
+  padding: 15px;
+}
+.signin-form form{
+  padding-top:10px;
+}
+.signin-form p{
+  padding-bottom:5px;
+}
+.signin-form a{
+  font-size:12px;
+}
+.signin-form input[type="text"], .signin-form input[type="password"]{
+  padding:5px;
+  box-shadow:none;
+  margin-bottom:15px;
+  border: 1px solid #eeeeee;
+}
+.signin-form input[type="submit"]{
+  margin-bottom:0;
+}
+
+.button-div{
+  width: 100%;
+}
+
+.button-div a, .button-div input[type="submit"]{
+  width: 12em;
+  margin: 0 auto;
+}
