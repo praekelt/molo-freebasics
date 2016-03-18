@@ -43,16 +43,16 @@
     {% can_vote question as user_can_vote %}
     {% if user_can_vote %}
     <div class="button-div">
-      <input type="submit" value="{% trans "Vote" %}" class="flatbutton-input "/>
-      </div>
+      <input type="submit" value="{% trans "Vote" %}" class="flatbutton-input"/>
+    </div>
     {% elif question.show_results %}
     <div class="button-div">
-      <a href="{% url 'molo.polls:results' question.id %}" class="flatbutton-input  ">{% trans "Show Results" %}</a>
-      </div>
+      <a href="{% url 'molo.polls:results' question.id %}" class="flatbutton-input">{% trans "Show Results" %}</a>
+    </div>
     {% endif %}
   {% else %}
   <div class="button-div">
     <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input">{% trans "Log in to vote" %}</a>
-    </div>
+  </div>
   {% endif %}
 </form>
