@@ -7,17 +7,26 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 
-<!DOCTYPE html>
+<!--[if gt IE 8]><!-->
 <html class="template-base">
 <head>
+
+  <title>Template View | Praekelt Foundation Incubator for Free Basics</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Template View | Praekelt Foundation Incubator for Free Basics</title>
+  <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
   <!-- Base Bemplate style -->
+  {% compress css %}
   <link rel="stylesheet" href="{% static 'css/template-base.css' %}">
+  {% endcompress %}
+
+  {% block extra_css %}
+  {% endblock %}
+  {% custom_css %}
   <!-- Google Fonts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+  <script src="{% static 'js/webfont.js' %}"></script>
   <!-- Google Tag Manager -->
        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M9FBNX"
        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -59,6 +68,10 @@
               loadJS( "{% static 'js/main.js' %}" );
             }
             </script>
+
+            {% compress css file enhanced %}
+              <link rel="stylesheet" type="text/x-scss" href="{% static 'css/enhanced.scss' %}">
+            {% endcompress %}
 </head>
 
 <body>

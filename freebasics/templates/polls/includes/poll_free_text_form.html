@@ -18,6 +18,9 @@
       <p>{% trans "Thank you! Your repsonse has already been submitted." %}<p>
     {% endif %}
   {% else %}
-      <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}">{% trans "Log in to vote" %}</a>
+  <div padding15>
+  <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input">{% trans "Log in to vote" %}</a>
+</div>
   {% endif %}
+
 </form>

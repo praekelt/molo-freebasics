@@ -49,17 +49,7 @@ h6{
 .block-logo{
   padding: 10px;
 }
-.logo-placeholder{
-  margin: -5px 0px -5px -10px;
-  position: relative;
-  width: 30px;
-  height: 30px;
-  background-image: url(../../../static/img/logo_temp.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  overflow: visible;
-  float: left;
-}
+
 .block-logo span{
   margin-left: 0;
 }
@@ -220,8 +210,8 @@ h6{
 	background-color:#69269d;
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
-	border-radius:20px;
-	display:inline;
+	border-radius:2px;
+	display:inherit;
 	cursor:pointer;
 	color:#fff;
 	font-size: 12px;
