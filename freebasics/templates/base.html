@@ -1,5 +1,5 @@
 
-{% load wagtailcore_tags compress static wagtailuserbar core_tags freebasics_tags i18n %}
+{% load wagtailcore_tags wagtailimages_tags compress static wagtailuserbar core_tags freebasics_tags i18n %}
 {% load static from staticfiles %}
 
 <!DOCTYPE html>
@@ -15,6 +15,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="{% if self.social_media_title %}{{ self.social_media_title }}{% else %}{{ self.title }}{% endif %}"/>
+  <meta name="twitter:description" content="{% if self.social_media_description %}{{ self.social_media_description }}{% else %}{{ self.subtitle }}{% endif %}"/>
+  {% image self.social_media_image width-300 as tmp_photo %}
+  <meta name="twitter:image" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
+  <meta property="og:title" content= "{% if self.social_media_title %}{{ self.social_media_title }}{% else %}{{ self.title }}{% endif %}" />
+  <meta property="og:description" content="{% if self.social_media_description %}{{ self.social_media_description }}{% else %}{{ self.subtitle }}{% endif %}"/>
+  {% image self.social_media_image width-300 as tmp_photo %}
+  <meta property="og:image" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
+  <meta property="og:image:url" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
+
 
   <!-- Base Bemplate style -->
   {% compress css %}
