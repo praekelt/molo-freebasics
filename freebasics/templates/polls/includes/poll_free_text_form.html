@@ -13,12 +13,14 @@
       {% endif%}
       <br>
       <br>
+      <div class="button-div">
       <input type="submit" value="{% trans "Submit" %}" class="flatbutton-input"/>
+      </div>
     {% else %}
       <p>{% trans "Thank you! Your repsonse has already been submitted." %}<p>
     {% endif %}
   {% else %}
-  <div padding15>
+  <div class="button-div">
   <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input">{% trans "Log in to vote" %}</a>
 </div>
   {% endif %}

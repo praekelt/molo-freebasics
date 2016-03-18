@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% load i18n static core_tags wagtailcore_tags %}
 
+{% block breadcrumbs %}
+<div class="breadcrumbs fb-body">
+    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
+    <span class="active">{{ question.title }}</span>
+</div>
+{% endblock %}
+
 {% block content %}
 	<div class="block-poll fb-body fb-card">
 		{% if question.show_results and not question.freetextquestion%}
@@ -11,7 +18,7 @@
 				{% for choice in choices %}
 					<h4>{{ choice.title }}</h4>
 						{% if question.result_as_percentage %}
-							<h3 class="fb-accent2">{{ choice.percentage }}%</h3>
+							<h3 class="fb-accent-2">{{ choice.percentage }}%</h3>
 						{% else %}
 							<h3 class="fb-accent-2">{{ choice.votes }} vote{{ choice.votes|pluralize }}</h3>
 						{% endif %}

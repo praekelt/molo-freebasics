@@ -15,4 +15,4 @@ def custom_css(context):
         "accent_1": settings.CUSTOM_CSS_ACCENT_1,
         "accent_2": settings.CUSTOM_CSS_ACCENT_2
     }
-    return {'styles': styles}
+    return styles

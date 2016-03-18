@@ -149,9 +149,7 @@ h6{
   text-align: center;
 }
 .block-banner{
-  width: auto;
-  height: 130px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .block-search input[type="text"]{
@@ -302,4 +300,13 @@ h6{
 }
 .signin-form input[type="submit"]{
   margin-bottom:0;
+}
+
+.button-div{
+  width: 100%;
+}
+
+.button-div a, .button-div input[type="submit"]{
+  width: 12em;
+  margin: 0 auto;
 }

@@ -1,11 +1,18 @@
 {% extends "base.html" %}
 {% load static core_tags i18n %}
 
+{% block breadcrumbs %}
+<div class="breadcrumbs fb-body">
+    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
+    <span class="active">{{ question.title }}</span>
+</div>
+{% endblock %}
+
 {% block content %}
 <div class="block-poll fb-body fb-card">
 
 	<h6 class="block-heading fb-accent-1">{{ question.title }}</h6>
-		{% if form.choice.errors %}<h3><strong>{{form.choice.errors|join:", " }}</strong></h3>{% endif %}
+		{% if form.choice.errors %}<h6 class="sub-heading">{{form.choice.errors|join:", " }}</h6>{% endif %}
 		<form action="{% url 'molo.polls:vote' question.id %}" method="post">
 			{% csrf_token %}
 			{% for choice in question.choices %}
@@ -20,9 +27,10 @@
 					{% endif %}
 				</div>
 			{% endfor %}
-			<div>
+			<div class="button-div">
 				<input type="submit" value="{% trans "Vote" %}" class="flatbutton-input"/>
 			</div>
+      <br/>
 		</form>
 	</div>
 {% endblock %}
