@@ -5,30 +5,21 @@
 {% if search_results %}
 <div class="block-search fb-body fb-card">
   <h6 class="block-heading fb-accent-1">Search Results</h6>
-  <h6 class="sub-heading">{{search_query}}</h6>
+  <h6 class="sub-heading">Search Results for {{search_query}}</h6>
 
   {% for page in search_results %}
-  <ul>
+  <ul class="list-block">
     {% with parent_section=page.get_parent_section ancestor=page.get_parent_section.get_ancestors.last %}
     {% if ancestor.sectionpage.image %}
     <li>
-      <a href="{% pageurl page %}">
-        <div class="nav">
           <h6 class="fb-accent-2">{{ancestor.title}}</h6>
-          <h3>{{page.title}}</h3>
-          <p>{{page.subtitle}}</p>
-        </div>
-      </a>
+          <p>{{page.title}}</p>
     </li>
     {% else %}
     <li>
-      <a href="{% pageurl page %}">
-        <div class="nav">
           <h6 class="fb-accent-2">{{parent_section.title}}</h6>
-          <h3>{{page.title}}</h3>
-          <p>{{page.subtitle}}</p>
-        </div>
-      </a>
+          <p>{{page.title}}</p>
+          <a href={{page.url}} class="fb-accent-2 link-button">View</a>
     </li>
     {% endif %}
     {% endwith %}
