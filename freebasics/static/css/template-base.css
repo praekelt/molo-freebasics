@@ -310,7 +310,7 @@ h6{
   margin: 0 auto;
   display: block;
 }
-.free-text-form input[type="text"], input[type="number"]{
+.free-text-form input[type="text"], .free-text-form input[type="number"]{
   width:100%;
   height: 2em;
 }
