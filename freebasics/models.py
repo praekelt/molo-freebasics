@@ -4,7 +4,7 @@ from django.db import models
 
 
 @register_setting
-class HomePageSettings(BaseSetting):
+class SiteSettings(BaseSetting):
     logo = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
