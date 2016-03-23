@@ -24,21 +24,22 @@
     </li>
     {% endif %}
     {% endwith %}
-  </ul>
   {% endfor %}
-</div>
-
+<li>
   <div class="step-links">
     {% if search_results.has_previous %}
-        <a href="?p={{ search_results.previous_page_number }}&amp;q={{search_query}}">&larr;</a>
+        <a class="fb-accent-2" href="?p={{ search_results.previous_page_number }}&amp;q={{search_query}}">&larr;</a>
     {% endif %}
-    <span class="current">
+    <span class="current fb-accent-2">
         Page {{ search_results.number }} of {{ search_results.paginator.num_pages }}
     </span>
     {% if search_results.has_next %}
-        <a href="?p={{ search_results.next_page_number }}&amp;q={{search_query}}">&rarr;</a>
+        <a class="fb-accent-2" href="?p={{ search_results.next_page_number }}&amp;q={{search_query}}">&rarr;</a>
     {% endif %}
   </div>
+  </li>
+</ul>
+</div>
 
   {% else %}
       <div class="block-search fb-body fb-card">
@@ -47,7 +48,7 @@
         <div class="nav">
             <form action="{% url 'search' %}">
               <input placeholder="{% trans "I am looking for" %}" name="q" type="search">
-              <input type="submit" value="{% trans "Search"%}" class="flatbutton">
+              <input type="submit" value="{% trans "Search"%}" class="flatbutton block-heading fb-accent-1">
             </form>
         </div>
     </div>

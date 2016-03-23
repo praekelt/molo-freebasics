@@ -1,8 +1,6 @@
 
 {% load wagtailcore_tags wagtailimages_tags compress static wagtailuserbar core_tags freebasics_tags i18n %}
-{% load wagtailsettings_tags %}
 {% load static from staticfiles %}
-{% get_settings %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -94,8 +92,6 @@
       <div class="row">
         <div class="pull-left">
           <div class="block-logo logo-placeholder">
-            {% image settings.freebasics.HomePageSettings.logo height-30 as tmp_photo %}
-            <img src="{{ tmp_photo.url }}" alt="{{ settings.freebasics.HomePageSettings.logo.title }}"/>
           </div>
           <span id="printsitelabel1">
               <title>{{ self.title }}</title>
