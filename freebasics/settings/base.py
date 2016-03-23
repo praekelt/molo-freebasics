@@ -64,7 +64,6 @@ INSTALLED_APPS = (
     'wagtail.wagtailsearch',
     'wagtail.wagtailredirects',
     'wagtail.wagtailforms',
-    'wagtail.contrib.settings',
 
     'molo.core',
     'freebasics',
@@ -182,7 +181,6 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'molo.core.context_processors.locale',
     'molo.profiles.context_processors.get_profile_data',
-    'wagtail.contrib.settings.context_processors.settings',
 )
 
 
