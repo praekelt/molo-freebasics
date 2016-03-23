@@ -4,8 +4,8 @@
 {% block content %}
 {% if search_results %}
 <div class="block-search fb-body fb-card">
-  <h6 class="block-heading fb-accent-1">Search Results</h6>
-  <h6 class="sub-heading">{% trans "Search results for " %}{{search_query}}</h6>
+  <h6 class="block-heading fb-accent-1">{% trans "Search Results" %}</h6>
+  <h6 class="sub-heading">{% trans "Search results for: " %}{{search_query}}</h6>
 
   {% for page in search_results %}
   <ul class="list-block">
@@ -14,12 +14,13 @@
     <li>
           <h6 class="fb-accent-2">{{ancestor.title}}</h6>
           <p>{{page.title}}</p>
+          <a href={{page.url}} class="fb-accent-2 link-button">{% trans "View" %}</a>
     </li>
     {% else %}
     <li>
           <h6 class="fb-accent-2">{{parent_section.title}}</h6>
           <p>{{page.title}}</p>
-          <a href={{page.url}} class="fb-accent-2 link-button">View</a>
+          <a href={{page.url}} class="fb-accent-2 link-button">{% trans "View" %}</a>
     </li>
     {% endif %}
     {% endwith %}
@@ -41,8 +42,8 @@
 
   {% else %}
       <div class="block-search fb-body fb-card">
-        <h6 class="block-heading fb-accent-1">Search Results</h6>
-        <h6 class="sub-heading">No search results for: {{search_query}}</h6>
+        <h6 class="block-heading fb-accent-1">{% trans "Search Results" %}</h6>
+        <h6 class="sub-heading">{% trans "Search results for: " %} {{search_query}}</h6>
         <div class="nav">
             <form action="{% url 'search' %}">
               <input placeholder="{% trans "I am looking for" %}" name="q" type="search">
