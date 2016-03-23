@@ -47,7 +47,7 @@ h6{
   overflow: hidden;
 }
 .block-logo{
-  padding: 10px;
+  padding-top: 5px;
 }
 
 .block-logo span{
@@ -192,7 +192,6 @@ h6{
   color: #c736c0;
 }
 .flatbutton{
-	background-color:#69269d;
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
 	border-radius:2px;
@@ -313,4 +312,8 @@ h6{
 .free-text-form input[type="text"], .free-text-form input[type="number"]{
   width:100%;
   height: 2em;
+}
+
+.step-links a{
+  text-decoration: none;
 }
