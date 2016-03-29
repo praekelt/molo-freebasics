@@ -1,5 +1,6 @@
 from django.core.urlresolvers import reverse
 from django.test import TestCase, Client
+from django.contrib.auth.models import User
 
 
 class RegistrationViewTest(TestCase):
@@ -7,11 +8,11 @@ class RegistrationViewTest(TestCase):
     def setUp(self):
         self.client = Client()
 
-    def test_register_view_invalid_form(self):
-        # NOTE: empty form submission
+    def test_registration_with_password(self):
         response = self.client.post(reverse('user_register'), {
             'username': 'testing',
             'password': 'testing',
         })
-        print response
-        self.assertRedirects(response, reverse('user_register'))
+        self.assertRedirects(response, reverse(
+            'molo.profiles:user_register'))
+        self.assertEquals(User.objects.all().count(), 1)
