@@ -8,12 +8,12 @@
       <p>{% trans "Not a member yet? Join us by signing up below." %}</p>
       <form method="post" action="{% url 'molo.profiles:user_register' %}">{% csrf_token %}
           <p><strong>{% trans "Choose a username" %}</strong></p>
-          {{ form.username.errors}}
-          {{ form.username }}
+          {{ registration_form.username.errors}}
+          {{ registration_form.username }}
 
-          <p><strong>{% trans "Choose a 4-digit pin" %}</strong></p>
-          {{ form.password.errors}}
-          {{ form.password }}
+          <p><strong>{% trans "Choose a password" %}</strong></p>
+          {{ registration_form.password.errors}}
+          {{ registration_form.password }}
           <br>
           <input type="submit" class="flatbutton block-heading fb-accent-1" value='{% trans "JOIN" %}' />
           <input type="hidden" name="next" value="{% url 'molo.profiles:registration_done' %}" />

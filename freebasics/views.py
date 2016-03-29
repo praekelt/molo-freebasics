@@ -6,6 +6,10 @@ from django.conf import settings
 from molo.core.models import ArticlePage
 from wagtail.wagtailsearch.models import Query
 
+from molo.profiles.views import RegistrationView, ProfilePasswordChangeView
+
+from forms import RegistrationForm, ProfilePasswordChangeForm
+
 
 def search(request, results_per_page=10):
     search_query = request.GET.get('q', None)
@@ -46,3 +50,11 @@ class HomeView(TemplateView):
         blocks.sort(key=lambda tup: tup[1])
         context.update({'blocks': blocks})
         return context
+
+
+class RegistrationView(RegistrationView):
+    form_class = RegistrationForm()
+
+
+class ProfilePasswordChangeView(ProfilePasswordChangeView):
+    form_class = ProfilePasswordChangeForm()

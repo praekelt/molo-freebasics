@@ -4,12 +4,14 @@ from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 
 from wagtail.wagtailadmin import urls as wagtailadmin_urls
 from wagtail.wagtaildocs import urls as wagtaildocs_urls
 from wagtail.wagtailcore import urls as wagtail_urls
 
-from .views import search, HomeView
+from .views import (search, HomeView, RegistrationView,
+                    ProfilePasswordChangeView)
 
 # implement CAS URLs in a production setting
 if settings.ENABLE_SSO:
@@ -28,7 +30,15 @@ urlpatterns += patterns(
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
     url(r'search/$', search, name='search'),
-
+    url(
+        r'^register/$',
+        RegistrationView.as_view(),
+        name='user_register'),
+    url(
+        r'^password-reset/$',
+        login_required(ProfilePasswordChangeView.as_view()),
+        name="profile_password_change"
+    ),
     url(r'^profiles/',
         include('molo.profiles.urls',
                 namespace='molo.profiles',
