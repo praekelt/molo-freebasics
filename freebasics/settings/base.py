@@ -181,7 +181,6 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'molo.core.context_processors.locale',
     'molo.profiles.context_processors.get_profile_data',
-    'freebasics.context_processors.default_forms',
 
 )
 
