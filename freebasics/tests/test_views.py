@@ -14,4 +14,4 @@ class RegistrationViewTest(TestCase):
             'password': 'testing',
         })
         print response
-        self.assertRedirects(response, reverse('molo.profiles:user_register'))
+        self.assertRedirects(response, reverse('user_register'))
