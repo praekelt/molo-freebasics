@@ -52,9 +52,9 @@ class HomeView(TemplateView):
         return context
 
 
-class RegistrationView(RegistrationView):
-    form_class = RegistrationForm()
+class FreeBasicsRegistrationView(RegistrationView):
+    form_class = RegistrationForm
 
 
-class ProfilePasswordChangeView(ProfilePasswordChangeView):
-    form_class = ProfilePasswordChangeForm()
+class FreeBasicsProfilePasswordChangeView(ProfilePasswordChangeView):
+    form_class = ProfilePasswordChangeForm
