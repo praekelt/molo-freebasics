@@ -9,6 +9,7 @@ class RegistrationViewTest(TestCase):
         self.client = Client()
 
     def test_registration_with_password(self):
+        self.assertEquals(User.objects.all().count(), 0)
         response = self.client.post(reverse('user_register'), {
             'username': 'testing',
             'password': 'testing',
@@ -16,3 +17,4 @@ class RegistrationViewTest(TestCase):
         self.assertRedirects(response, reverse(
             'molo.profiles:user_register'))
         self.assertEquals(User.objects.all().count(), 1)
+        self.assertEquals(User.objects.all()[0].username, 'testing')
