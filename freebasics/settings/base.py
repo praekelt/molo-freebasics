@@ -53,6 +53,9 @@ INSTALLED_APPS = (
     'taggit',
     'modelcluster',
 
+    'molo.core',
+    'freebasics',
+
     'wagtail.wagtailcore',
     'wagtail.wagtailadmin',
     'wagtail.wagtaildocs',
@@ -64,9 +67,9 @@ INSTALLED_APPS = (
     'wagtail.wagtailsearch',
     'wagtail.wagtailredirects',
     'wagtail.wagtailforms',
+    'wagtailmodeladmin',
+    'wagtail.contrib.settings',
 
-    'molo.core',
-    'freebasics',
     'mptt',
     'molo.profiles',
     'django_comments',
@@ -95,6 +98,7 @@ MIDDLEWARE_CLASSES = (
 
     'wagtail.wagtailcore.middleware.SiteMiddleware',
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
+    'wagtailmodeladmin.middleware.ModelAdminMiddleware',
 )
 
 ROOT_URLCONF = 'freebasics.urls'
@@ -181,6 +185,7 @@ TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.request',
     'molo.core.context_processors.locale',
     'molo.profiles.context_processors.get_profile_data',
+    'wagtail.contrib.settings.context_processors.settings',
 
 )
 
@@ -229,3 +234,5 @@ BANNER_BLOCK_POSITION = int(environ.get('BLOCK_POSITION_BANNER', 1))
 LATEST_BLOCK_POSITION = int(environ.get('BLOCK_POSITION_LATEST', 2))
 QUESTIONS_BLOCK_POSITION = int(environ.get('BLOCK_POSITION_QUESTIONS', 3))
 SECTIONS_BLOCK_POSITION = int(environ.get('BLOCK_POSITION_SECTIONS', 4))
+
+UNICORE_DISTRIBUTE_API = 'http://localhost:6543'
