@@ -37,8 +37,7 @@ urlpatterns += patterns(
     url(
         r'^profiles/password-reset/$',
         login_required(FreeBasicsProfilePasswordChangeView.as_view()),
-        name="profile_password_change"
-    ),
+        name="profile_password_change"),
     url(r'^profiles/',
         include('molo.profiles.urls',
                 namespace='molo.profiles',
