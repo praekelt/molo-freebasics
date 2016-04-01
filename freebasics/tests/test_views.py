@@ -15,6 +15,6 @@ class RegistrationViewTest(TestCase):
             'password': 'testing',
         })
         self.assertRedirects(response, reverse(
-            'molo.profiles:user_register'))
+            'molo.profiles:registration_done'))
         self.assertEquals(User.objects.all().count(), 1)
         self.assertEquals(User.objects.all()[0].username, 'testing')
