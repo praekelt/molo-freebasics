@@ -1,11 +1,12 @@
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags core_tags %}
 
 {% if sections %}
 {% for section in sections %}
 <div class="block-category fb-body fb-card {{section.get_effective_extra_style_hints}}">
   <h6 class="block-heading fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></span></h6>
   <ul>
-  {% for article in section.featured_articles_in_homepage %}
+  {% load_descendant_articles_for_section section featured_in_homepage=True as featured_articles %}
+  {% for article in featured_articles %}
     <li>
       <h6><a class="fb-accent-2" href="{% pageurl article %}">{{article.title}}</a></h6>
     </li>
