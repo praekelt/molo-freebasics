@@ -15,7 +15,7 @@
       </a></h6>
       {% load_child_sections_for_section self as sections %}
       {% for section in sections %}
-          <h6 class="block-heading fb-accent-1">{{section.title}}</h6>
+          <h6 class="block-heading fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></h6>
           {% if section.image %}
             <a href="{% pageurl section %}">{% image section.image width-60 %}</a>
           {% endif %}
@@ -34,7 +34,8 @@
           </ul>
         </h2>
       {% endfor %}
-
+    </div>
+    <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
       <ul class="list-block">
       {% load_child_articles_for_section self as articles %}
       {% for article in articles %}
@@ -47,8 +48,9 @@
           <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
         </li>
       {% endfor %}
-    </ul>
+      </ul>
     </div>
+
     <div class="polls">
       {% has_questions self as questions %}
       {% if questions %}
