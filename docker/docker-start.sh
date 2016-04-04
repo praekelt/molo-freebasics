@@ -2,7 +2,7 @@
 
 set -e
 
-./manage.py migrate
+./manage.py migrate --noinput
 ./manage.py collectstatic --noinput
 ./manage.py compress
 
