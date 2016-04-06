@@ -10,10 +10,10 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
         self.mk_main()
 
     def test_block_ordering(self):
-        with self.settings(BANNER_BLOCK_POSITION=4,
-                           LATEST_BLOCK_POSITION=3,
-                           QUESTIONS_BLOCK_POSITION=2,
-                           SECTIONS_BLOCK_POSITION=1):
+        with self.settings(BLOCK_POSITION_BANNER=4,
+                           BLOCK_POSITION_LATEST=3,
+                           BLOCK_POSITION_QUESTIONS=2,
+                           BLOCK_POSITION_SECTIONS=1):
             home = HomeView()
             context = home.get_context_data()
             self.assertEquals(context['blocks'][0], (
