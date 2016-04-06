@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static core_tags i18n %}
+{% load static core_tags i18n poll_votings %}
 
 {% block breadcrumbs %}
 <div class="breadcrumbs fb-body">
@@ -15,14 +15,15 @@
 		{% if form.choice.errors %}<h6 class="sub-heading">{{form.choice.errors|join:", " }}</h6>{% endif %}
 		<form action="{% url 'molo.polls:vote' question.id %}" method="post">
 			{% csrf_token %}
-			{% for choice in question.choices %}
+      {% load_choices_for_poll_page question as choices %}
+			{% for choice in choices %}
 			<div class="form-group">
-					{% if question.allow_multiple_choice%}
-						<input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+					{% if question.get_main_language_page.allow_multiple_choice %}
+						<input type="checkbox" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.get_main_language_page.id }}" />
 						<label for="choice{{ forloop.counter }}">{{ choice.title }}</label>
 					{% else %}
 						<label for="choice{{ forloop.counter }}">
-						<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+						<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.get_main_language_page.id }}">
 						{{ choice.title }}</label>
 					{% endif %}
 				</div>
