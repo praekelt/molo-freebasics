@@ -25,7 +25,7 @@
               {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
               {% if featured_articles %}
               {% for article in featured_articles %}
-                <h6 class="fb-accent-1">{{article.title}}</h6>
+                <h6 class="fb-accent-2">{{article.title}}</h6>
                 <p>{{article.body|striptags|truncatechars:150}}</p>
                 <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
               {% endfor %}
