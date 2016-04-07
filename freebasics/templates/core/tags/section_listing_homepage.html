@@ -8,7 +8,9 @@
   {% load_descendant_articles_for_section section featured_in_homepage=True as featured_articles %}
   {% for article in featured_articles %}
     <li>
-      <h6><a class="fb-accent-2" href="{% pageurl article %}">{{article.title}}</a></h6>
+      <h6 class="fb-accent-2">{{article.title}}</h6>
+      <p>{{article.body|striptags|truncatechars:150}}</p>
+      <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
     </li>
   {% endfor %}
 </ul>
