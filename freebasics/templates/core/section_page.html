@@ -40,10 +40,11 @@
       {% load_child_articles_for_section self as articles %}
       {% for article in articles %}
         <li>
-          {% if article.image %}
-          <a href="{% pageurl article %}">{% image article.image width-60 %}</a>
-          {% endif %}
           <h6 class="fb-accent-2">{{article.title}}</h6>
+          {% if article.image %}
+          {% image article.image width-100 as tmp_photo %}
+          <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
+          {% endif %}
           <p>{{article.body|striptags|truncatechars:150}}</p>
           <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
         </li>
