@@ -3,15 +3,15 @@
 
 {% if articles %}
   {% for article in articles %}
-  <div class="block-article fb-body  fb-card">
-    <h6 class="block-heading fb-accent-1">{% trans "Latest" %}</h6>
+  <div class="block-article fb-body fb-card">
+    <h6 class="block-heading fb-accent-1">{{article.title}}</h6>
     {% if article.image %}
     {% image article.image width-100 as tmp_photo %}
     <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
     {% endif %}
-    <h6 class="sub-heading">{{article.title }}</h6>
+    <h6 class="sub-heading">{{article.subtitle }}</h6>
 
-    <p>{{article.subtitle}}
+    <p>{{article.body|striptags|truncatechars:150}}
     <br>
     <br>
     <a href="{% pageurl article %}" class="fb-accent-2 link-button">{% trans "Read More" %}</a>

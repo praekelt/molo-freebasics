@@ -19,14 +19,14 @@
           {% if section.image %}
             <a href="{% pageurl section %}">{% image section.image width-60 %}</a>
           {% endif %}
-          <ul class="list-block">
+          <ul>
             <li>
               {% if section.description %}<p>{{section.description}}</p>{% endif %}
               {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
               {% if featured_articles %}
               {% for article in featured_articles %}
-                <h6 class="fb-accent-1"><a href="{% pageurl article %}">{{article.title}}</a></h6>
-                <p>{{article.subtitle}}</p>
+                <h6 class="fb-accent-2">{{article.title}}</h6>
+                <p>{{article.body|striptags|truncatechars:150}}</p>
                 <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
               {% endfor %}
               {% endif %}
@@ -43,8 +43,8 @@
           {% if article.image %}
           <a href="{% pageurl article %}">{% image article.image width-60 %}</a>
           {% endif %}
-          <h6 class="fb-accent-2"><a href="{% pageurl article %}">{{article.title}}</a></h6>
-          <p>{{article.subtitle}}</p>
+          <h6 class="fb-accent-2">{{article.title}}</h6>
+          <p>{{article.body|striptags|truncatechars:150}}</p>
           <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
         </li>
       {% endfor %}
