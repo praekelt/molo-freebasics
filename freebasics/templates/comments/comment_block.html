@@ -6,7 +6,7 @@
   {% if self.allow_commenting %}
     {% get_comment_count for self as comment_count %}
     {% if comment_count > 0 %}
-    <a href="#" class="comments-count fb-accent-1">{{comment_count}} <span>{% trans "comment" %}{{comment_count|pluralize}}</span></a>
+    <a href="#" class="comments-count fb-accent-2">{{comment_count}} <span>{% trans "comment" %}{{comment_count|pluralize}}</span></a>
     <br><br>
     {% endif %}
     <div class="post-comment">
