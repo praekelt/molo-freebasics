@@ -93,16 +93,17 @@
   <div class="block-header no-fb-body">
     <div class="container-fluid">
       <div class="row">
-        <div class="pull-left">
-          <div class="block-logo logo-placeholder">
-            {% if settings.core.SiteSettings.logo %}
-              {% image settings.core.SiteSettings.logo height-30 %}
-            {% endif %}
-          </div>
-          <span id="printsitelabel1">
-              <title>{{ self.title }}</title>
-             </span>
+        {% if settings.core.SiteSettings.logo %}
+        <div class="block-logo pull-left">
+        <div>
+            {% image settings.core.SiteSettings.logo height-30 %}
         </div>
+        </div>
+        {% else %}
+        <div class="block-logo-text pull-left">
+        <span id="printsitelabel1"><strong>{% get_site_name %}</strong></span>
+        </div>
+        {% endif %}
 
         <div class="block-menu pull-right fb-body">
           <span class="pull-right">
