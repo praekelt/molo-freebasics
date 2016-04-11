@@ -15,7 +15,7 @@
       <br>
       <br>
       <div class="button-div">
-        <input type="submit" value="{% trans "Submit" %}" class="flatbutton-input block-heading fb-accent-1"/>
+        <input type="submit" value="{% trans "Submit" %}" class="flatbutton-input fb-accent-1"/>
       </div>
     </div>
     {% else %}
@@ -23,7 +23,7 @@
     {% endif %}
   {% else %}
   <div class="button-div">
-    <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input block-heading fb-accent-1">{% trans "Log in to vote" %}</a>
+    <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input fb-accent-1">{% trans "Log in to vote" %}</a>
   </div>
   {% endif %}
 

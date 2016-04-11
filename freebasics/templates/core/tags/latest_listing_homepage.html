@@ -11,7 +11,7 @@
     {% endif %}
     <h6 class="sub-heading">{{article.subtitle }}</h6>
 
-    <p>{{article.body|striptags|truncatechars:150}}
+    <p>{{article.body|striptags|truncatewords:30}}
     <br>
     <br>
     <a href="{% pageurl article %}" class="fb-accent-2 link-button">{% trans "Read More" %}</a>

@@ -41,18 +41,22 @@
 </ul>
 </div>
 
-  {% else %}
-      <div class="block-search fb-body fb-card">
-        <h6 class="block-heading fb-accent-1">{% trans "Search Results" %}</h6>
-        <h6 class="sub-heading">{% trans "Search results for" %}: {{search_query}}</h6>
-        <div class="nav">
-            <form action="{% url 'search' %}">
-              <input placeholder="{% trans "I am looking for" %}" name="q" type="search">
-              <input type="submit" value="{% trans "Search"%}" class="flatbutton block-heading fb-accent-1">
-            </form>
-        </div>
+{% else %}
+  <div class="block-search fb-body fb-card">
+    <h6 class="block-heading fb-accent-1">{% trans "Search Results" %}</h6>
+    <div class="padding15">
+      <p>{% trans "No search results for " %}{{search_query}}.</p>
     </div>
-  {% endif %}
+  </div>
+  <div class="block-search fb-body fb-card">
+    <div class="padding15">
+      <form action="{% url 'search' %}">
+        <input placeholder="{% trans "Looking for something?" %}" name="q" type="text" value="{{search_query}}">
+        <input class="flatbutton fb-accent-1 pull-right"type="submit" value="{% trans "SEARCH"%}">
+      </form>
+    </div>
+  </div>
+{% endif %}
 {% endblock %}
 
 {% block search %}
