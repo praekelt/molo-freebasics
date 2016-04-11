@@ -210,15 +210,24 @@ h6{
 .flatbutton-input{
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
-	border-radius:2px;
-	display:inherit;
+  background-color: #dfdfdf;
+  font-family:"Bangers", Helvetica, sans-serif;,
+  text-transform: uppercase;
+  border-radius: 3px 3px 3px 3px;
+	display:inline;
 	cursor:pointer;
-	color:#fff;
 	font-size: 12px;
 	padding: 8px 22px;
 	text-decoration:none;
 	border: 15px;
   text-align: center;
+}
+.flatbutton-input:hover {
+	background-color:#c736c0;
+}
+.flatbutton-input:active {
+	position:relative;
+	top:1px;
 }
 .flatbutton:hover {
 	background-color:#c736c0;
@@ -284,6 +293,9 @@ h6{
 }
 .padding15{
   padding: 15px;
+}
+.padding-no-top{
+  padding: 0px 15px 15px 15px;
 }
 .signin-form form{
   padding-top:10px;

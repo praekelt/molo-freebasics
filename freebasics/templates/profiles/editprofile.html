@@ -5,6 +5,7 @@
 <div class="block-default fb-body fb-card">
 	<div class="block turq">
 		<h6 class="block-heading fb-accent-1">{% trans "Edit Profile" %}</h6><br>
+		<div class="padding-no-top">
 		<form method="post" id="frmProfileEdit" action="{% url 'molo.profiles:edit_my_profile' %}">{% csrf_token %}
 			<p>{% trans "Type new display name:" %}</p>
 			{{ form.alias }}<br><br>
@@ -12,8 +13,9 @@
 	      {{ form.date_of_birth }}
 				<br>
 				<br>
-			<input type="submit" value='{% trans "Update profile" %}' class="flatbutton block-heading fb-accent-1">
+			<input type="submit" value='{% trans "Update profile" %}' class="flatbutton fb-accent-1">
 		</form>
+	</div>
 	</div>
 </div>
 

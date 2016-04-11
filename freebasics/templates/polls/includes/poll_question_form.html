@@ -19,7 +19,7 @@
         </div>
       {% endfor %}
       <div class="button-div">
-        <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input block-heading fb-accent-1">{% trans "Log in to vote" %}</a>
+        <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input fb-accent-1">{% trans "Log in to vote" %}</a>
       </div>
     {% else %}
       {% can_vote question as user_can_vote %}
@@ -36,11 +36,11 @@
           </div>
         {% endfor %}
         <div class="button-div">
-          <input type="submit" value="{% trans "Vote" %}" class="flatbutton-input block-heading fb-accent-1"/>
-        </div>  
+          <input type="submit" value="{% trans "Vote" %}" class="flatbutton-input fb-accent-1"/>
+        </div>
       {% elif question.get_main_language_page.show_results %}
       <div class="button-div">
-        <a href="{% url 'molo.polls:results' question.id %}" class="flatbutton-input block-heading fb-accent-1">{% trans "Show Results" %}</a>
+        <a href="{% url 'molo.polls:results' question.id %}" class="flatbutton-input fb-accent-1">{% trans "Show Results" %}</a>
       </div>
       {% elif not question.get_main_language_page.show_results %}
         {% user_choice question as user_choice %}
