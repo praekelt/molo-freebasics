@@ -96,12 +96,12 @@
         {% if settings.core.SiteSettings.logo %}
         <div class="block-logo pull-left">
         <div>
-            {% image settings.core.SiteSettings.logo height-30 %}
+          <a href="/">{% image settings.core.SiteSettings.logo height-30 %}</a>
         </div>
         </div>
         {% else %}
         <div class="block-logo-text pull-left">
-        <span id="printsitelabel1"><strong>{% get_site_name %}</strong></span>
+        <a href="/" class="no-underline "><span id="printsitelabel1"><strong>{% get_site_name %}</strong></span></a>
         </div>
         {% endif %}
 
