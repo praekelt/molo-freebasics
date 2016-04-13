@@ -27,5 +27,10 @@ def get_site_name(context):
 def load_sections(context):
     request = context['request']
     locale_code = context.get('locale_code')
-    qs = request.site.root_page.specific.sections()
+
+    if request.site:
+        qs = request.site.root_page.specific.sections()
+    else:
+        qs = []
+
     return [a.get_translation_for(locale_code) or a for a in qs]
