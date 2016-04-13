@@ -10,8 +10,7 @@
 
 <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
   <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
-  </div>
-  <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
+
   <ul class="list-block">
   {% load_child_articles_for_section self as articles %}
   {% for article in articles %}
@@ -25,13 +24,11 @@
       <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
     </li>
   {% endfor %}
-  </ul>
-</div>
-  <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
+
 
     {% load_child_sections_for_section self as sections %}
     {% for section in sections %}
-        <h6 class="block-heading fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></h6>
+        <h6 class="block-heading-sub-cat fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></h6>
 
             {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
             <ul>
