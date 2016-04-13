@@ -21,3 +21,16 @@ def custom_css(context):
 @register.simple_tag(takes_context=True)
 def get_site_name(context):
     return settings.SITE_NAME
+
+
+@register.assignment_tag(takes_context=True)
+def load_sections(context):
+    request = context['request']
+    locale_code = context.get('locale_code')
+
+    if request.site:
+        qs = request.site.root_page.specific.sections()
+    else:
+        qs = []
+
+    return [a.get_translation_for(locale_code) or a for a in qs]
