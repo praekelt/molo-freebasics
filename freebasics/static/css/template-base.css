@@ -147,6 +147,7 @@ h6{
 }
 
 .banner-container{
+  overflow: hidden; // clips the content inside, so the border-radius on .fb-card is applied to the image
   text-align: center;
 }
 .block-banner{
