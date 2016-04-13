@@ -92,6 +92,10 @@ h6{
   padding: 10px 15px;
   font-size: 15px;
 }
+.block-heading-sub-cat{
+  padding: 10px 15px;
+  font-size: 15px;
+}
 .see-more{
   text-decoration: none;
   text-transform: capitalize;
@@ -185,6 +189,12 @@ h6{
 }
 .fb-body .block-heading{
   background-color: #dfdfdf;
+  font-family:"Bangers", Helvetica, sans-serif;,
+  text-transform: uppercase;
+  border-radius: 3px 3px 0px 0px;
+}
+.fb-body .block-heading-sub-cat{
+  border: 1px solid;
   font-family:"Bangers", Helvetica, sans-serif;,
   text-transform: uppercase;
   border-radius: 3px 3px 0px 0px;
