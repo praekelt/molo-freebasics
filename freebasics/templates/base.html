@@ -124,7 +124,8 @@
         <input type="checkbox" id="menu-toggle" />
         <ul class="menuinner fb-body">
           <li><a href="/">{% trans "Home" %}</a></li>
-          {% for section in language_page.sections %}
+          {% load_sections as sections %}
+          {% for section in sections %}
             <li><a href="{% pageurl section %}">{{section.title}}</a></li>
           {% endfor %}
         </ul>
