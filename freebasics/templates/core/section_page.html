@@ -7,50 +7,47 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-    <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
-      <h6><a class="fb-accent-2">
-        {% if self.image %}
-          <a href="{% pageurl self %}">{% image self.image width-60 %}</a>
-        {% endif %}
-      </a></h6>
-      {% load_child_sections_for_section self as sections %}
-      {% for section in sections %}
-          <h6 class="block-heading fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></h6>
-          {% if section.image %}
-            <a href="{% pageurl section %}">{% image section.image width-60 %}</a>
-          {% endif %}
-          <ul>
+
+<div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
+  <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
+  </div>
+  <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
+  <ul class="list-block">
+  {% load_child_articles_for_section self as articles %}
+  {% for article in articles %}
+    <li>
+      <h6 class="fb-accent-2">{{article.title}} </h6>
+      {% if article.image %}
+      {% image article.image width-100 as tmp_photo %}
+      <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
+      {% endif %}
+      <p>{{article.body|striptags|truncatewords:30}}</p>
+      <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+  <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
+
+    {% load_child_sections_for_section self as sections %}
+    {% for section in sections %}
+        <h6 class="block-heading fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></h6>
+
+            {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
+            <ul>
+            {% if featured_articles %}
+            {% for article in featured_articles %}
             <li>
-              {% if section.description %}<p>{{section.description}}</p>{% endif %}
-              {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
-              {% if featured_articles %}
-              {% for article in featured_articles %}
-                <h6 class="fb-accent-2">{{article.title}}</h6>
-                <p>{{article.body|striptags|truncatechars:150}}</p>
-                <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
-              {% endfor %}
-              {% endif %}
+              <h6 class="fb-accent-2">{{article.title}}</h6>
+              <p>{{article.body|striptags|truncatewords:30}}</p>
+              <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
             </li>
-          </ul>
-        </h2>
-      {% endfor %}
-    </div>
-    <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
-      <ul class="list-block">
-      {% load_child_articles_for_section self as articles %}
-      {% for article in articles %}
-        <li>
-          <h6 class="fb-accent-2">{{article.title}}</h6>
-          {% if article.image %}
-          {% image article.image width-100 as tmp_photo %}
-          <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
-          {% endif %}
-          <p>{{article.body|striptags|truncatechars:150}}</p>
-          <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
-        </li>
-      {% endfor %}
-      </ul>
-    </div>
+            {% endfor %}
+        </ul>
+            {% endif %}
+      </h2>
+    {% endfor %}
+  </div>
 
     <div class="polls">
       {% has_questions self as questions %}
