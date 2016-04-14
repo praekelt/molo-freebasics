@@ -358,7 +358,7 @@ h6{
   line-height: 18px !important;
 }
 
-.error:before, .errorlist li:before {
+.error:before, .errorlist li:before, p.errorlist:before {
   content: " ";
   display: inline-block;
   background: red;
