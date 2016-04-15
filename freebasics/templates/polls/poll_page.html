@@ -3,10 +3,10 @@
 {% block content %}
 	{% if questions %}
 	<div class="block-poll fb-body fb-card">
+		<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
 		<ul>
 		{% for question in questions %}
 			{% if forloop.first%}
-			<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
 			{% endif %}
 			<li>
 				<h6 class="sub-heading">{{ question.title }}</h6>
