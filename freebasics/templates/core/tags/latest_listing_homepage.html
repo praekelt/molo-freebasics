@@ -4,7 +4,8 @@
 {% if articles %}
   {% for article in articles %}
   <div class="block-article fb-body fb-card">
-    <h6 class="block-heading fb-accent-1">{{article.title}}</h6>
+    <a href="{% pageurl article %}" class="no-underline"><h6 class="block-heading fb-accent-1">{{article.title}}</h6></a>
+
     {% if article.image %}
     {% image article.image width-100 as tmp_photo %}
     <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
