@@ -15,7 +15,7 @@
   {% load_child_articles_for_section self as articles %}
   {% for article in articles %}
     <li>
-      <h6 class="fb-accent-2">{{article.title}} </h6>
+      <a href="{% pageurl article %}" class="fb-accent-2 link-button"><h6 class="fb-accent-2">{{article.title}}</h6></a>
       {% if article.image %}
       {% image article.image width-100 as tmp_photo %}
       <img class="block-img" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
@@ -35,7 +35,7 @@
             {% if featured_articles %}
             {% for article in featured_articles %}
             <li>
-              <h6 class="fb-accent-2">{{article.title}}</h6>
+              <a href="{% pageurl article %}" class="fb-accent-2 link-button"><h6 class="fb-accent-2">{{article.title}}</h6></a>
               <p>{{article.body|striptags|truncatewords:30}}</p>
               <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
             </li>
