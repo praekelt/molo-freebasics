@@ -18,10 +18,11 @@
 <article>
   {% for block in self.body %}
       {% if block.block_type == 'heading' %}
-          <h1>{{ block.value }}</h1>
+          <h1 class="padding-no-top fb-accent-1">{{ block.value }}</h1>
       {% else %}
       {% if block.block_type == 'image' %}
-        {% image block.value width-240 %}
+      {% image block.value width-240 as tmp_photo %}
+      <img class="article-img padding15" src="{{ tmp_photo.url }}" alt="{{ block.value.title }}"/>
       {% else %}
       {% if block.block_type == 'numbered_list' %}
         <ol>
@@ -30,7 +31,7 @@
         {% endfor %}
         </ol>
       {% else %}
-          {{ block }}
+          <div class="padding-no-top">{{ block }}</div>
       {% endif %}
       {% endif %}
       {% endif %}
