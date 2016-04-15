@@ -3,20 +3,21 @@
 {% block content %}
 	{% if questions %}
 	<div class="block-poll fb-body fb-card">
+		<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
+		<ul>
 		{% for question in questions %}
 			{% if forloop.first%}
-			<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
-
 			{% endif %}
-			<div class="polls">
+			<li>
 				<h6 class="sub-heading">{{ question.title }}</h6>
 				{% if question.freetextquestion %}
 					{% include 'polls/includes/poll_free_text_form.html'%}
 				{% else %}
 					{% include 'polls/includes/poll_question_form.html'%}
 				{% endif %}
-			</div><br>
+		</li>
 		{% endfor %}
+	</ul>
 	</div>
 	{% endif %}
 {% endblock %}
