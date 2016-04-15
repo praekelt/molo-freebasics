@@ -145,6 +145,18 @@ h6{
 .block-category li:last-child{
   border-bottom: none;
 }
+.block-poll ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+.block-poll li{
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 15px;
+}
+.block-poll li:last-child{
+  border-bottom: none;
+}
 .block-category a{
   text-decoration: none;
   text-transform: capitalize;
