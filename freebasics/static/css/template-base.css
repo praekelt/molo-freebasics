@@ -86,11 +86,12 @@ h6{
   font-size: 12px;
   line-height: 15px;
 }
-.block-img{
-  width: 100px;
+.block-img {
+  display: inline;
+  width: 100px; /* I really want to make this 100% */
   height: auto;
-  float: right;
-  margin: 15px;
+
+  margin: 9px 0;
 }
 .block-heading{
   padding: 10px 15px;
@@ -106,6 +107,7 @@ h6{
   font-size: 14px;
   font-weight: initial;
 }
+
 .link-button{
   margin-top: 10px;
   font-size: 13px;
@@ -208,15 +210,11 @@ h6{
 }
 .fb-body .block-heading{
   background-color: #dfdfdf;
-  font-family:"Bangers", Helvetica, sans-serif;,
-  text-transform: uppercase;
-  border-radius: 3px 3px 0px 0px;
+  border-radius: 3px 3px 0 0;
 }
 .fb-body .block-heading-sub-cat{
   border: 1px solid;
-  font-family:"Bangers", Helvetica, sans-serif;,
-  text-transform: uppercase;
-  border-radius: 3px 3px 0px 0px;
+  border-radius: 0;
 }
 .fb-body .fb-accent-1{
   color: #69269d;
@@ -271,7 +269,7 @@ h6{
 .fb-body, .fb-body *:not(.no-fb-body){
   font-family: "Yanone Kaffeesatz", Helvetica, sans-serif;
 }
-///
+
 
 
 .comments-count{
