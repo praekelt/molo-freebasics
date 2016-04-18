@@ -85,7 +85,8 @@ h6{
 }
 
 .block-heading{
-  padding: 10px 15px;
+  padding: 0 8px;
+  padding: 10px 8px;
   font-size: 15px;
 }
 .block-heading-sub-cat{
@@ -384,21 +385,24 @@ h6{
 .block-article appears on "homepage", "section list", and "article itself."
 */
 .block-article {
-  padding: 15px;
+  padding: 8px;
 }
 
 .block-article__title {
   margin: 0 0 8px 0;
 }
 
+.block-article__image {
+  margin: 0 0 8px 8px;
+  float: right;
+}
+
+
 .block-article__subtitle {
   margin: 0 0 8px 0;
   font-weight: bold;
 }
 
-.block-article__image {
-  margin: 0 0 8px 0;
-}
 
 .block-article__content {
   margin: 0 0 8px 0;

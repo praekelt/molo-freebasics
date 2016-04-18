@@ -9,7 +9,6 @@
 {% block content %}
 
 <div class="block-category fb-body fb-card {{self.get_effective_extra_style_hints}}">
-
   <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
   <ul class="list-block">
     {% load_child_articles_for_section self as articles %}
@@ -57,9 +56,9 @@
 
 {% has_questions self as questions %}
 {% if questions %}
-  <div class="polls">
-    {% poll_page_in_section page=self %}
-  </div>
+<div class="polls">
+  {% poll_page_in_section page=self %}
+</div>
 {% endif %}
 
 
