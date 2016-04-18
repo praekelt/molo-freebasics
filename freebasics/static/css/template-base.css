@@ -1,13 +1,9 @@
-@media screen{
-  html.template-base{
-    background-color: #333;
-    max-width: 35em;
-    margin: 0 auto;
-    font-size: 10px;
-    } }
-html.template-base screen and (min-device-width: 50em){
-  html{
-    max-width: 20em; } }
+html.template-base {
+  background-color: #333;
+  max-width: 35em;
+  margin: 0 auto;
+  font-size: 10px;
+}
 
 html.template-base body{
   font-family: Arial, Helvetica, sans-serif;
