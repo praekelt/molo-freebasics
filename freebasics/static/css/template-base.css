@@ -162,13 +162,10 @@ h6{
   text-transform: capitalize;
 }
 
-.banner-container{
-  overflow: hidden; // clips the content inside, so the border-radius on .fb-card is applied to the image
-  text-align: center;
-}
 .block-banner{
-  vertical-align: top; // removes the whitespace that's often appended to an image.
+  vertical-align: top;
   width: 100%;
+  border-radius: 3px;
 }
 .article-img{
   display: block;
