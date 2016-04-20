@@ -14,11 +14,13 @@
           <p><strong>{% trans "Choose a password" %}</strong></p>
           {{ form.password.errors}}
           {{ form.password }}
+          <br>
+
           {% if settings.profiles.UserProfilesSettings.show_mobile_number_field %}
              <p><strong>{% trans "Enter your mobile number" %}</strong></p>
              <p>{% trans "(e.g. +260979000001)" %}</p>
              {% if form.mobile_number.errors %}
-             <p class="alert-error">* {{ form.mobile_number.errors|join:' '}}</p>
+             {{ form.mobile_number.errors}}
              {% endif %}
              {{ form.mobile_number }}
              <br>
