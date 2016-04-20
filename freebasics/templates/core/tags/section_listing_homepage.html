@@ -1,19 +1,25 @@
-{% load wagtailcore_tags wagtailimages_tags core_tags %}
+{% load wagtailcore_tags wagtailimages_tags core_tags i18n %}
 
 {% if sections %}
 {% for section in sections %}
 <div class="block-category fb-body fb-card {{section.get_effective_extra_style_hints}}">
-  <h6 class="block-heading fb-accent-1">{{section.title}}<a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a></span></h6>
+
+  <h6 class="block-heading fb-accent-1">{{section.title}}
+    <a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a>
+  </h6>
+
   <ul>
   {% load_descendant_articles_for_section section featured_in_homepage=True as featured_articles %}
   {% for article in featured_articles %}
-    <li>
-      <a href="{% pageurl article %}" class="fb-accent-2 link-button"><h6 class="fb-accent-2">{{article.title}}</h6></a>
-      <p>{{article.body|striptags|truncatewords:30}}</p>
-      <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
+    <li class="block-article block-article--in-list">
+      <h6 class="block-article__title fb-accent-2">
+        <a href="{% pageurl article %}" class="fb-accent-2">{{article.title}}</a>
+      </h6>
+      <div class="block-article__subtitle">{{article.subtitle}}</div>
+      <a href="{% pageurl article %}" class="fb-accent-2 block-article__read-more">{% trans "Read More" %}</a>
     </li>
   {% endfor %}
-</ul>
+  </ul>
 </div>
 {% endfor%}
 {% endif %}
