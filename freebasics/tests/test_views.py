@@ -14,6 +14,7 @@ class RegistrationViewTest(TestCase):
         response = self.client.post(reverse('user_register'), {
             'username': 'testing',
             'password': 'testing',
+            'terms_and_conditions': True,
             'next': reverse('molo.profiles:registration_done')
         })
         self.assertRedirects(response, reverse(
