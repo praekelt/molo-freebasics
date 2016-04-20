@@ -9,7 +9,8 @@
   <div class="padding-no-top">
 
   <label class="label-wide">{% trans "Display Name: " %}{{ user.profile.alias | default:'Anonymous' }}</label><br>
-  <label class="label-wide">{% trans "Date of Birth: " %}{{ user.profile.date_of_birth | date:"M d, Y" }}</label><br><br>
+  <label class="label-wide">{% trans "Date of Birth: " %}{{ user.profile.date_of_birth | date:"M d, Y" }}</label><br>
+  <label class="label-wide">{% trans "Mobile Number: " %}{{ user.profile.mobile_number | default:' '}}</label><br><br>
   <a href="{% url 'molo.profiles:auth_logout' %}" class="btn btn-wide"><input type="button" value='{% trans "Logout" %}' class="flatbutton fb-accent-1" /></a><br><br>
   <a href="{% url 'molo.profiles:edit_my_profile' %}" class="btn btn-wide"><input type="button" value='{% trans "Edit My Profile" %}' class="flatbutton fb-accent-1" /></a><br><br>
   <a href="{% url 'molo.profiles:profile_password_change' %}" class="btn btn-wide"><input type="button" value='{% trans "Change My Password" %}' class="flatbutton fb-accent-1" /></a>
