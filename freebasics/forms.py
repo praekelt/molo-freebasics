@@ -30,6 +30,8 @@ class RegistrationForm(forms.Form):
         label=_("Password"),
     )
     mobile_number = PhoneNumberField(required=False)
+    terms_and_conditions = forms.BooleanField(required=True)
+
     next = forms.CharField(required=False)
 
     def clean_username(self):

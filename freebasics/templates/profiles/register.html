@@ -25,6 +25,12 @@
              {{ form.mobile_number }}
              <br>
           {% endif %}
+
+          {% if form.terms_and_conditions.errors %}
+            <p>{% trans "Please accept the T&Cs in order to complete the registration" %}</p>
+          {% endif %}
+          {{ form.terms_and_conditions }}
+          <span>{% trans "I accept the Terms and Conditions" %}</span></p>
           <input type="submit" class="flatbutton fb-accent-1" value='{% trans "JOIN" %}' />
           <input type="hidden" name="next" value="{% url 'molo.profiles:registration_done' %}" />
           <a href="{% url 'molo.profiles:auth_login' %}" class="button inverted">{% trans "already joined?" %}</a>
