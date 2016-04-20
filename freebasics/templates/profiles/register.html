@@ -8,21 +8,20 @@
       <p>{% trans "Not a member yet? Join us by signing up below." %}</p>
       <form method="post" action="{% url 'molo.profiles:user_register' %}">{% csrf_token %}
           <p><strong>{% trans "Choose a username" %}</strong></p>
-          {{ form.username.errors}}
           {{ form.username }}
+          {{ form.username.errors}}
 
           <p><strong>{% trans "Choose a password" %}</strong></p>
-          {{ form.password.errors}}
+
           {{ form.password }}
+          {{ form.password.errors}}
           <br>
 
           {% if settings.profiles.UserProfilesSettings.show_mobile_number_field %}
              <p><strong>{% trans "Enter your mobile number" %}</strong></p>
              <p>{% trans "(e.g. +260979000001)" %}</p>
-             {% if form.mobile_number.errors %}
-             {{ form.mobile_number.errors}}
-             {% endif %}
              {{ form.mobile_number }}
+             {{ form.mobile_number.errors}}
              <br>
           {% endif %}
 
