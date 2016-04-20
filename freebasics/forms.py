@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from phonenumber_field.formfields import PhoneNumberField
 
 
 class RegistrationForm(forms.Form):
@@ -28,6 +29,7 @@ class RegistrationForm(forms.Form):
         ),
         label=_("Password"),
     )
+    mobile_number = PhoneNumberField(required=False)
     next = forms.CharField(required=False)
 
     def clean_username(self):

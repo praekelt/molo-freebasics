@@ -14,7 +14,15 @@
           <p><strong>{% trans "Choose a password" %}</strong></p>
           {{ form.password.errors}}
           {{ form.password }}
-          <br>
+          {% if settings.profiles.UserProfilesSettings.show_mobile_number_field %}
+             <p><strong>{% trans "Enter your mobile number" %}</strong></p>
+             <p>{% trans "(e.g. +260979000001)" %}</p>
+             {% if form.mobile_number.errors %}
+             <p class="alert-error">* {{ form.mobile_number.errors|join:' '}}</p>
+             {% endif %}
+             {{ form.mobile_number }}
+             <br>
+          {% endif %}
           <input type="submit" class="flatbutton fb-accent-1" value='{% trans "JOIN" %}' />
           <input type="hidden" name="next" value="{% url 'molo.profiles:registration_done' %}" />
           <a href="{% url 'molo.profiles:auth_login' %}" class="button inverted">{% trans "already joined?" %}</a>
