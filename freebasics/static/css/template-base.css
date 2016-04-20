@@ -156,9 +156,9 @@ h6{
   display: block;
   margin: 0 auto;
 }
-
+/* TODO: Determine a better way to display these. */
 .block-search input[type="text"]{
-	width: 60%;
+	width: 55%;
 	padding: 8px;
 	border: 1px solid #eeeeee;
 }
