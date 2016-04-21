@@ -316,12 +316,13 @@ h6{
 .signin-form a{
   font-size:12px;
 }
-.signin-form input[type="text"], .signin-form input[type="password"]{
+.signin-form input[type="text"], .signin-form input[type="password"], .signin-form input[type="tel"]{
   padding:5px;
   box-shadow:none;
   margin-bottom:15px;
   border: 1px solid #eeeeee;
 }
+
 .signin-form input[type="submit"]{
   margin-bottom:0;
 }
@@ -344,9 +345,15 @@ h6{
   text-decoration: none;
 }
 
+ul.errorlist {
+  padding-left:0;
+  margin-bottom: 16px;
+}
+
 .error, .errorlist {
   list-style: none;
   margin: 0;
+  text-align: left !important;
   display: block;
   color: #ff4b4b !important;
   background: #fff;

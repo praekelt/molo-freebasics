@@ -19,7 +19,7 @@
 				<br>
 				<input class="flatbutton-input fb-accent-1" type="submit" value="{% trans 'Sign in' %}">
 				<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
-				<a href="{% url 'molo.profiles:user_register' %}" class="button inverted fb-accent-2">{% trans "Not a member yet" %}</a>
+				<a href="{% url 'molo.profiles:user_register' %}" class="button inverted fb-accent-2">{% trans "Not a member yet" %}?</a>
 		</form>
 	</div>
 </div>
