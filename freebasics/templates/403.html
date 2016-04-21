@@ -6,6 +6,6 @@
 
 {% block content %}
     <h2>{% trans "Access Denied" %}</h2>
-    <p>{% trans "You do not have permssion to access this site." %}</p>
-    <p><a href="{% url 'wagtailadmin_logout' %}?next={% url 'wagtailadmin_login' %}">Retry</a></p>
+    <p>{% trans "The user you are currently logged in as does not have permssion to access this site." %}</p>
+    <p><a href="{% url 'wagtailadmin_logout' %}?next={% url 'wagtailadmin_login' %}">Log in as admin user</a></p>
 {% endblock %}
