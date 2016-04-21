@@ -413,6 +413,7 @@ h6{
 */
 .block-article {
   padding: 15px;
+  overflow: auto;
 }
 
 .block-article__title {
