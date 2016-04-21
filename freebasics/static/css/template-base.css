@@ -44,38 +44,74 @@ h6{
 .no-fb-card{
   background-color: #fff;
 }
-.block-header{
+
+/* HEADER STYLES */
+.header {
   color: #000;
-  background-color: #fff;
-  border-bottom: 1px solid #eeeeee;
-  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  text-align: right;
+  overflow: auto;
 }
-.block-logo{
-  padding-top: 5px;
+.header img {
+  vertical-align: middle;
+}
+.header__logo {
+  display: inline-block;
+  margin: 8px;
+  width: 60%;
+  max-width: 115px;
+  float: left;
+}
+.header__logo img {
+  width: 100%;
+  height: auto;
+}
+.header__link {
+  text-align: center;
+  display: inline-block;
+  line-height: 44px;
+  margin-left: 8px;
+}
+.header__link--button {
+  padding: 0 8px;
+  border-left: 1px #eee solid;
 }
 
-.block-logo-text{
-  padding: 10px;
+/* SECTION NAVIGATION */
+.section-nav input {
+  display: none;
+}
+.section-nav input + * {
+  display: none;
+}
+.section-nav input:checked + * {
+ display: block;
+}
+.section-nav__items {
+  font-size: 13px;
+  margin: 0;
+  background: #fff;
+  padding: 0;
+  list-style-type: none;
+}
+.section-nav__item {
+  padding: 8px 16px;
+  border-bottom: 1px #eee solid;
+}
+.section-nav__item a {
+  text-decoration: none;
 }
 
-.block-logo span{
-  margin-left: 0;
-}
-.block-menu span{
-  border-left: 1px solid #eeeeee;
-  padding: 10px 0 10px 15px;
-  font-weight: 400
-}
+
+
+
 .block-footer{
   color: #000;
   background-color: #eeeeee;
   padding: 1px 5px 5px 5px;
   font-size: 11px;
   text-align: center;
-}
-.block-header .container-fluid{
-  padding-left: 20px;
-  padding-right: 26px;
 }
 
 .block-img {
@@ -245,9 +281,6 @@ h6{
 	position:relative;
 	top:1px;
 }
-.fb-body, .fb-body *:not(.no-fb-body){
-  font-family: "Yanone Kaffeesatz", Helvetica, sans-serif;
-}
 
 
 
@@ -259,45 +292,6 @@ h6{
   font-size: 12px;
 }
 
-.block-menu label{
-  cursor: pointer;
-}
-.collapsmenu a{
-  font-size: 13px;
-  text-decoration: none;
-}
-.collapsmenu li > input + *{
- display: none;
-}
-.collapsmenu li > input:checked + *{
- display: block;
-}
-.collapsmenu li > input{
- display: none;
-}
-.collapsmenu label{
- cursor: pointer;
-}
-.collapsmenu li{
-  list-style: none;
-}
-.collapsmenu, .collapsmenu ul{
-  margin: 10px 0 0 0;
-  padding: 0;
-}
-.collapsmenu ul.menuinner{
-  margin-top: 40px;
-  margin-left: 0px;
-  margin-bottom: 0px;
-}
-.menuinner a {
-    margin-left: 15px;
-}
-.menuinner li{
-  line-height: 33px;
-  list-style: none;
-  border-top: 1px solid #eee;
-}
 .post-comment p{
   padding: 0;
 }
