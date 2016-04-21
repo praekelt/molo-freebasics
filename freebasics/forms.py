@@ -1,24 +1,9 @@
 from django import forms
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from phonenumber_field.formfields import PhoneNumberField
+from molo.profiles.forms import RegistrationForm
 
 
-class RegistrationForm(forms.Form):
-    username = forms.RegexField(
-        regex=r'^[\w.@+-]+$',
-        widget=forms.TextInput(
-            attrs=dict(
-                required=True,
-                max_length=30,
-            )
-        ),
-        label=_("Username"),
-        error_messages={
-            'invalid': _("This value must contain only letters, "
-                         "numbers and underscores."),
-        }
-    )
+class FBRegistrationForm(RegistrationForm):
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs=dict(
@@ -29,17 +14,6 @@ class RegistrationForm(forms.Form):
         ),
         label=_("Password"),
     )
-    mobile_number = PhoneNumberField(required=False)
-    terms_and_conditions = forms.BooleanField(required=True)
-
-    next = forms.CharField(required=False)
-
-    def clean_username(self):
-        if User.objects.filter(
-            username__iexact=self.cleaned_data['username']
-        ).exists():
-            raise forms.ValidationError(_("Username already exists."))
-        return self.cleaned_data['username']
 
 
 class ProfilePasswordChangeForm(forms.Form):
