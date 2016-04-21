@@ -1,12 +1,14 @@
 from django.core.urlresolvers import reverse
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
+from molo.core.tests.base import MoloTestCaseMixin
 
 
-class RegistrationViewTest(TestCase):
+class RegistrationViewTest(TestCase, MoloTestCaseMixin):
 
     def setUp(self):
         self.client = Client()
+        self.mk_main()
 
     def test_registration_with_password(self):
 
