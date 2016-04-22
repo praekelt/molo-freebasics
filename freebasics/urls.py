@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 from wagtail.wagtailadmin import urls as wagtailadmin_urls
 from wagtail.wagtaildocs import urls as wagtaildocs_urls
 from wagtail.wagtailcore import urls as wagtail_urls
+from django.views.generic import TemplateView
+
 
 from .views import (search, HomeView, FreeBasicsRegistrationView,
                     FreeBasicsProfilePasswordChangeView)
@@ -57,6 +59,9 @@ urlpatterns += patterns(
         include('molo.polls.urls',
                 namespace='molo.polls',
                 app_name='molo.polls')),
+    url(r'^403/$', TemplateView.as_view(template_name='403.html')),
+    url(r'^404/$', TemplateView.as_view(template_name='404.html')),
+    url(r'^500/$', TemplateView.as_view(template_name='500.html')),
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'', include('molo.core.urls')),
     url(r'', include(wagtail_urls)),
