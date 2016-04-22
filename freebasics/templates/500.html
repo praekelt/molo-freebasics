@@ -1,21 +1,14 @@
 
+
+{% extends "error_page_base.html" %}
 {% load i18n %}
 
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>{% trans "Internal server error" %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <h1>{% trans "Internal server error" %}</h1>
+{% block content %}
+<div class="error-page">
+  <h1>{% trans "Whoops!" %}</h1>
+  <p>{% trans "We're sorry! We're having problems with our technology. We have been notified, and will look into it ASAP." %}</p>
 
-        <h2>{% trans "Sorry, there seems to be an error. Please try again soon." %}</h2>
-    </body>
-</html>
+  <p><a href="/">{% trans "Return to the homepage." %}</a></p>
 
+</div>
+{% endblock %}
