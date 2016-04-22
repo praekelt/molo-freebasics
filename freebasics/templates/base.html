@@ -81,53 +81,34 @@
 
 <body>
 {% wagtailuserbar %}
-  <!-- header block -->
-  <div class="block-header no-fb-body">
-    <div class="container-fluid">
-      <div class="row">
-        {% if settings.core.SiteSettings.logo %}
-        <div class="block-logo pull-left">
-        <div>
-          <a href="/">{% image settings.core.SiteSettings.logo height-30 %}</a>
-        </div>
-        </div>
-        {% else %}
-        <div class="block-logo-text pull-left">
-        <a href="/" class="no-underline "><span id="printsitelabel1"><strong>{% get_site_name %}</strong></span></a>
-        </div>
-        {% endif %}
 
-        <div class="block-menu pull-right fb-body">
-          <span class="pull-right">
-            <label for="menu-toggle">{% trans "Menu" %}</label>
-          </span>
-        </div>
-        <div class="pull-right profile-icon">
-          {% if user.is_authenticated %}
-          <a href="{% url 'molo.profiles:view_my_profile' %}"><img alt="" height="20px" src="{% static 'img/profile-2.png' %}"></a>
-          {% else %}
-          <a href="{% url 'molo.profiles:auth_login' %}"><img alt="" height="20px" src="{% static 'img/profile-2.png' %}"></a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    <ul class="collapsmenu">
-      <li>
-        <input type="checkbox" id="menu-toggle" />
-        <ul class="menuinner fb-body">
-          <li><a href="/">{% trans "Home" %}</a></li>
-          {% load_sections as sections %}
-          {% for section in sections %}
-            <li><a href="{% pageurl section %}">{{section.title}}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
+  <div class="header">
+    <a class="header__logo" href="/" >
+      {% if settings.core.SiteSettings.logo %}
+        {% image settings.core.SiteSettings.logo height-30 %}
+      {% else %}
+        {% get_site_name %}
+      {% endif %}
+    </a>
+    <a class="header__link" href="{% if user.is_authenticated %}{% url 'molo.profiles:view_my_profile' %}{% else %}{% url 'molo.profiles:auth_login' %}{% endif %}">
+      <img alt="" height="20px" src="{% static 'img/profile-2.png' %}">
+    </a>
+    <label class="header__link header__link--button" for="menu-toggle">{% trans "Menu" %}</label>
+  </div>
+
+  <div class="section-nav">
+    <input type="checkbox" id="menu-toggle" />
+    <ul class="section-nav__items">
+        <li class="section-nav__item"><a href="/">{% trans "Home" %}</a></li>
+        {% load_sections as sections %}
+        {% for section in sections %}
+        <li class="section-nav__item"><a href="{% pageurl section %}">{{ section.title }}</a></li>
+        {% endfor %}
     </ul>
   </div>
-  <!-- end header block -->
 
   {% block breadcrumbs %}
-  {% breadcrumbs %}
+    {% breadcrumbs %}
   {% endblock %}
 
   {% block content %}{% endblock %}
