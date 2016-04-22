@@ -8,7 +8,7 @@ from wagtail.wagtailsearch.models import Query
 
 from molo.profiles.views import RegistrationView, ProfilePasswordChangeView
 
-from forms import RegistrationForm, ProfilePasswordChangeForm
+from forms import FBRegistrationForm, ProfilePasswordChangeForm
 
 
 def search(request, results_per_page=10):
@@ -53,7 +53,7 @@ class HomeView(TemplateView):
 
 
 class FreeBasicsRegistrationView(RegistrationView):
-    form_class = RegistrationForm
+    form_class = FBRegistrationForm
 
 
 class FreeBasicsProfilePasswordChangeView(ProfilePasswordChangeView):

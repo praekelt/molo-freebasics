@@ -8,13 +8,29 @@
       <p>{% trans "Not a member yet? Join us by signing up below." %}</p>
       <form method="post" action="{% url 'molo.profiles:user_register' %}">{% csrf_token %}
           <p><strong>{% trans "Choose a username" %}</strong></p>
-          {{ form.username.errors}}
           {{ form.username }}
+          {{ form.username.errors}}
 
           <p><strong>{% trans "Choose a password" %}</strong></p>
-          {{ form.password.errors}}
+
           {{ form.password }}
+          {{ form.password.errors}}
           <br>
+
+          {% if settings.profiles.UserProfilesSettings.show_mobile_number_field %}
+             <p><strong>{% trans "Enter your mobile number" %}</strong></p>
+             <p>{% trans "(e.g. +260979000001)" %}</p>
+             {{ form.mobile_number }}
+             {{ form.mobile_number.errors}}
+             <br>
+          {% endif %}
+
+          {{ form.terms_and_conditions }}
+          <span>{% trans "I accept the Terms and Conditions" %}</span>
+          {% if form.terms_and_conditions.errors %}
+            <p class="error">{% trans "Please accept the T&amp;Cs in order to complete the registration" %}</p>
+          {% endif %}
+
           <input type="submit" class="flatbutton fb-accent-1" value='{% trans "JOIN" %}' />
           <input type="hidden" name="next" value="{% url 'molo.profiles:registration_done' %}" />
           <a href="{% url 'molo.profiles:auth_login' %}" class="button inverted">{% trans "already joined?" %}</a>

@@ -2,9 +2,10 @@
 {% load i18n %}
 
 {% block content %}
+<<<<<<< HEAD
 <div class="error-page">
     <h1>{% trans "Access Denied" %}</h1>
-    <p>{% trans "You do not have permssion to access this site." %}</p>
-    <p><a href="{% url 'wagtailadmin_logout' %}?next={% url 'wagtailadmin_login' %}">Retry</a></p>
+    <p>{% trans "The user you are currently logged in as does not have permssion to access this site." %}</p>
+    <p><a href="{% url 'wagtailadmin_logout' %}?next={% url 'wagtailadmin_login' %}">Log in as admin user</a></p>
 </div>
 {% endblock %}
