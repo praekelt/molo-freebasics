@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
-{% load core_tags %}
+{% load core_tags wagtailimages_tags %}
 
 {% block content %}
-  {% bannerpages %}
+
+{% if self.banner %}
+  {% image self.banner width-320 %}
+{% endif %}
+
 {% endblock %}
