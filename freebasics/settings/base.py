@@ -52,6 +52,7 @@ INSTALLED_APPS = (
 
     'taggit',
     'modelcluster',
+    'overextends',
 
     'molo.core',
     'freebasics',
