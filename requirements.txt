@@ -1,7 +1,7 @@
 molo.core==3.0rc8
 molo.profiles==0.2.6
 molo.commenting==0.2.8
-molo.polls==2.0.1
+molo.polls==2.0.2
 django-contrib-comments
 gunicorn
 psycopg2
