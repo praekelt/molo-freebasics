@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import migrations, models
+from django.db import migrations
 
 
 def move_banners_to_index_page(apps, schema_editor):
-    from molo.core.models import (BannerPage, SiteLanguage, BannerIndexPage, Main)
+    from molo.core.models import (
+        BannerPage, SiteLanguage, BannerIndexPage, Main)
     main = Main.objects.all().first()
     main_language = SiteLanguage.objects.filter(is_main_language=True).first()
 
