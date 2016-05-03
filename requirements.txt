@@ -1,4 +1,4 @@
-molo.core==3.0rc8
+molo.core==3.0rc9
 molo.profiles==0.2.6
 molo.commenting==0.2.8
 molo.polls==2.0.2
