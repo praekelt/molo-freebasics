@@ -1,11 +1,25 @@
+{# Used for wagtail preview #}
 {% extends "base.html" %}
 
-{% load core_tags wagtailimages_tags %}
+{% load core_tags wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
 
-{% if self.banner %}
-  {% image self.banner width-320 %}
-{% endif %}
-
+<div class="header">
+  {% if self.banner %}
+    {% if self.banner_link_page %}
+    <div class="no-fb-body fb-card banner-container">
+      <a href="{% pageurl self.banner_link_page %}">
+        {% image self.banner width-320 as tmp_photo %}
+        <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ self.banner.title }}"/>
+      </a>
+    </div>
+    {% else %}
+      <div class="no-fb-body fb-card banner-container">
+        {% image self.banner width-320 as tmp_photo %}
+        <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ self.banner.title }}"/>
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
 {% endblock %}

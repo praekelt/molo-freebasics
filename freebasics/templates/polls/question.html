@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static core_tags i18n %}
+
+{% block content %}
+
+  <div class="block-poll fb-body fb-card">
+		<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
+		<ul>
+    <h6 class="sub-heading">{{ self.title }}</h6>
+    {% if self.freetextquestion %}
+      {% include 'polls/includes/poll_free_text_form.html' with question=self %}
+      <hr>
+    {% else %}
+      {% include 'polls/includes/poll_question_form.html' with question=self %}
+      <hr>
+    {% endif %}
+	</ul>
+  </div>
+{% endblock %}
