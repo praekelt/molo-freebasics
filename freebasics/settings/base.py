@@ -28,8 +28,6 @@ SECRET_KEY = "+qjha14e^w1+41tqi$fhc=y(%iijt&q)0mw@kze!ewz)7($#4#"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -41,7 +39,7 @@ BASE_URL = 'http://example.com'
 
 # Application definition
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,7 +79,7 @@ INSTALLED_APPS = (
     'raven.contrib.django.raven_compat',
     'django_cas_ng',
     'compressor',
-)
+]
 
 COMMENTS_APP = 'molo.commenting'
 COMMENTS_FLAG_THRESHHOLD = 3
@@ -89,7 +87,7 @@ COMMENTS_HIDE_REMOVED = False
 
 SITE_ID = 1
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -101,7 +99,27 @@ MIDDLEWARE_CLASSES = (
     'wagtail.wagtailcore.middleware.SiteMiddleware',
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
     'wagtailmodeladmin.middleware.ModelAdminMiddleware',
-)
+]
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'molo.core.context_processors.locale',
+                'molo.profiles.context_processors.get_profile_data',
+                'wagtail.contrib.settings.context_processors.settings',
+            ],
+            'builtins': ['overextends.templatetags.overextends_tags'],
+        },
+    },
+]
 
 ROOT_URLCONF = 'freebasics.urls'
 WSGI_APPLICATION = 'freebasics.wsgi.application'
@@ -152,7 +170,7 @@ USE_TZ = True
 # Native South African languages are currently not included in the default
 # list of languges in django
 # https://github.com/django/django/blob/master/django/conf/global_settings.py#L50
-LANGUAGES = global_settings.LANGUAGES + (
+LANGUAGES = global_settings.LANGUAGES + [
     ('zu', _('Zulu')),
     ('xh', _('Xhosa')),
     ('st', _('Sotho')),
@@ -161,11 +179,11 @@ LANGUAGES = global_settings.LANGUAGES + (
     ('ts', _('Tsonga')),
     ('ss', _('Swati')),
     ('nr', _('Ndebele')),
-)
+]
 
-LOCALE_PATHS = (
+LOCALE_PATHS = [
     join(PROJECT_ROOT, "locale"),
-)
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
@@ -173,11 +191,11 @@ LOCALE_PATHS = (
 STATIC_ROOT = join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
-STATICFILES_FINDERS = (
+STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
-)
+]
 
 MEDIA_ROOT = join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
@@ -186,20 +204,9 @@ MEDIA_URL = '/media/'
 # Django compressor settings
 # http://django-compressor.readthedocs.org/en/latest/settings/
 
-COMPRESS_PRECOMPILERS = (
+COMPRESS_PRECOMPILERS = [
     ('text/x-scss', 'django_libsass.SassCompiler'),
-)
-
-
-# Template configuration
-
-TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
-    'django.core.context_processors.request',
-    'molo.core.context_processors.locale',
-    'molo.profiles.context_processors.get_profile_data',
-    'wagtail.contrib.settings.context_processors.settings',
-
-)
+]
 
 
 # Wagtail settings
