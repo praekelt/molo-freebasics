@@ -18,6 +18,7 @@ ADD README.rst /deploy/
 ADD VERSION /deploy/
 
 RUN pip install -e .
+RUN pip install "django==1.9.6"
 
 RUN mkdir -p /etc/supervisor/conf.d/
 RUN mkdir -p /var/log/supervisor
