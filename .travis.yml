@@ -11,6 +11,8 @@ install:
   - pip install flake8 --cache-dir $HOME/.pip-cache/
   - pip install -r requirements-dev.txt --cache-dir $HOME/.pip-cache/
   - pip install -e . --cache-dir $HOME/.pip-cache/
+  # NOTE: manually installing 1.9 since molo.core isn't upgraded yet
+  - pip install "django==1.9.6" --cache-dir $HOME/.pip-cache/
 script:
   - flake8 freebasics
   - py.test
