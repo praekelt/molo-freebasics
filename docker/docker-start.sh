@@ -2,6 +2,7 @@
 
 set -e
 
+./manage.py migrate django_cas_ng --fake-initial --noinput
 ./manage.py migrate --noinput
 ./manage.py collectstatic --noinput
 ./manage.py compress
