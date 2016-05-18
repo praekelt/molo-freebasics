@@ -1,6 +1,6 @@
 molo.core==3.0.3
 molo.profiles==0.2.6
-molo.commenting==0.2.8
+molo.commenting==0.4.0
 molo.polls==2.0.2
 django-contrib-comments
 django-overextends
