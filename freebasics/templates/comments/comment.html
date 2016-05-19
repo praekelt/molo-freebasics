@@ -1,11 +1,29 @@
 {% load i18n molo_commenting_tags %}
 <div class="nav {{self.get_parent_section.get_effective_extra_style_hints}} {% if node.user.is_staff %}staff{% endif %}">
-  <p class="fb-accent-2"><strong>{{node.user_name}}</strong> <span class="date">{{node.submit_date|date:"j F Y"}}</span></p>
+  <p class="fb-accent-2">
+    <strong>
+    {% if node.user_name.lower == 'anonymous' %}
+      {{node.user_name}}
+    {% else %}
+      {% if not node.user.profile.alias %}
+        {% trans "Anonymous" %}
+      {% else %}
+        {{node.user.profile.alias}}
+      {% endif %}
+    {% endif %}
+    </strong>
+    <span class="date">{{node.submit_date|date:"j F Y"}}</span>
+  </p>
   {% if node.is_removed %}
     <p>{% trans "This comment has been removed by the community. Please read our platform rules." %}</p>
   {% else %}
     <p>{{node.comment}}</p>
-    <p class="fb-accent-2"><a href="{% url 'molo.commenting:molo-comments-report' node.pk %}?next={% url 'molo.commenting:report_response' node.pk %}" style="padding-left: 0px;">{% trans "Report" %}</a></p>
+    	{% if node.parent == None %}
+        <p class="fb-accent-2"><a href="{% url 'molo.commenting:molo-comments-report' node.pk %}?next={% url 'molo.commenting:report_response' node.pk %}" style="padding-left: 0px;">{% trans "Report" %}</a></p>
+        {% if request.user|is_in_group:'Expert' and not node.user|is_in_group:'Expert' %}
+            <p class="fb-accent-2"><a href="{% url 'molo.commenting:molo-comments-reply' node.pk %}" style="padding-left: 0px;">{% trans "Reply"%}</a></p>
+        {% endif %}
+    {% endif %}
   {% endif %}
 </div>
 <hr>
