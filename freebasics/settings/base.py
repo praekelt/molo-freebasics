@@ -151,6 +151,8 @@ CELERY_IMPORTS = ('molo.core.tasks')
 BROKER_URL = environ.get('BROKER_URL', 'redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = environ.get(
     'CELERY_RESULT_BACKEND', 'redis://localhost:6379/0')
+CELERY_ACCEPT_CONTENT = ['json']
+
 CELERYBEAT_SCHEDULE = {
     'rotate_content': {
         'task': 'molo.core.tasks.rotate_content',

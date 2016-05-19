@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 from molo.core.tests.base import MoloTestCaseMixin
 from freebasics.views import HomeView
 from freebasics.templatetags import freebasics_tags
@@ -14,7 +14,11 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
                            BLOCK_POSITION_LATEST=3,
                            BLOCK_POSITION_QUESTIONS=2,
                            BLOCK_POSITION_SECTIONS=1):
+            factory = RequestFactory()
+            request = factory.get('/')
+            request.site = self.site
             home = HomeView()
+            home.request = request
             context = home.get_context_data()
             self.assertEquals(context['blocks'][0], (
                 'blocks/sections.html', 1))
