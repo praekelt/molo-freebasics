@@ -51,7 +51,9 @@ class HomeView(TemplateView):
             ('blocks/sections.html', settings.BLOCK_POSITION_SECTIONS),
         ]
         blocks.sort(key=lambda tup: tup[1])
-        context.update({'blocks': blocks})
+        context.update({
+            'blocks': blocks,
+            'self': self.request.site.root_page})
         return context
 
 
