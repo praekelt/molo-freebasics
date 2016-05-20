@@ -77,6 +77,7 @@ INSTALLED_APPS = [
     'molo.polls',
 
     'raven.contrib.django.raven_compat',
+    'djcelery',
     'django_cas_ng',
     'compressor',
 ]
@@ -152,6 +153,9 @@ BROKER_URL = environ.get('BROKER_URL', 'redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = environ.get(
     'CELERY_RESULT_BACKEND', 'redis://localhost:6379/0')
 CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
 
 CELERYBEAT_SCHEDULE = {
     'rotate_content': {
