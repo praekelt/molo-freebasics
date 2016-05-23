@@ -13,7 +13,9 @@ from os import environ
 from django.conf import global_settings
 from django.utils.translation import ugettext_lazy as _
 import dj_database_url
+import djcelery
 from celery.schedules import crontab
+djcelery.setup_loader()
 
 # Absolute filesystem path to the Django project directory:
 PROJECT_ROOT = dirname(dirname(dirname(abspath(__file__))))
@@ -265,3 +267,8 @@ BLOCK_POSITION_SECTIONS = int(environ.get('BLOCK_POSITION_SECTIONS', 4))
 UNICORE_DISTRIBUTE_API = 'http://localhost:6543'
 
 ADMIN_LANGUAGE_CODE = environ.get('ADMIN_LANGUAGE_CODE', "en")
+
+EMAIL_HOST = environ.get('EMAIL_HOST', 'localhost')
+EMAIL_PORT = environ.get('EMAIL_PORT', 25)
+EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD', '')
