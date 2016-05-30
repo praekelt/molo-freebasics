@@ -59,6 +59,7 @@ urlpatterns += patterns(
         include('molo.polls.urls',
                 namespace='molo.polls',
                 app_name='molo.polls')),
+    url('^', include('django.contrib.auth.urls')),
     url(r'^403/$', TemplateView.as_view(template_name='403.html')),
     url(r'^404/$', TemplateView.as_view(template_name='404.html')),
     url(r'^500/$', TemplateView.as_view(template_name='500.html')),

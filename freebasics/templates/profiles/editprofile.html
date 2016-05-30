@@ -12,12 +12,16 @@
       <p>{% trans "Update your date of birth:" %}</p>
 	      {{ form.date_of_birth }}<br><br>
 				{% if settings.profiles.UserProfilesSettings.show_mobile_number_field %}
-	      <p>{% trans "Update your mobile number:" %}</p>
-		      {{ form.mobile_number.errors }}
-		      {{ form.mobile_number }}
-			{% endif %}
+		      <p>{% trans "Update your mobile number:" %}</p>
+			      {{ form.mobile_number.errors }}
+			      {{ form.mobile_number }}
+				{% endif %}
+				{% if settings.profiles.UserProfilesSettings.show_email_field %}
+		      <p>{% trans "Update your email address:" %}</p>
+			      {{ form.email.errors }}
+			      {{ form.email }}
+				{% endif %}
 
-				<br>
 				<br>
 			<input type="submit" value='{% trans "Update profile" %}' class="flatbutton fb-accent-1">
 		</form>
