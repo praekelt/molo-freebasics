@@ -25,6 +25,14 @@
              <br>
           {% endif %}
 
+          {% if settings.profiles.UserProfilesSettings.show_email_field %}
+             <p><strong>{% trans "Enter your email address" %}</strong></p>
+             <p>{% trans "(e.g. example@foo.com)" %}</p>
+             {{ form.email }}
+             {{ form.email.errors}}
+             <br>
+          {% endif %}
+
           {{ form.terms_and_conditions }}
           <span>{% trans "I accept the Terms and Conditions" %}</span>
           {% if form.terms_and_conditions.errors %}

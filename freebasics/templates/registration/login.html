@@ -19,8 +19,10 @@
 				<br>
 				<input class="flatbutton-input fb-accent-1" type="submit" value="{% trans 'Sign in' %}">
 				<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
-				<a href="{% url 'molo.profiles:user_register' %}" class="button inverted fb-accent-2">{% trans "Not a member yet" %}?</a>
+				<a href="{% url 'molo.profiles:user_register' %}" class="btn btn-wide"><input type="button" value='{% trans "Register" %}' class="flatbutton fb-accent-1" /></a><br>
 		</form>
+		<br>
+		<a href="{% url 'password_reset' %}">{% trans 'Forgotten your password?' %}</a>
 	</div>
 </div>
 {% endblock %}
