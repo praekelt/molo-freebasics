@@ -15,8 +15,13 @@
       <h6 class="block-article__title fb-accent-2">
         <a href="{% pageurl article %}" class="fb-accent-2">{{article.title}}</a>
       </h6>
+
+      <!-- Only show "Read More" when the subtitle is shown. This avoids having listing of "title" + "readmore" only -->
+      {% if article.subtitle %}
       <div class="block-article__subtitle">{{article.subtitle}}</div>
       <a href="{% pageurl article %}" class="fb-accent-2 block-article__read-more">{% trans "Read More" %}</a>
+      {% endif %}
+
     </li>
   {% endfor %}
   </ul>
