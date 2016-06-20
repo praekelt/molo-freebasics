@@ -1,4 +1,4 @@
-from freebasics.settings import *
+from freebasics.settings import *  # noqa
 
 DATABASES = {
     'default': {
