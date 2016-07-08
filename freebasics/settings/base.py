@@ -106,6 +106,7 @@ MIDDLEWARE_CLASSES = [
     'wagtail.wagtailcore.middleware.SiteMiddleware',
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
     'wagtailmodeladmin.middleware.ModelAdminMiddleware',
+    'molo.core.middleware.NoScriptGASessionMiddleware',
 ]
 
 TEMPLATES = [
