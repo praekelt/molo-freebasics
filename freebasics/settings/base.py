@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for base freebasics.
 
@@ -174,7 +175,7 @@ CELERYBEAT_SCHEDULE = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Africa/Johannesburg'
 USE_I18N = True
 USE_L10N = True
@@ -194,20 +195,20 @@ LANGUAGES = global_settings.LANGUAGES + [
     ('nr', _('Ndebele')),
     ('wo', _('Wolof')),
     ('yo', _('Yoruba')),
-    ('ib', _('Ibo')),
+    ('ig', _('Igbo')),
     ('ha', _('Hausa')),
     ('am', _('Amharic')),
     ('ms', _('Malay')),
-    ('gr', _('Guarani')),
+    ('gn', _('Guarani')),
     ('gu', _('Gujarati')),
-    ('fi', _('Filipino')),
-    ('nq', _('N\'ko')),
-    ('sy', _('Syriac')),
-    ('th', _('Thaana')),
-    ('ti', _('Tifinar')),
+    ('fil', _('Filipino')),
+    ('nqo', _('N\'ko')),
+    ('sys', _('Syriac')),
+    ('dv', _('Dhivehi')),
+    ('ber', _('Berber')),
     ('ku', _('Kurdish')),
-    ('ar', _('Aramaic')),
-    ('kr', _('kreyol')),
+    ('arc', _('Aramaic')),
+    ('ht', _('Creole Haitian')),
 ]
 
 EXTRA_LANG_INFO = {
@@ -269,25 +270,13 @@ EXTRA_LANG_INFO = {
         'bidi': False,
         'code': 'yo',
         'name': 'Yoruba',
-        'name_local': 'Yoruba'
+        'name_local': 'Yorùbá'
     },
-    'nr': {
+    'ig': {
         'bidi': False,
-        'code': 'nr',
-        'name': 'Ndebele',
-        'name_local': 'Ndebele'
-    },
-    'wo': {
-        'bidi': False,
-        'code': 'wo',
-        'name': 'Wolof',
-        'name_local': 'Wolof'
-    },
-    'ib': {
-        'bidi': False,
-        'code': 'ib',
-        'name': 'Ibo',
-        'name_local': 'Ibo'
+        'code': 'ig',
+        'name': 'Igbo',
+        'name_local': 'Igbo'
     },
     'ha': {
         'bidi': False,
@@ -299,73 +288,73 @@ EXTRA_LANG_INFO = {
         'bidi': False,
         'code': 'am',
         'name': 'Amharic',
-        'name_local': 'Amharic'
+        'name_local': 'አማርኛ'
     },
-    'ma': {
+    'ms': {
         'bidi': False,
-        'code': 'ma',
+        'code': 'ms',
         'name': 'Malay',
-        'name_local': 'Malay'
+        'name_local': 'Malaysia'
     },
-    'gu': {
+    'gn': {
         'bidi': False,
-        'code': 'gu',
+        'code': 'gn',
         'name': 'Guarani',
-        'name_local': 'Guarani'
+        'name_local': 'Karaiñe’ême'
     },
     'gu': {
         'bidi': False,
         'code': 'gu',
         'name': 'Gujarati',
-        'name_local': 'Gujarati'
+        'name_local': 'ગુજરાતી'
     },
-    'fi': {
+    'fil': {
         'bidi': False,
-        'code': 'fi',
+        'code': 'fil',
         'name': 'Filipino',
         'name_local': 'Filipino'
     },
-    'nk': {
+    'nqo': {
         'bidi': False,
-        'code': 'nk',
+        'code': 'nqo',
         'name': 'N\'ko',
         'name_local': 'N\'ko'
     },
-    'sy': {
-        'bidi': False,
-        'code': 'sy',
+    'sys': {
+        'bidi': True,
+        'code': 'sys',
         'name': 'Syriac',
-        'name_local': 'Syriac'
+        'name_local': 'ગુજરાતી'
     },
-    'th': {
+    'dv': {
         'bidi': False,
-        'code': 'th',
-        'name': 'Thaana',
-        'name_local': 'Thaana'
+        'code': 'dv',
+        'name': 'Dhivehi',
+        'name_local': 'Dhivehi'
     },
-    'ti': {
+    'ber': {
         'bidi': False,
-        'code': 'ti',
-        'name': 'Tifinar',
-        'name_local': 'Tifinar'
+        'code': 'ber',
+        'name': 'Berber',
+        'name_local': 'Tamaziɣt'
     },
     'ku': {
         'bidi': False,
         'code': 'ku',
         'name': 'Kurdish',
-        'name_local': 'Kurdish'
+        'name_local': 'Kurdî'
     },
-    'ar': {
-        'bidi': False,
-        'code': 'ar',
+    'arc': {
+        'bidi': True,
+        'code': 'arc',
         'name': 'Aramaic',
-        'name_local': 'Aramaic'
+        'name_local': 'ܐܪܡܝܐ‎'
     },
-    'kr': {
+    'ht': {
         'bidi': False,
         'code': 'kr',
-        'name': 'kreyol',
-        'name_local': 'kreyol'
+        'name': 'Creole Haitian',
+        'name_local': 'Kreyòl ayisyen'
     },
 }
 
