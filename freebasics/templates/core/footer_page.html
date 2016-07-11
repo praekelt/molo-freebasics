@@ -7,34 +7,34 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-<div class="articles nav">
-  <h3 class="article-title">{{self.title}}</h3>
-  <p>{{self.subtitle}}</p>
-  {% if self.image %}
-  <div class="banner">{% image self.image width-240 %}</div>
-  {% endif %}
+<div class="fb-body fb-card {{self.get_parent_section.get_effective_extra_style_hints}}">
 
-<article>
+  <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
+    <div class="block-article">
+      {% if self.image %}
+      {% image self.image width-274 as tmp_photo %}
+      <img class="block-article__image block-article__image--full-width" src="{{ tmp_photo.url }}" alt="{{ self.image.title }}"/>
+      {% endif %}
+  <div class="block-article__subtitle">{{self.subtitle}}</div>
+
+  <article  class="article-content">
   {% for block in self.body %}
       {% if block.block_type == 'heading' %}
-          <h1>{{ block.value }}</h1>
-      {% else %}
-      {% if block.block_type == 'image' %}
-        {% image block.value width-240 %}
-      {% else %}
-      {% if block.block_type == 'numbered_list' %}
+        <h3 class="article-content__title fb-accent-1">{{ block.value }}</h3>
+      {% elif block.block_type == 'image' %}
+        {% image block.value width-274 as tmp_photo %}
+        <img class="article-content__image" src="{{ tmp_photo.url }}" alt="{{ block.value.title }}"/>
+      {% elif block.block_type == 'numbered_list' %}
         <ol>
         {% for item in block.value %}
           <li>{{item}}</li>
         {% endfor %}
         </ol>
       {% else %}
-          {{ block }}
-      {% endif %}
-      {% endif %}
+        {{ block }}
       {% endif %}
   {% endfor %}
-</article>
+  </article>
+</div>
 </div>
 {% endblock %}
-
