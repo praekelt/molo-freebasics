@@ -25,6 +25,12 @@
         {% elif block.block_type == 'image' %}
           {% image block.value width-274 as tmp_photo %}
           <img class="article-content__image" src="{{ tmp_photo.url }}" alt="{{ block.value.title }}"/>
+        {% elif block.block_type == 'numbered_list' %}
+          <ol>
+          {% for item in block.value %}
+            <li>{{item}}</li>
+          {% endfor %}
+          </ol>
         {% else %}
           {{ block }}
         {% endif %}
