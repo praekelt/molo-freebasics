@@ -107,7 +107,7 @@
         <li class="section-nav__item"><a href="/">{% trans "Home" %}</a></li>
         {% load_sections as sections %}
         {% for section in sections %}
-        <li class="section-nav__item"><a href="{% pageurl section %}">{{ section.title }}</a></li>
+          <li class="section-nav__item"><a href="{% pageurl section %}">{{ section.title }}</a></li>
         {% endfor %}
     </ul>
   </div>
