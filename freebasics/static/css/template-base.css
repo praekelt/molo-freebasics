@@ -61,7 +61,7 @@ h6{
 }
 .header__logo {
   display: inline-block;
-  margin: 6px;
+  margin: 10px;
   float: left;
 }
 .header__logo img {
@@ -69,6 +69,7 @@ h6{
   height: auto;
   max-width: 200px;
   max-height: 30px;
+  margin: -2px;
 }
 .header__link {
   text-align: center;
