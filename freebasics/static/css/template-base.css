@@ -61,14 +61,14 @@ h6{
 }
 .header__logo {
   display: inline-block;
-  margin: 8px;
-  width: 60%;
-  max-width: 115px;
+  margin: 6px;
   float: left;
 }
 .header__logo img {
   width: 100%;
   height: auto;
+  max-width: 200px;
+  max-height: 30px;
 }
 .header__link {
   text-align: center;
