@@ -2,8 +2,7 @@
 
 {% if sections %}
 {% for section in sections %}
-<div class="block-category fb-body fb-card {{section.get_effective_extra_style_hints}}">
-
+      <div class="fb-card block-category {{section.get_effective_extra_style_hints}}">
   <h6 class="block-heading fb-accent-1">{{section.title}}
     <a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a>
   </h6>
@@ -25,6 +24,7 @@
     </li>
   {% endfor %}
   </ul>
+
 </div>
 {% endfor%}
 {% endif %}

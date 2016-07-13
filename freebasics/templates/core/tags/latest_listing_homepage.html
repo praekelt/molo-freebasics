@@ -1,7 +1,7 @@
 {% load wagtailcore_tags wagtailimages_tags i18n %}
 
 {% if articles %}
-<div class="fb-body fb-card">
+      <div class="fb-card">
   {% for article in articles %}
     <h6 class="block-heading fb-accent-1">
       <a href="{% pageurl article %}" class="no-underline">{{article.title}}</a>
@@ -21,4 +21,5 @@
     </div>
   {% endfor %}
 </div>
+
 {% endif %}

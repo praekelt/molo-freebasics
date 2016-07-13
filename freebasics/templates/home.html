@@ -6,8 +6,11 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
+<div class="fb-body">
+<div class="base-bcolor">
   {% for template_name, position in blocks %}
   {% include template_name %}
   {% endfor %}
-
+</div>
+</div>
 {% endblock %}

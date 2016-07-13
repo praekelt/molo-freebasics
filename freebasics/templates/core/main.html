@@ -6,9 +6,12 @@
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
+asdfadfas fasdf
+<div class="fb-body milton">
     {% bannerpages %}
     {% latest_listing_homepage num_count=10 %}
     {% poll_page page=request.site.root_page %}
     {% section_listing_homepage %}
     {% surveys_list %}
+</div>
 {% endblock %}
