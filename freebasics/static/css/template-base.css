@@ -52,7 +52,6 @@ h6{
 .header {
   color: #000;
   background: #fff;
-  border-bottom: 1px solid #eee;
   text-align: right;
   overflow: auto;
 }
@@ -265,9 +264,8 @@ h6{
 }
 
 /*default colors*/
-.fb-body .base-bcolor{
+.base-bcolor{
   background-color: #efefef;
-  border: 1px solid #eeeeee;
 }
 .fb-body .block-heading{
   background-color: #dfdfdf;
