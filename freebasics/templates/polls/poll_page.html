@@ -3,7 +3,7 @@
 {% block content %}
 	{% if questions %}
 
-		      <div class="fb-card block-poll">
+	<div class="fb-card block-poll">
 		<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
 		<ul>
 		{% for question in questions %}
@@ -19,7 +19,6 @@
 		</li>
 		{% endfor %}
 	</ul>
-
-	</div>
+</div>
 	{% endif %}
 {% endblock %}
