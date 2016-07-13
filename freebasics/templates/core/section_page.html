@@ -43,7 +43,7 @@
     {% if featured_articles %}
     <ul>
       {% for article in featured_articles %}
-        <li>
+        <li class="block-article block-article--in-list">
           <a href="{% pageurl article %}" class="fb-accent-2 link-button"><h6 class="fb-accent-2">{{article.title}}</h6></a>
           <p>{{article.body|striptags|truncatewords:30}}</p>
           <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
