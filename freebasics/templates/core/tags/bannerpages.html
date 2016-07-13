@@ -3,22 +3,20 @@
 
 {% if bannerpages %}
 {% for bannerpage in bannerpages %}
-<div class="header">
   {% if bannerpage.banner %}
     {% if bannerpage.banner_link_page %}
-    <div class="no-fb-body fb-card banner-container">
+          <div class="fb-card banner-container">
       <a href="{% pageurl bannerpage.banner_link_page %}">
         {% image bannerpage.banner width-320 as tmp_photo %}
         <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ bannerpage.banner.title }}"/>
       </a>
     </div>
     {% else %}
-      <div class="no-fb-body fb-card banner-container">
+              <div class="fb-card banner-container">
         {% image bannerpage.banner width-320 as tmp_photo %}
         <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ bannerpage.banner.title }}"/>
       </div>
     {% endif %}
   {% endif %}
-</div>
 {% endfor%}
 {% endif %}
