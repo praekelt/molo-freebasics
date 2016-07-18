@@ -7,3 +7,4 @@ django-contrib-comments
 django-overextends
 gunicorn
 psycopg2
+html5lib==0.9999999
