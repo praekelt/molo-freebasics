@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Milton Madanda <milton@praekelt.com>
 RUN apt-get update && apt-get -y --force-yes install libjpeg-dev zlib1g-dev libxslt1-dev libpq-dev nginx supervisor redis-server python-dev python-pip
-RUN apt-get install libffi-dev
+RUN apt-get -y install libffi-dev gettext
 
 RUN pip install --upgrade pip
 
@@ -11,6 +11,7 @@ ENV DJANGO_SETTINGS_MODULE freebasics.settings.docker
 WORKDIR /deploy/
 
 COPY freebasics /deploy/freebasics
+COPY locale /deploy/locale
 ADD manage.py /deploy/
 ADD requirements.txt /deploy/
 ADD setup.py /deploy/
