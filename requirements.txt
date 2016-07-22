@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 molo.core==3.2.8
+=======
+molo.core==3.4.0
+>>>>>>> Stashed changes
 molo.profiles==1.0.0
 molo.commenting==0.4.0
 molo.polls==2.0.2
