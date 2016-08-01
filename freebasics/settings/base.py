@@ -213,6 +213,7 @@ LANGUAGES = global_settings.LANGUAGES + [
     ('ku', _('Kurdish')),
     ('arc', _('Aramaic')),
     ('ht', _('Creole Haitian')),
+    ('ny', _('Chichewa')),
 ]
 
 EXTRA_LANG_INFO = {
@@ -360,6 +361,12 @@ EXTRA_LANG_INFO = {
         'name': 'Creole Haitian',
         'name_local': 'Kreyòl ayisyen'
     },
+    'ny': {
+        'bidi': False,
+        'code': 'ny',
+        'name': 'Chichewa',
+        'name_local': 'Chichewa',
+    }
 }
 
 LANG_INFO = (
