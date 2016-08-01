@@ -233,7 +233,7 @@ EXTRA_LANG_INFO = {
         'bidi': False,
         'code': 'st',
         'name': 'Sotho',
-        'name_local': 'Sotho'
+        'name_local': 'Sesotho'
     },
     've': {
         'bidi': False,
@@ -245,7 +245,7 @@ EXTRA_LANG_INFO = {
         'bidi': False,
         'code': 'tn',
         'name': 'Tswana',
-        'name_local': 'Tswana'
+        'name_local': 'Setswana'
     },
     'ts': {
         'bidi': False,
@@ -257,7 +257,7 @@ EXTRA_LANG_INFO = {
         'bidi': False,
         'code': 'ss',
         'name': 'Swati',
-        'name_local': 'Swati'
+        'name_local': 'SiSwati'
     },
     'nr': {
         'bidi': False,
