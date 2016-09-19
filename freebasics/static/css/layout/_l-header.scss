@@ -1,0 +1,32 @@
+/* HEADER STYLES */
+.header {
+  color: #000;
+  background: #fff;
+  text-align: right;
+  overflow: auto;
+}
+.header img {
+  vertical-align: middle;
+}
+.header__logo {
+  display: inline-block;
+  margin: 10px;
+  float: left;
+}
+.header__logo img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 30px;
+  margin: -2px;
+}
+.header__link {
+  text-align: center;
+  display: inline-block;
+  line-height: 44px;
+  margin-left: 8px;
+}
+.header__link--button {
+  padding: 0 8px;
+  border-left: 1px #eee solid;
+}
