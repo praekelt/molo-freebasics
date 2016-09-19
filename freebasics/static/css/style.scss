@@ -1,71 +1,65 @@
-@import "mixins";
-@import "variables";
-@import "h5bp";
-@import "base";
-@import "modules";
-@import "icons";
+@import "variables/_variables";
 
-$colorFirst: #e52d47; // red
-$colorSecond: #27262b; // dark grey
-$colorThird: #1473ad; // blue
-$colorFourth: #ebebeb; // light grey
-$anotherShadeOfGrey: #67666b;
-
-@include links($colorFirst);
+@import "_base";
+@import "layout/_layout";
+@import "modules/_modules";
+@import "state/_state";
 
 
-a {
+
+/* TODO: Remove this. */
+.row:after, .row:before, .container-fluid:after, .container-fluid:before{
+  display: table;
+  content: " ";
+}
+
+/* TODO: This is terrible?! */
+p,h6{
+  margin: 0
+}
+h6{
+  font-size:13px;
+}
+
+.fb-card{
+  margin: 7px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.no-fb-card{
+  background-color: #fff;
+}
+
+.active {
+  color: #696969;
+}
+
+
+/*default colors*/
+.base-bcolor{
+  background-color: #efefef;
+}
+.fb-body .block-heading{
+  background-color: #dfdfdf;
+  border-radius: 3px 3px 0 0;
+}
+.fb-body .block-heading-sub-cat{
+  border: 1px solid;
+  border-radius: 0;
+}
+.fb-body .fb-accent-1{
+  color: #69269d;
+}
+.fb-body .fb-accent-2{
+  color: #c736c0;
+}
+.no-underline{
   text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
-body,
-input,
-textarea {
-  font-family: "Exo 2", sans-serif;
-  color: $anotherShadeOfGrey;
+.padding15{
+  padding: 15px;
 }
-
-// dark grey
-.highlight-primary {
-  color: $colorSecond;
-  p {
-    color: $anotherShadeOfGrey;
-  }
-}
-
-// dark grey
-.highlight-secondary {
-  color: $anotherShadeOfGrey;
-  li {
-    border: none;
-  }
-  a {
-    text-transform: uppercase;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-// blue
-.highlight-tertiary {
-  color: $colorThird;
-}
-
-// light grey
-.highlight-quaternary {
-  color: $colorFourth;
-}
-
-
-
-// typography
-
-p {
-  margin: 0;
-  padding-bottom: 1em;
+.padding-no-top{
+  padding: 0px 15px 15px 15px;
 }
