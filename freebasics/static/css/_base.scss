@@ -25,3 +25,8 @@ fieldset {
     list-style-type: none;
   }
 }
+
+input[type="submit"] {
+  display: block;
+  margin: 10px 0;
+}
