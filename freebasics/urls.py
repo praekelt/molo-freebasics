@@ -49,7 +49,7 @@ urlpatterns += patterns(
         include('molo.commenting.urls',
                 namespace='molo.commenting',
                 app_name='molo.commenting')),
-    
+
     url(r'^polls/',
         include('molo.polls.urls',
                 namespace='molo.polls',
