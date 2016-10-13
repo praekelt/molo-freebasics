@@ -155,7 +155,7 @@
   {% block footer %}
   <div class="block-footer no-fb-body">
     <p>&copy; 2016 <span id="printsitelabel2"><strong>{% get_site_name %}</strong></span> | All rights reserved.</p>
-    {% if languages %}
+    {% if languages|length > 1 %}
       <strong>{% trans "Site Language:" %}</strong>
       {% get_current_language as LANGUAGE_CODE %}
       {% for language in languages %}
