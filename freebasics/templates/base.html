@@ -162,6 +162,7 @@
         <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" {% if LANGUAGE_CODE == language.locale %} class="active" {% endif %}>{{language}}</a>&nbsp;
       {% endfor %}
     {% endif %}
+
     {% footer_page %}
   </div>
   {% endblock %}
