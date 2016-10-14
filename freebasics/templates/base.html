@@ -3,7 +3,7 @@
 {% load wagtailsettings_tags wagtailimages_tags %}
 {% load google_analytics_tags %}
 {% get_settings %}
-
+{% get_static_prefix as STATIC_PREFIX %}
 <!DOCTYPE html>
 <html class="template-base">
 <head>
@@ -26,9 +26,8 @@
 
   <!-- Base Bemplate style -->
   {% compress css %}
-   <link rel="stylesheet" type="text/x-scss" href="{% static 'css/style.scss' %}">
+   <link rel="stylesheet" type="text/x-scss" href="{{ STATIC_PREFIX }}css/{{ ENV }}/style.css %}">
   {% endcompress %}
-
   {% block extra_css %}{% endblock %}
   {% custom_css %}
   <!-- Google Fonts -->
@@ -106,7 +105,7 @@
             <img src="{% google_analytics settings.core.SiteSettings.local_ga_tracking_code %}" width="0" height="0" />
         </div>
         <!-- Local End Google Tracking Code -->
-  {% endif %} 
+  {% endif %}
   {% wagtailuserbar %}
 
   <div class="header">

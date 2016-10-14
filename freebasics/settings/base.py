@@ -127,6 +127,7 @@ TEMPLATES = [
                 'molo.core.context_processors.locale',
                 'molo.profiles.context_processors.get_profile_data',
                 'wagtail.contrib.settings.context_processors.settings',
+                'freebasics.processors.env',
             ],
             'builtins': ['overextends.templatetags.overextends_tags'],
         },
