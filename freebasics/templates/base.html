@@ -1,9 +1,7 @@
 {% load wagtailcore_tags compress static wagtailuserbar core_tags freebasics_tags i18n %}
-{% load static from staticfiles %}
 {% load wagtailsettings_tags wagtailimages_tags %}
 {% load google_analytics_tags %}
 {% get_settings %}
-
 <!DOCTYPE html>
 <html class="template-base">
 <head>
@@ -23,14 +21,27 @@
   {% image self.social_media_image width-300 as tmp_photo %}
   <meta property="og:image" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
   <meta property="og:image:url" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
-
   <!-- Base Bemplate style -->
   {% compress css %}
-   <link rel="stylesheet" type="text/x-scss" href="{% static 'css/style.scss' %}">
+   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/style.css">
   {% endcompress %}
+  <script type="text/javascript">
+    var CutsTheMustard = 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window,
+        LargeScreen = ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) >= 200);
 
+    var smartStyles = '{% spaceless %}
+     {% compress css %}
+       <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/enhanced.css">
+     {% endcompress %}
+    {% endspaceless %}';
+    if(CutsTheMustard === true) {
+    if(LargeScreen) {
+      document.write(smartStyles);
+      }
+    }
+    </script>
   {% block extra_css %}{% endblock %}
-  {% custom_css %}
+  <noscript>Your browser does not support JavaScript!</noscript>
   <!-- Google Fonts -->
   <script src="{% static 'js/webfont.js' %}"></script>
 
@@ -65,10 +76,6 @@
               loadJS( "{% static 'js/main.js' %}" );
             }
             </script>
-
-      {% compress css file enhanced %}
-        <link rel="stylesheet" type="text/x-scss" href="{% static 'css/enhanced.scss' %}">
-      {% endcompress %}
 </head>
 
 <body>
@@ -106,7 +113,7 @@
             <img src="{% google_analytics settings.core.SiteSettings.local_ga_tracking_code %}" width="0" height="0" />
         </div>
         <!-- Local End Google Tracking Code -->
-  {% endif %} 
+  {% endif %}
   {% wagtailuserbar %}
 
   <div class="header">
