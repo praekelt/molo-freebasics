@@ -11,8 +11,8 @@ var gulp              =   require('gulp'),
     livereload        =   require('gulp-livereload');
 
 var sassPaths = [
-    'freebasics/styles/enhanced.scss',
     'freebasics/styles/style.scss',
+    'freebasics/styles/enhanced.scss',
 ];
 
 var sassDest = {

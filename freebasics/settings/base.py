@@ -31,6 +31,7 @@ SECRET_KEY = "+qjha14e^w1+41tqi$fhc=y(%iijt&q)0mw@kze!ewz)7($#4#"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ENV = 'dev'
 
 ALLOWED_HOSTS = ['*']
 
@@ -127,7 +128,7 @@ TEMPLATES = [
                 'molo.core.context_processors.locale',
                 'molo.profiles.context_processors.get_profile_data',
                 'wagtail.contrib.settings.context_processors.settings',
-                'freebasics.processors.env',
+                'freebasics.processors.compress_settings',
             ],
             'builtins': ['overextends.templatetags.overextends_tags'],
         },
