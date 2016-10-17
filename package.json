@@ -15,9 +15,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watch": "^4.3.9"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/praekelt/molo-freebasics.git"
