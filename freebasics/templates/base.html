@@ -23,10 +23,12 @@
   <meta property="og:image" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
   <meta property="og:image:url" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
 
-  <!-- Base Bemplate style -->
+  <!-- Base Bemplate style
+  Type = needs to be x-scss to be compiled
+ -->
   {% compress css %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/style.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/enhanced.css">
+    <link rel="stylesheet" type="text/x-scss" href="{{ STATIC_URL }}css/{{ ENV }}/style.css">
+    <link rel="stylesheet" type="text/x-scss" href="{{ STATIC_URL }}css/{{ ENV }}/enhanced.css">
   {% endcompress %}
 
   {% block extra_css %}{% endblock %}
