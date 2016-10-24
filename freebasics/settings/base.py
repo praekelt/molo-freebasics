@@ -110,7 +110,8 @@ MIDDLEWARE_CLASSES = [
     'wagtailmodeladmin.middleware.ModelAdminMiddleware',
 
     'molo.core.middleware.AdminLocaleMiddleware',
-    'molo.core.middleware.NoScriptGASessionMiddleware'
+    'molo.core.middleware.NoScriptGASessionMiddleware',
+    'molo.core.middleware.MoloGoogleAnalyticsMiddleware'
 ]
 
 TEMPLATES = [
@@ -137,6 +138,26 @@ TEMPLATES = [
 ROOT_URLCONF = 'freebasics.urls'
 WSGI_APPLICATION = 'freebasics.wsgi.application'
 
+
+# Google analytics
+
+GOOGLE_ANALYTICS = {
+    'google_analytics_id': None,
+}
+
+GOOGLE_ANALYTICS_IGNORE_PATH = [
+    # health check used by marathon
+    '/health/',
+    # admin interfaces for wagtail and django
+    '/admin/', '/django-admin/',
+    # Universal Core content import URL
+    '/import/',
+    # browser troll paths
+    '/favicon.ico', '/robots.txt',
+    # when using nginx, we handle statics and media
+    # but including them here just incase
+    '/media/', '/static/',
+]
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
