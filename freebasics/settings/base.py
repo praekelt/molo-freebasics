@@ -141,10 +141,7 @@ WSGI_APPLICATION = 'freebasics.wsgi.application'
 
 # Google analytics
 
-GOOGLE_ANALYTICS = {
-    'google_analytics_id': None,
-}
-
+GOOGLE_ANALYTICS = {}
 GOOGLE_ANALYTICS_IGNORE_PATH = [
     # health check used by marathon
     '/health/',
@@ -158,6 +155,12 @@ GOOGLE_ANALYTICS_IGNORE_PATH = [
     # but including them here just incase
     '/media/', '/static/',
 ]
+
+CUSTOM_GOOGLE_ANALYTICS_IGNORE_PATH = environ.get(
+    'GOOGLE_ANALYTICS_IGNORE_PATH')
+if CUSTOM_GOOGLE_ANALYTICS_IGNORE_PATH:
+    GOOGLE_ANALYTICS_IGNORE_PATH += [
+        d.strip() for d in CUSTOM_GOOGLE_ANALYTICS_IGNORE_PATH.split(',')]
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -181,7 +184,7 @@ DATABASES = {'default': dj_database_url.config(
 #     }
 # }
 
-CELERY_IMPORTS = ('molo.core.tasks')
+CELERY_IMPORTS = ('molo.core.tasks', 'google_analytics.tasks')
 BROKER_URL = environ.get('BROKER_URL', 'redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = environ.get(
     'CELERY_RESULT_BACKEND', 'redis://localhost:6379/0')
