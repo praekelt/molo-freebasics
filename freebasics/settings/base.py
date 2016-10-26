@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     'molo.surveys',
     'molo.profiles',
     'molo.commenting',
+    'molo.yourwords',
     'django_comments',
     'raven.contrib.django.raven_compat',
     'molo.polls',
@@ -110,7 +111,8 @@ MIDDLEWARE_CLASSES = [
     'wagtailmodeladmin.middleware.ModelAdminMiddleware',
 
     'molo.core.middleware.AdminLocaleMiddleware',
-    'molo.core.middleware.NoScriptGASessionMiddleware'
+    'molo.core.middleware.NoScriptGASessionMiddleware',
+    'molo.core.middleware.MoloGoogleAnalyticsMiddleware'
 ]
 
 TEMPLATES = [
@@ -138,6 +140,29 @@ ROOT_URLCONF = 'freebasics.urls'
 WSGI_APPLICATION = 'freebasics.wsgi.application'
 
 
+# Google analytics
+
+GOOGLE_ANALYTICS = {}
+GOOGLE_ANALYTICS_IGNORE_PATH = [
+    # health check used by marathon
+    '/health/',
+    # admin interfaces for wagtail and django
+    '/admin/', '/django-admin/',
+    # Universal Core content import URL
+    '/import/',
+    # browser troll paths
+    '/favicon.ico', '/robots.txt',
+    # when using nginx, we handle statics and media
+    # but including them here just incase
+    '/media/', '/static/',
+]
+
+CUSTOM_GOOGLE_ANALYTICS_IGNORE_PATH = environ.get(
+    'GOOGLE_ANALYTICS_IGNORE_PATH')
+if CUSTOM_GOOGLE_ANALYTICS_IGNORE_PATH:
+    GOOGLE_ANALYTICS_IGNORE_PATH += [
+        d.strip() for d in CUSTOM_GOOGLE_ANALYTICS_IGNORE_PATH.split(',')]
+
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
@@ -160,7 +185,7 @@ DATABASES = {'default': dj_database_url.config(
 #     }
 # }
 
-CELERY_IMPORTS = ('molo.core.tasks')
+CELERY_IMPORTS = ('molo.core.tasks', 'google_analytics.tasks')
 BROKER_URL = environ.get('BROKER_URL', 'redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = environ.get(
     'CELERY_RESULT_BACKEND', 'redis://localhost:6379/0')
@@ -448,3 +473,8 @@ EMAIL_HOST = environ.get('EMAIL_HOST', 'localhost')
 EMAIL_PORT = environ.get('EMAIL_PORT', 25)
 EMAIL_HOST_USER = environ.get('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = environ.get('EMAIL_HOST_PASSWORD', '')
+
+CSRF_FAILURE_VIEW = 'molo.core.views.csrf_failure'
+
+FREE_BASICS_URL_FOR_CSRF_MESSAGE = environ.get(
+    'FREE_BASICS_URL_FOR_CSRF_MESSAGE', '')

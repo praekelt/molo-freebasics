@@ -12,7 +12,7 @@ from wagtail.wagtailcore import urls as wagtail_urls
 from django.views.generic import TemplateView
 
 
-from .views import (search, HomeView, FreeBasicsRegistrationView,
+from .views import (HomeView, FreeBasicsRegistrationView,
                     FreeBasicsProfilePasswordChangeView)
 
 # implement CAS URLs in a production setting
@@ -31,7 +31,6 @@ urlpatterns += patterns(
     url(r'^django-admin/', include(admin.site.urls)),
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
-    url(r'search/$', search, name='search'),
     url(
         r'^profiles/register/$',
         FreeBasicsRegistrationView.as_view(),
@@ -45,10 +44,16 @@ urlpatterns += patterns(
                 namespace='molo.profiles',
                 app_name='molo.profiles')),
 
-    url(r'^comments/',
-        include('molo.commenting.urls',
-                namespace='molo.commenting',
-                app_name='molo.commenting')),
+    url(r'^commenting/', include('molo.commenting.urls',
+        namespace='molo.commenting',
+        app_name='molo.commenting')),
+
+    url(r'', include('django_comments.urls')),
+
+    url(r'^yourwords/',
+        include('molo.yourwords.urls',
+                namespace='molo.yourwords',
+                app_name='molo.yourwords')),
 
     url(r'^polls/',
         include('molo.polls.urls',

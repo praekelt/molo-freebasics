@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-12 09:03+0000\n"
+"POT-Creation-Date: 2016-10-26 11:05+0200\n"
 "PO-Revision-Date: 2016-07-12 09:03+0000\n"
 "Last-Translator: Anonymous Pootle User\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,100 +39,104 @@ msgstr ""
 msgid "New passwords do not match."
 msgstr ""
 
-#: freebasics/settings/base.py:188
+#: freebasics/settings/base.py:217
 msgid "Zulu"
 msgstr ""
 
-#: freebasics/settings/base.py:189
+#: freebasics/settings/base.py:218
 msgid "Xhosa"
 msgstr ""
 
-#: freebasics/settings/base.py:190
+#: freebasics/settings/base.py:219
 msgid "Sotho"
 msgstr ""
 
-#: freebasics/settings/base.py:191
+#: freebasics/settings/base.py:220
 msgid "Venda"
 msgstr ""
 
-#: freebasics/settings/base.py:192
+#: freebasics/settings/base.py:221
 msgid "Tswana"
 msgstr ""
 
-#: freebasics/settings/base.py:193
+#: freebasics/settings/base.py:222
 msgid "Tsonga"
 msgstr ""
 
-#: freebasics/settings/base.py:194
+#: freebasics/settings/base.py:223
 msgid "Swati"
 msgstr ""
 
-#: freebasics/settings/base.py:195
+#: freebasics/settings/base.py:224
 msgid "Ndebele"
 msgstr ""
 
-#: freebasics/settings/base.py:196
+#: freebasics/settings/base.py:225
 msgid "Wolof"
 msgstr ""
 
-#: freebasics/settings/base.py:197
+#: freebasics/settings/base.py:226
 msgid "Yoruba"
 msgstr ""
 
-#: freebasics/settings/base.py:198
+#: freebasics/settings/base.py:227
 msgid "Igbo"
 msgstr ""
 
-#: freebasics/settings/base.py:199
+#: freebasics/settings/base.py:228
 msgid "Hausa"
 msgstr ""
 
-#: freebasics/settings/base.py:200
+#: freebasics/settings/base.py:229
 msgid "Amharic"
 msgstr ""
 
-#: freebasics/settings/base.py:201
+#: freebasics/settings/base.py:230
 msgid "Malay"
 msgstr ""
 
-#: freebasics/settings/base.py:202
+#: freebasics/settings/base.py:231
 msgid "Guarani"
 msgstr ""
 
-#: freebasics/settings/base.py:203
+#: freebasics/settings/base.py:232
 msgid "Gujarati"
 msgstr ""
 
-#: freebasics/settings/base.py:204
+#: freebasics/settings/base.py:233
 msgid "Filipino"
 msgstr ""
 
-#: freebasics/settings/base.py:205
+#: freebasics/settings/base.py:234
 msgid "N'ko"
 msgstr ""
 
-#: freebasics/settings/base.py:206
+#: freebasics/settings/base.py:235
 msgid "Syriac"
 msgstr ""
 
-#: freebasics/settings/base.py:207
+#: freebasics/settings/base.py:236
 msgid "Dhivehi"
 msgstr ""
 
-#: freebasics/settings/base.py:208
+#: freebasics/settings/base.py:237
 msgid "Berber"
 msgstr ""
 
-#: freebasics/settings/base.py:209
+#: freebasics/settings/base.py:238
 msgid "Kurdish"
 msgstr ""
 
-#: freebasics/settings/base.py:210
+#: freebasics/settings/base.py:239
 msgid "Aramaic"
 msgstr ""
 
-#: freebasics/settings/base.py:211
+#: freebasics/settings/base.py:240
 msgid "Creole Haitian"
+msgstr ""
+
+#: freebasics/settings/base.py:241
+msgid "Chichewa"
 msgstr ""
 
 #: freebasics/templates/403.html:6
@@ -143,6 +147,26 @@ msgstr ""
 msgid ""
 "The user you are currently logged in as does not have permssion to access "
 "this site."
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:9
+msgid "Unable to Login"
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:12
+msgid "Hi"
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:13
+msgid ""
+"Sorry, you are having trouble accessing this feature! Due to a temporary "
+"technical issue, login and registrations are not available on the Free "
+"Basics app for now. To login or register for a profile, visit our free "
+"mobisite through your mobile browser at"
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:13
+msgid " We're working hard to get this problem resolved. Thank you."
 msgstr ""
 
 #: freebasics/templates/404.html:7
@@ -175,46 +199,46 @@ msgstr ""
 msgid "Import content from a Universal Core site"
 msgstr ""
 
-#: freebasics/templates/admin/versions.html:13
+#: freebasics/templates/admin/versions.html:7
 msgid "Plugin"
 msgstr ""
 
-#: freebasics/templates/admin/versions.html:14
+#: freebasics/templates/admin/versions.html:8
 msgid "PyPI Version"
 msgstr ""
 
-#: freebasics/templates/admin/versions.html:15
+#: freebasics/templates/admin/versions.html:9
 msgid "Runing Version"
 msgstr ""
 
-#: freebasics/templates/admin/versions.html:16
+#: freebasics/templates/admin/versions.html:10
 msgid "Status"
 msgstr ""
 
-#: freebasics/templates/admin/versions.html:24
+#: freebasics/templates/admin/versions.html:18
 msgid "UpToDate"
 msgstr ""
 
-#: freebasics/templates/admin/versions.html:27
+#: freebasics/templates/admin/versions.html:21
 msgid "Not installed"
 msgstr ""
 
-#: freebasics/templates/admin/versions.html:29
+#: freebasics/templates/admin/versions.html:23
 msgid "Compare"
 msgstr ""
 
-#: freebasics/templates/base.html:101
+#: freebasics/templates/base.html:112
 msgid "Menu"
 msgstr ""
 
-#: freebasics/templates/base.html:107
+#: freebasics/templates/base.html:118
 #: freebasics/templates/core/tags/breadcrumbs.html:6
 #: freebasics/templates/polls/detail.html:6
 #: freebasics/templates/polls/results.html:6
 msgid "Home"
 msgstr ""
 
-#: freebasics/templates/base.html:137
+#: freebasics/templates/base.html:148
 msgid "Site Language:"
 msgstr ""
 
@@ -265,11 +289,15 @@ msgstr ""
 msgid "Back to article"
 msgstr ""
 
-#: freebasics/templates/comments/form.html:7
-msgid "Please correct the error below"
+#: freebasics/templates/comments/form.html:6
+msgid ""
+"\n"
+"          Please correct the error below\n"
+"          "
 msgid_plural ""
-"Please correct the\n"
-"        errors below"
+"\n"
+"            Please correct the errors below\n"
+"          "
 msgstr[0] ""
 msgstr[1] ""
 
@@ -304,8 +332,12 @@ msgstr ""
 
 #: freebasics/templates/core/section_page.html:30
 #: freebasics/templates/core/tags/latest_listing_homepage.html:20
-#: freebasics/templates/core/tags/section_listing_homepage.html:22
+#: freebasics/templates/core/tags/section_listing_homepage.html:21
 msgid "Read More"
+msgstr ""
+
+#: freebasics/templates/core/tags/topic_of_the_day.html:5
+msgid "Topic of the Day"
 msgstr ""
 
 #: freebasics/templates/polls/detail.html:32
@@ -319,7 +351,7 @@ msgid "Submit"
 msgstr ""
 
 #: freebasics/templates/polls/includes/poll_free_text_form.html:22
-msgid "Thank you! Your repsonse has already been submitted."
+msgid "Thank you! Your response has already been submitted."
 msgstr ""
 
 #: freebasics/templates/polls/includes/poll_free_text_form.html:26
@@ -335,7 +367,7 @@ msgstr ""
 msgid "You voted: "
 msgstr ""
 
-#: freebasics/templates/polls/poll_page.html:6
+#: freebasics/templates/polls/poll_page.html:7
 #: freebasics/templates/polls/poll_page_in_section.html:6
 #: freebasics/templates/polls/question.html:6
 #: freebasics/templates/polls/results.html:30

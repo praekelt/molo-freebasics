@@ -1,7 +1,8 @@
-molo.core==3.4.2
-molo.profiles==1.0.0
-molo.commenting==0.5.4
-molo.polls==2.0.2
+molo.core==3.12.0
+molo.profiles==1.3.3
+molo.commenting==1.0.0
+molo.yourwords==1.2.1
+molo.polls==2.2.1
 molo.surveys==1.1.0
 django-contrib-comments
 django-overextends
