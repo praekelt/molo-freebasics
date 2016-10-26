@@ -2,12 +2,13 @@
 {% extends "base.html" %}
 
 {% load static core_tags molo_survey_tags %}
-{% load wagtailcore_tags wagtailimages_tags poll_votings i18n %}
+{% load wagtailcore_tags wagtailimages_tags poll_votings competition_tag i18n %}
 
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
 
+{% your_words_competition_in_section self %}
 <div class="block-category fb-body fb-card {self.get_effective_extra_style_hints}}">
   <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
   <ul class="list-block">
