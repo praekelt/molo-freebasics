@@ -44,10 +44,11 @@ urlpatterns += patterns(
                 namespace='molo.profiles',
                 app_name='molo.profiles')),
 
-    url(r'^comments/',
-        include('molo.commenting.urls',
-                namespace='molo.commenting',
-                app_name='molo.commenting')),
+    url(r'^commenting/', include('molo.commenting.urls',
+        namespace='molo.commenting',
+        app_name='molo.commenting')),
+
+    url(r'', include('django_comments.urls')),
 
     url(r'^yourwords/',
         include('molo.yourwords.urls',
