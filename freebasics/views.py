@@ -16,6 +16,8 @@ class HomeView(TemplateView):
             ('blocks/latest.html', settings.BLOCK_POSITION_LATEST),
             ('blocks/questions.html', settings.BLOCK_POSITION_QUESTIONS),
             ('blocks/sections.html', settings.BLOCK_POSITION_SECTIONS),
+            ('blocks/topic_of_the_day.html',
+                settings.BLOCK_POSITION_TOPIC_OF_THE_DAY),
         ]
         blocks.sort(key=lambda tup: tup[1])
         context.update({
