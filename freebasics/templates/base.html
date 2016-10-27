@@ -23,7 +23,7 @@
   <meta property="og:image" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
   <meta property="og:image:url" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
   {% compress css %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/style.css">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'css/style.scss' %}">
   {% endcompress %}
   {% block extra_css %}{% endblock %}
   <!-- Google Fonts -->
@@ -34,7 +34,7 @@
 
       var smartStyles = '{% spaceless %}
         {% compress css %}
-         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/enhanced.css">
+         <link rel="stylesheet" type="text/x-scss" href="{% static 'css/enhanced.scss' %}">
         {% endcompress %}
       {% endspaceless %}';
 
