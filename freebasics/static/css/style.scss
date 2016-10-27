@@ -1,0 +1,67 @@
+@import "variables/_variables";
+
+@import "_base";
+@import "layout/_layout";
+@import "modules/_modules";
+@import "state/_state";
+@import "versions";
+
+
+
+/* TODO: Remove this. */
+.row:after, .row:before, .container-fluid:after, .container-fluid:before{
+  display: table;
+  content: " ";
+}
+
+/* TODO: This is terrible?! */
+p,h6{
+  margin: 0
+}
+h6{
+  font-size:13px;
+}
+
+.fb-card{
+  margin: 7px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.no-fb-card{
+  background-color: #fff;
+}
+
+.active {
+  color: #696969;
+  text-decoration: underline;
+}
+
+
+/*default colors*/
+.base-bcolor{
+  background-color: #efefef;
+}
+.fb-body .block-heading{
+  background-color: #dfdfdf;
+  border-radius: 3px 3px 0 0;
+}
+.fb-body .block-heading-sub-cat{
+  border: 1px solid;
+  border-radius: 0;
+}
+.fb-body .fb-accent-1{
+  color: #69269d;
+}
+.fb-body .fb-accent-2{
+  color: #c736c0;
+}
+.no-underline{
+  text-decoration: none;
+}
+
+.padding15{
+  padding: 15px;
+}
+.padding-no-top{
+  padding: 0px 15px 15px 15px;
+}
