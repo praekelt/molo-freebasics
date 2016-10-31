@@ -26,6 +26,7 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/style.css">
   {% endcompress %}
   {% block extra_css %}{% endblock %}
+  {% custom_css %}
   <!-- Google Fonts -->
   <script src="{{ STATIC_URL }}js/webfont.js"></script>
   <script type="text/javascript">
