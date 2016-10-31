@@ -33,3 +33,9 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
             styles = freebasics_tags.custom_css(context='')
             self.assertEquals(styles['accent_2'], 'red')
             self.assertEquals(styles['text_transform'], 'lowercase')
+
+    def test_custom_css(self):
+        response = self.client.get('/')
+        self.assertContains(response, '.fb-body .base-bcolor')
+        self.assertContains(response, '.fb-body .block-heading')
+        self.assertContains(response, '.section-nav__items')
