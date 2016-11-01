@@ -36,6 +36,7 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
 
     def test_custom_css(self):
         response = self.client.get('/')
+        self.assertContains(response, 'Free Basics Custom CSS')
         self.assertContains(response, '.fb-body .base-bcolor')
         self.assertContains(response, '.fb-body .block-heading')
         self.assertContains(response, '.section-nav__items')
