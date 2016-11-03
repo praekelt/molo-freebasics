@@ -11,6 +11,13 @@
         <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ bannerpage.banner.title }}"/>
       </a>
     </div>
+     {% elif bannerpage.external_link %}
+          <div class="fb-card banner-container">
+      <a href="{{ bannerpage.external_link }}">
+        {% image bannerpage.banner width-320 as tmp_photo %}
+        <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ bannerpage.banner.title }}"/>
+      </a>
+    </div>
     {% else %}
               <div class="fb-card banner-container">
         {% image bannerpage.banner width-320 as tmp_photo %}
