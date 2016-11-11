@@ -1,5 +1,5 @@
 molo.core==3.12.3
-molo.profiles==1.3.3
+molo.profiles==1.3.5
 molo.commenting==1.0.0
 molo.yourwords==1.2.1
 molo.polls==2.2.1
