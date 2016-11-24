@@ -1,13 +1,17 @@
-
-.comments-count{
+.comments-counter--heading {
+  padding: 0 15px;
+}
+.comments-count {
   padding-bottom:10px;
 }
-.breadcrumbs{
-  padding: 5px 15px 0px 15px;
-  font-size: 12px;
-  text-decoration: none;
+
+.post-comment {
+  padding: 0 15px;
+  p{
+    padding: 0;
+  }
 }
 
-.post-comment p{
-  padding: 0;
+.comment-form {
+  padding: 0 15px;
 }

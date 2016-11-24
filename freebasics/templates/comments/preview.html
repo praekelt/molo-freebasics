@@ -28,14 +28,11 @@
   </ul>
   {% endif %}
     <div class="block-comments">
-      <div class="padding15">
-
       {% if request.user.is_authenticated %}
         {% include "comments/form.html" with node=comment %}
       {% else %}
         <p>{% trans "Please " %}<a href="{% url 'molo.profiles:auth_login' %}">{% trans "log in" %}</a>{% trans " to leave a comment." %}</p>
       {% endif %}
-		</div>
 		</div>
 </div>
 {% endblock %}
