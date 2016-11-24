@@ -1,3 +1,58 @@
+.profile {
+  .block-heading  {
+    text-transform: capitalize;
+  }
+  .label-wide {
+    display: block;
+  }
+  .btn-wide,
+  .btn-wide input[type="button"] {
+    width: 95%;
+    display: block;
+    margin: 10px 0;
+  }
+
+  .signin-form p {
+    padding-bottom: 10px;
+  }
+}
+
+.profile--view-edit {
+  .btn-wide,
+  .btn-wide input[type="button"] {
+    margin: 10px auto;
+  }
+}
+.call-to-action__text-item {
+  text-transform: capitalize;
+}
+
+.call-to-action__text-item,
+.call-to-action__item--forgotten-pass {
+  font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+    &:before { text-decoration: none !important; }
+  }
+}
+
+.call-to-action__text-item--dir-left {
+  display: inline-block;
+  &:before {
+    content: "";
+    padding-right: 10px;
+    text-decoration: none !important;
+    @media only screen and (min-width: 320px) {
+      content: "<";
+    }
+    @media only screen and (min-width: 490px) {
+       content: "❮";
+    }
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}
 
 .profile-icon{
   padding: 10px 10px 0px 10px;

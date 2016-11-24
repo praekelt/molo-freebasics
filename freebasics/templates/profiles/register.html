@@ -2,6 +2,7 @@
 {% load i18n static core_tags %}
 
 {% block content %}
+<div class="profile">
 <div class="block-default fb-body fb-card">
     <h6 class="block-heading fb-accent-1">{% trans "Join" %}</h6>
     <div class="signin-form padding15 fb-body">
@@ -41,8 +42,9 @@
 
           <input type="submit" class="flatbutton fb-accent-1" value='{% trans "JOIN" %}' />
           <input type="hidden" name="next" value="{% url 'molo.profiles:registration_done' %}" />
-          <a href="{% url 'molo.profiles:auth_login' %}" class="button inverted">{% trans "already joined?" %}</a>
+          <a href="{% url 'molo.profiles:auth_login' %}" class="call-to-action__text-item">{% trans "already joined?" %}</a>
       </form>
     </div>
+  </div>
   </div>
 {% endblock %}

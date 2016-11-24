@@ -15,12 +15,12 @@
 
 .call-to-action__nav-item,
 .flatbutton-input {
-  text-transform: uppercase;
+  text-transform: capitalize;;
   border-radius: 3px;
   display:inline;
   cursor:pointer;
   font-size: 12px;
-  padding: 8px 22px;
+  padding: 10px 22px;
   text-decoration:none;
   border: 15px;
   text-align: center;
