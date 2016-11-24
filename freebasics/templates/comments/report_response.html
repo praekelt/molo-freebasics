@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags comments mptt_tags molo_commenting_tags i18n %}
+
 {% block content %}
-
-
-<div class="nav {{article.get_parent_section.get_effective_extra_style_hints}}">
-  <div class="article-copy">
-    <p><strong>{% trans "Thanks!" %}</strong></p>
+<div class="comment-heading comment-heading--{{article.get_parent_section.get_effective_extra_style_hints}}">
+    <h3 class="heading heading--comment-feedback">{% trans "Thanks!" %}</h3>
     <p><strong>{% trans "This comment has been reported." %}</strong></p>
     <p>{% trans "It will be reviewed by the team and may be removed if it breaks our Platform rules" %}</p>
-  </div>
-  <a href="{% pageurl article %}" class="call-to-action__nav-item call-to-action__nav-item--back-home">{% trans "Back to article" %}</a>
 </div>
+  <a href="{% pageurl article %}" class="call-to-action__nav-item call-to-action__nav-item--back-home">{% trans "Back to article" %}</a>
 {% endblock %}

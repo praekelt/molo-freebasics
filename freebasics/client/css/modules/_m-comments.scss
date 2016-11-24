@@ -6,12 +6,28 @@
 }
 
 .post-comment {
-  padding: 0 15px;
   p{
     padding: 0;
   }
 }
 
-.comment-form {
+.comment-form,
+.comment-heading {
   padding: 0 15px;
+}
+
+.heading--comment-feedback {
+  font-size: 16px;
+  margin: 10px 0 10px;
+}
+
+.comments-list {
+  padding: 30px 0 10px;
+  .comment p{
+    margin: 10px 0;
+  }
+}
+
+.comments-list__all {
+  padding: 10px 15px 10px;
 }
