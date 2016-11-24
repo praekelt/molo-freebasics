@@ -14,13 +14,8 @@
 }
 
 .surveys {
-  input[type="text"] {
-    width: 90%;
-    padding: 6px 5px;
-  }
   input[type="submit"],
-  .call-to-action__nav-item--surveys,
-  .call-to-action__nav-item--back-home {
+  .call-to-action__nav-item--surveys {
     background: transparent;
     color: #000;
     text-decoration: underline;
@@ -31,7 +26,7 @@
     border-radius: 3px;
     font-size: $font-x-small;
     text-transform: uppercase;
-    width: auto; 
+    width: auto;
     text-align: left;
   }
 }

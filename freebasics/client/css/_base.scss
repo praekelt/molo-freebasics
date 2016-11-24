@@ -26,11 +26,26 @@ fieldset {
   }
 }
 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="url"] {
+  padding: 8px 15px;
+  width: 90%;
+}
+
 textarea {
   padding: 5px;
   width: 95%;
 }
 
+select {
+  height: 25px;
+}
 input[type="submit"] {
   display: block;
   margin: 10px 0;
