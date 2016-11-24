@@ -26,6 +26,18 @@ fieldset {
   }
 }
 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="url"] {
+  padding: 10px 5px;
+  width: 90%;
+}
+
 textarea {
   padding: 5px;
   width: 95%;
