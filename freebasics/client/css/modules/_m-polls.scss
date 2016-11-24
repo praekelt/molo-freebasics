@@ -1,24 +1,31 @@
-.block-poll .form-group {
-  padding: 0px 15px 15px 15px;
-  margin-bottom: 0;
-}
-.block-poll p {
-  font-size: 12px;
-  line-height: 15px;
+
+.polls-form {
+  padding: 0 15px;
+  .call-to-action__nav-item {
+    margin: 10px 15px 10px 0;
+  }
 }
 .post-comment textarea {
   box-sizing: border-box;
   width: 100%;
 }
+
 .block-poll ul {
   list-style: none;
   margin:0;
   padding:0;
+  li {
+    border-bottom: 1px solid #eeeeee;
+  }
+  li:last-child {
+    border-bottom: none;
+  }
+  p {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
-.block-poll li {
-  border-bottom: 1px solid #eeeeee;
-  padding: 15px 15px;
-}
-.block-poll li:last-child {
-  border-bottom: none;
+
+.poll-feedback {
+  padding-bottom: 10px;
 }

@@ -27,9 +27,11 @@
 			</div>
 		{% else %}
     <div class="block-poll fb-body">
-  			<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
-			<h4 class="padding-no-top">{% trans "Thank you for voting!" %}</h4>
+  		<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
+			<h4>{% trans "Thank you for voting!" %}</h4>
     </div>
 		{% endif %}
+  <a href="/" class="call-to-action__text-item">{% trans 'Back to home page' %}</a>
 	</div>
+
 {% endblock %}

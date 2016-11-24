@@ -13,7 +13,7 @@
 
 	<h6 class="block-heading fb-accent-1">{{ question.title }}</h6>
 		{% if form.choice.errors %}<h6 class="sub-heading">{{form.choice.errors|join:", " }}</h6>{% endif %}
-		<form action="{% url 'molo.polls:vote' question.id %}" method="post">
+		<form action="{% url 'molo.polls:vote' question.id %}" method="post" class="polls-form">
 			{% csrf_token %}
       {% load_choices_for_poll_page question as choices %}
 			{% for choice in choices %}
@@ -28,9 +28,9 @@
 					{% endif %}
 				</div>
 			{% endfor %}
-			<div class="button-div">
-				<input type="submit" value="{% trans "Vote" %}" class="flatbutton-input fb-accent-1"/>
-			</div>
+
+				<input type="submit" value="{% trans "Vote" %}"/>
+	
       <br/>
 		</form>
 	</div>

@@ -15,28 +15,18 @@
 
 .call-to-action__nav-item,
 .flatbutton-input {
-  text-transform: capitalize;;
   border-radius: 3px;
-  display:inline;
+  display: inline-block;
   cursor:pointer;
   font-size: 12px;
   padding: 10px 22px;
   text-decoration:none;
   border: 15px;
   text-align: center;
+  margin: 10px 15px 10px 22px; //This is for home page
   &:hover {
     color: $blue;
   }
-}
-
-.flatbutton-input:active {
-  position:relative;
-  top:1px;
-}
-
-.flatbutton:active {
-  position:relative;
-  top:1px;
 }
 
 .call-to-action__text-item--dir-left,

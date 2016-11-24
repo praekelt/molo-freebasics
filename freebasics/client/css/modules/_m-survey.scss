@@ -1,3 +1,9 @@
+
+.surveys__form {
+  padding: 0 10px 10px 20px;
+  border-bottom: 1px solid $dove_gray;
+}
+
 .surveys__title {
   background-color: #dfdfdf;
   border-radius: 3px 3px 0px 0px;
@@ -5,35 +11,13 @@
   padding: 10px 15px;
   font-size: $font-small;
   margin: 5px 7px;
-
 }
 
 .surveys__intro {
   padding: 0 15px;
-  font-weight: normal;
-}
-
-.surveys {
-  input[type="submit"],
-  .call-to-action__nav-item--surveys {
-    background: transparent;
-    color: #000;
-    text-decoration: underline;
-    padding: 10px;
-    word-break: keep-all;
-    display: inline-block;
-    border: none;
-    border-radius: 3px;
-    font-size: $font-x-small;
-    text-transform: uppercase;
-    width: auto;
-    text-align: left;
-  }
-}
-
-.surveys__form {
-  padding: 0 0 15px;
-  border-bottom: 1px solid $dove_gray;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 10px 7px;
 }
 
 p.error--surveys {

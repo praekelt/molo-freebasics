@@ -1,7 +1,7 @@
 {% load i18n static poll_votings %}
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-<form action="{% url 'molo.polls:free_text_vote' question.id %}" method="post" class="free-text-form">
+<form action="{% url 'molo.polls:free_text_vote' question.id %}" method="post" class="free-text-form polls-form">
   {% csrf_token %}
   {% if request.user.is_authenticated %}
     {% can_vote question as user_can_vote %}
@@ -14,17 +14,15 @@
       {% endif %}
       <br>
       <br>
-      <div class="button-div">
         <input type="submit" value="{% trans "Submit" %}" class="flatbutton-input fb-accent-1"/>
-      </div>
     </div>
     {% else %}
-      <p class="padding-no-top">{% trans "Thank you! Your response has already been submitted." %}<p>
+    <div class="poll-feedback">
+      <p>{% trans "Thank you! Your response has already been submitted." %}<p>
+    </div>
     {% endif %}
   {% else %}
-  <div class="button-div">
-    <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="flatbutton-input fb-accent-1">{% trans "Log in to vote" %}</a>
-  </div>
+    <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="call-to-action__nav-item">{% trans "Log in to vote" %}</a>
   {% endif %}
 
 </form>

@@ -1,26 +1,14 @@
-.signin-form form {
-  padding-top:10px;
-}
-.signin-form p {
-  padding-bottom:5px;
-}
-.signin-form a {
-  font-size:12px;
-}
-.signin-form input[type="text"],
-.signin-form input[type="password"],
-.signin-form input[type="email"],
-.signin-form input[type="tel"]{
-  box-shadow:none;
-  margin-bottom:15px;
-  border: 1px solid #eeeeee;
-}
-
-.free-text-form input[type="text"],
-.free-text-form input[type="number"],
-.free-text-form input[type="email"] {
-  width:100%;
-  height: 2em;
+.signin-form  {
+  padding: 10px;
+  form {
+    padding-top:10px;
+  }
+  p {
+    padding-bottom:5px;
+  }
+  a {
+    font-size:12px;
+  }
 }
 
 .step-links a {

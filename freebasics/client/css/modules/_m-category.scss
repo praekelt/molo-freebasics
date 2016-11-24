@@ -10,6 +10,12 @@
   text-transform: capitalize;
 }
 
+.block-poll {
+  .sub-heading{
+    padding: 15px 15px 10px;
+  }
+}
+
 .see-more{
   text-decoration: none;
   text-transform: capitalize;
@@ -23,7 +29,7 @@
   text-decoration: underline;
 }
 .sub-heading{
-  padding: 15px 15px 10px 0;
+  padding: 15px 15px 10px 0; 
 }
 .checkbox, .radio {
   margin-top: 0px;
