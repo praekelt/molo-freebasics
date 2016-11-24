@@ -6,22 +6,27 @@
 <div class="profile">
 <div class="block-default fb-body fb-card">
 	<h6 class="block-heading fb-accent-1">{% trans "Login to your account" %}</h6>
-	<div class="signin-form padding15 fb-body">
+	<div class="signin-form fb-body">
 		<p>{% trans "We're excited to have you..." %}</p>
 		<form method="post" action=".">{% csrf_token %}
 				{% if form.errors %}
-						<p class="error errorlist">{% trans "Your username and password does not match. Please try again." %}</p>
+				    <p class="error errorlist">{% trans "Your username and password does not match. Please try again." %}</p>
 				{% endif %}
-				<p><strong>{% trans "Username" %}</strong></p>
-				{{form.username}}
-				<p><strong>{% trans "Password" %}</strong></p>
-				{{form.password}}
-				<br>
+        <fieldset>
+  				<label>{% trans "Username" %}</label>
+  				{{form.username}}
+        </fieldset>
+
+        <fieldset>
+  				<label>{% trans "Password" %}</label>
+  				{{form.password}}
+        </fieldset>
+
 				<input class="flatbutton-input fb-accent-1" type="submit" value="{% trans 'Sign in' %}">
 				<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
 				<a href="{% url 'molo.profiles:user_register' %}" class="btn btn-wide"><input type="button" value='{% trans "Register" %}' class="flatbutton fb-accent-1" /></a><br>
 		</form>
-		<a href="{% url 'password_reset' %}" class="call-to-action__text-item call-to-action__text-item--forgotten-pass">{% trans 'Forgotten your password?' %}</a>
+		<a href="{% url 'molo.profiles:forgot_password' %}" class="call-to-action__text-item call-to-action__text-item--forgotten-pass">{% trans 'Forgotten your password?' %}</a>
 	</div>
 </div>
 </div>
