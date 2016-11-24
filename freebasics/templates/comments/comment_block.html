@@ -2,7 +2,6 @@
 
 {% if self.is_commenting_enabled %}
 <div class="comments-container">
-  <div class="padding15">
     {% if self.allow_commenting %}
       {% get_comment_count for self as comment_count %}
       {% if comment_count > 0 %}
@@ -12,13 +11,12 @@
       {% if request.user.is_authenticated %}
         {% render_comment_form for self %}
       {% else %}
-        <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="button inverted">{% trans "Log in to comment" %}</a>
+        <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="call-to-action__nav-item">{% trans "Log in to comment" %}</a>
       {% endif %}
-    {% else %}
-      <p>{% trans "Commenting on this article is currently disabled" %}</p>
-    {% endif %}
-  	  </div>
-  </div>
+      {% else %}
+        <p>{% trans "Commenting on this article is currently disabled" %}</p>
+      {% endif %}
+    </div>
 
   <div lass="comments-section fb-body" id="comments-list">
     <div class="nav">
