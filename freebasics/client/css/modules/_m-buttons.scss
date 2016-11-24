@@ -38,3 +38,24 @@
   position:relative;
   top:1px;
 }
+
+.call-to-action__text-item--dir-left,
+.call-to-action__nav-item--back-home {
+  display: inline-block;
+  margin: 0;
+  background-color: transparent;
+  &:before {
+    content: "";
+    padding-right: 10px;
+    text-decoration: none !important;
+    @media only screen and (min-width: 320px) {
+      content: "<";
+    }
+    @media only screen and (min-width: 490px) {
+       content: "❮";
+    }
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}

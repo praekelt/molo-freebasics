@@ -36,24 +36,6 @@
   }
 }
 
-.call-to-action__text-item--dir-left {
-  display: inline-block;
-  &:before {
-    content: "";
-    padding-right: 10px;
-    text-decoration: none !important;
-    @media only screen and (min-width: 320px) {
-      content: "<";
-    }
-    @media only screen and (min-width: 490px) {
-       content: "❮";
-    }
-    &:hover {
-      text-decoration: none !important;
-    }
-  }
-}
-
 .profile-icon{
   padding: 10px 10px 0px 10px;
 }
