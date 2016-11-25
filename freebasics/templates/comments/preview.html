@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags comments mptt_tags molo_commenting_tags i18n %}
+{% get_comments_content_object for form as self %}
+{% block breadcrumbs %}
+<div class="breadcrumbs fb-body">
+  <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
+  <span class="active">{{ self.title }}</span>
+</div>
+{% endblock %}
 
 {% block content %}
-{% get_comments_content_object for form as self %}
-
 <div class="block-category fb-body fb-card {self.get_effective_extra_style_hints}}">
-
   {% with parent_section=self.get_parent_section ancestor=self.get_parent_section.get_ancestors.last %}
     <div class="icon">
       {% if self.image %}
@@ -28,14 +32,11 @@
   </ul>
   {% endif %}
     <div class="block-comments">
-      <div class="padding15">
-
       {% if request.user.is_authenticated %}
         {% include "comments/form.html" with node=comment %}
       {% else %}
         <p>{% trans "Please " %}<a href="{% url 'molo.profiles:auth_login' %}">{% trans "log in" %}</a>{% trans " to leave a comment." %}</p>
       {% endif %}
-		</div>
 		</div>
 </div>
 {% endblock %}

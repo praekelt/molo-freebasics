@@ -5,12 +5,6 @@
   .label-wide {
     display: block;
   }
-  .btn-wide,
-  .btn-wide input[type="button"] {
-    width: 95%;
-    display: block;
-    margin: 10px 0;
-  }
 
   .signin-form p {
     padding-bottom: 10px;
@@ -23,6 +17,11 @@
     margin: 10px auto;
   }
 }
+
+.profile__user-info,
+.profiles__form {
+  padding: 10px 15px;
+}
 .call-to-action__text-item {
   text-transform: capitalize;
 }
@@ -30,6 +29,7 @@
 .call-to-action__text-item,
 .call-to-action__item--forgotten-pass {
   font-weight: bold;
+  display: block;
   &:hover {
     text-decoration: underline;
     &:before { text-decoration: none !important; }
@@ -44,4 +44,8 @@
 }
 .pull-left{
   float:left!important;
+}
+
+.profiles__form {
+
 }

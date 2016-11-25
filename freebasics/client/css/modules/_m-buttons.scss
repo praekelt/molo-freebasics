@@ -14,48 +14,53 @@
 }
 
 .call-to-action__nav-item,
-.flatbutton-input {
-  text-transform: capitalize;;
-  border-radius: 3px;
-  display:inline;
-  cursor:pointer;
+.btn-wide input[type="button"]  {
+  cursor: pointer;
   font-size: 12px;
-  padding: 10px 22px;
-  text-decoration:none;
-  border: 15px;
-  text-align: center;
-  &:hover {
-    color: $blue;
+  padding: 10px 0;
+  text-decoration: underline;
+  text-align: left;
+  display: inline-block;
+
+  @media screen and (min-width:320px) {
+    background: #dfdfdf;
+    border: 15px;
+    padding: 10px 22px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 10px 15px 10px 0;
+    text-align: center;
+    &:hover {
+      background-color:#c736c0;
+    }
   }
 }
 
-.flatbutton-input:active {
-  position:relative;
-  top:1px;
+.btn-wide input[type="button"] {
+  width: 95%;
+  display: block;
 }
 
-.flatbutton:active {
-  position:relative;
-  top:1px;
-}
 
 .call-to-action__text-item--dir-left,
 .call-to-action__nav-item--back-home {
-  display: inline-block;
   margin: 0;
   background-color: transparent;
   &:before {
     content: "";
     padding-right: 10px;
-    text-decoration: none !important;
     @media only screen and (min-width: 320px) {
       content: "<";
     }
     @media only screen and (min-width: 490px) {
        content: "❮";
     }
-    &:hover {
-      text-decoration: none !important;
-    }
   }
+}
+.see-more {
+  display: block;
+    @media only screen and (min-width: 320px) {
+      display: inline;
+      margin-top: 3px;
+    }
 }

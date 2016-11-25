@@ -1,6 +1,7 @@
+
 {% load comments i18n wagtailcore_tags wagtailimages_tags %}
 
-<form action="{% url 'molo.commenting:molo-comments-post' %}#comments-list" method="post" class="">
+<form action="{% url 'molo.commenting:molo-comments-post' %}#comments-list" method="post" class="comment-form">
     {% csrf_token %}
     {% if form.errors %}
       <p class="block-article__subtitle">{% blocktrans count counter=form.errors|length %}
@@ -11,12 +12,11 @@
       </p>
     {% endif %}
 
-    {% if form.comment.errors %}<div class="padding15">{{ form.comment.errors }}</div>{% endif %}
+    {% if form.comment.errors %}<div class="comment__errors">{{ form.comment.errors }}</div>{% endif %}
     <p>{{ form.comment }}</p>
-    <div>
-    <input type="submit" name="submit" value="Comment" class="flatbutton-input fb-accent-1">
-    <input type="submit" name="submit_anonymously" value="Add anonymously" class="flatbutton-input fb-accent-1">
-    </div>
+    <input type="submit" name="submit" value="Comment">
+    <input type="submit" name="submit_anonymously" value="Add anonymously">
+
     {{ form.object_pk }}
 
     {{ form.content_type }}

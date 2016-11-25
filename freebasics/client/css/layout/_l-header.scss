@@ -9,22 +9,33 @@
   vertical-align: middle;
 }
 .header__logo {
-  display: inline-block;
-  margin: 10px;
-  float: left;
+  display: block;
+  margin: 10px 5px;
+  text-align: left;
+  @media screen and (min-width: 320px) {
+    display: inline-block;
+    margin: 10px;
+    float: left;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 30px;
+    margin: -2px;
+  }
 }
-.header__logo img {
-  width: 100%;
-  height: auto;
-  max-width: 200px;
-  max-height: 30px;
-  margin: -2px;
-}
+
 .header__link {
   text-align: center;
   display: inline-block;
+  margin-left: 5px;
+  float: left;
   line-height: 44px;
-  margin-left: 8px;
+  @media screen and (min-width: 320px) {
+    float: none;
+
+  }
 }
 .header__link--button {
   padding: 0 8px;

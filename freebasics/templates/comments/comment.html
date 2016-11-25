@@ -1,5 +1,6 @@
+
 {% load i18n molo_commenting_tags %}
-<div class="nav {{self.get_parent_section.get_effective_extra_style_hints}} {% if node.user.is_staff %}staff{% endif %}">
+<div class="comment {{self.get_parent_section.get_effective_extra_style_hints}} {% if node.user.is_staff %}staff{% endif %}">
   <p class="fb-accent-2">
     <strong>
     {% if node.user_name.lower == 'anonymous' %}
@@ -19,9 +20,9 @@
   {% else %}
     <p>{{node.comment}}</p>
     	{% if node.parent == None %}
-        <p class="fb-accent-2"><a href="{% url 'molo.commenting:molo-comments-report' node.pk %}?next={% url 'molo.commenting:report_response' node.pk %}" style="padding-left: 0px;">{% trans "Report" %}</a></p>
+        <a href="{% url 'molo.commenting:molo-comments-report' node.pk %}?next={% url 'molo.commenting:report_response' node.pk %}" class="call-to-action__text-item">{% trans "Report" %}</a>
         {% if request.user|is_in_group:'Expert' and not node.user|is_in_group:'Expert' %}
-            <p class="fb-accent-2"><a href="{% url 'molo.commenting:molo-comments-reply' node.pk %}" style="padding-left: 0px;">{% trans "Reply"%}</a></p>
+        <a href="{% url 'molo.commenting:molo-comments-reply' node.pk %}">{% trans "Reply"%}</a>
         {% endif %}
     {% endif %}
   {% endif %}

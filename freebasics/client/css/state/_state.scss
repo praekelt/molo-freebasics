@@ -2,17 +2,5 @@
 @media only screen and (min-width: 320px) {
    html { background: $gray;}
    body {max-width: 320px;}
-   fieldset {
-      margin: 15px;
-    }
-
-  .button-div a, .button-div input[type="submit"]{
-    width: 12em;
-    //margin: 0 auto;
-    display: block;
-  }
-
   @import "_s-buttons";
-  @import "_s-survey";
-
 }
