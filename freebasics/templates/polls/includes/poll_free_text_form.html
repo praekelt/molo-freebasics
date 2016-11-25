@@ -12,10 +12,9 @@
       {% else %}
         <input type="text" name="answer" id="id_answer" value="" />
       {% endif %}
-      <br>
-      <br>
-        <input type="submit" value="{% trans "Submit" %}" class="flatbutton-input fb-accent-1"/>
     </div>
+      <br>
+    <input type="submit" value="{% trans "Submit" %}"/>
     {% else %}
     <div class="poll-feedback">
       <p>{% trans "Thank you! Your response has already been submitted." %}<p>

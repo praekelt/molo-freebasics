@@ -1,9 +1,17 @@
+{% extends "base.html" %}
 {% extends "core/article_page.html" %}
 {% load wagtailcore_tags wagtailimages_tags comments mptt_tags molo_commenting_tags i18n %}
 
-{% block content %}
-{% get_comments_content_object for form as self %}
 
+{% get_comments_content_object for form as self %}
+{% block breadcrumbs %}
+<div class="breadcrumbs fb-body">
+    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
+    <span class="active">{{ self.title }}</span>
+</div>
+{% endblock %}
+
+{% block content %}
 <div class="block {{self.articlepage.get_parent_section.get_effective_extra_style_hints}}">
   <div class="comment">
     <p class="by">{{comment.user_name}} <span class="date">{{comment.submit_date}}</span></p>

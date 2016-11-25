@@ -56,5 +56,10 @@ input[type="submit"] {
   text-decoration: underline;
   @media screen and (min-width: 320px) {
     text-decoration: none;
+    color: #c736c0;
+  }
+  &:hover {
+    background-color:#c736c0;
+    color: #000;
   }
 }

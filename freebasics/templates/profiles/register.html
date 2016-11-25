@@ -40,7 +40,7 @@
             <p class="error">{% trans "Please accept the T&amp;Cs in order to complete the registration" %}</p>
           {% endif %}
 
-          <input type="submit" class="flatbutton fb-accent-1" value='{% trans "JOIN" %}' />
+          <input type="submit" value='{% trans "Join" %}' />
           <input type="hidden" name="next" value="{% url 'molo.profiles:registration_done' %}" />
           <a href="{% url 'molo.profiles:auth_login' %}" class="call-to-action__text-item">{% trans "already joined?" %}</a>
       </form>

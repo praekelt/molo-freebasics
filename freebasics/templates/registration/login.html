@@ -22,9 +22,11 @@
   				{{form.password}}
         </fieldset>
 
-				<input class="flatbutton-input fb-accent-1" type="submit" value="{% trans 'Sign in' %}">
+				<input type="submit" value="{% trans 'Sign in' %}">
 				<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
-				<a href="{% url 'molo.profiles:user_register' %}" class="btn btn-wide"><input type="button" value='{% trans "Register" %}' class="flatbutton fb-accent-1" /></a><br>
+				<a href="{% url 'molo.profiles:user_register' %}" class="btn btn-wide">
+          <input type="button" value='{% trans "Register" %}'/>
+        </a><br>
 		</form>
 		<a href="{% url 'molo.profiles:forgot_password' %}" class="call-to-action__text-item call-to-action__text-item--forgotten-pass">{% trans 'Forgotten your password?' %}</a>
 	</div>

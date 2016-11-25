@@ -16,7 +16,7 @@
               <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.get_main_language_page.id }}">
               {{ choice.title }}</label>
             {% endif %}
-        </div>
+      </div>
       {% endfor %}
 
         <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="call-to-action__nav-item">{% trans "Log in to vote" %}</a>

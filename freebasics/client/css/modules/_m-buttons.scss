@@ -13,39 +13,39 @@
   }
 }
 
-.call-to-action__nav-item,
-.flatbutton-input {
+.call-to-action__nav-item {
+  background: #dfdfdf;
   border-radius: 3px;
-  display: inline-block;
   cursor:pointer;
   font-size: 12px;
   padding: 10px 22px;
-  text-decoration:none;
+  text-decoration: underline;
   border: 15px;
   text-align: center;
-  margin: 10px 15px 10px 22px; //This is for home page
+  display: inline-block;
+  margin: 10px 15px 10px 15px; 
   &:hover {
-    color: $blue;
+    background-color:#c736c0;
+    color: #000;
+  }
+  @media screen and (min-width:320px) {
+    text-decoration: none;
+    color: #c736c0;
   }
 }
 
 .call-to-action__text-item--dir-left,
 .call-to-action__nav-item--back-home {
-  display: inline-block;
   margin: 0;
   background-color: transparent;
   &:before {
     content: "";
     padding-right: 10px;
-    text-decoration: none !important;
     @media only screen and (min-width: 320px) {
       content: "<";
     }
     @media only screen and (min-width: 490px) {
        content: "❮";
-    }
-    &:hover {
-      text-decoration: none !important;
     }
   }
 }

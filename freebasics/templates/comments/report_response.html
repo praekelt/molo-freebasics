@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags comments mptt_tags molo_commenting_tags i18n %}
 
+
+{% get_comments_content_object for form as self %}
+{% block breadcrumbs %}
+<div class="breadcrumbs fb-body">
+    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
+    <span class="active">{{ self.title }}</span>
+</div>
+{% endblock %}
+
 {% block content %}
 <div class="comment-heading comment-heading--{{article.get_parent_section.get_effective_extra_style_hints}}">
     <h3 class="heading heading--comment-feedback">{% trans "Thanks!" %}</h3>
