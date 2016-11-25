@@ -13,10 +13,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="comment-heading comment-heading--{{article.get_parent_section.get_effective_extra_style_hints}}">
-    <h3 class="heading heading--comment-feedback">{% trans "Thanks!" %}</h3>
-    <p class="subheading subheading--comment">{% trans "This comment has been reported." %}</p>
-    <p style="color: #FF6600;"><strong>{% trans "It will be reviewed by the team and may be removed if it breaks our Platform rules" %}</strong></p>
+<div class="fb-body fb-card fb-card--{{article.get_parent_section.get_effective_extra_style_hints}}">
+    <h3 class="block-heading fb-accent-1">{% trans "Thanks!" %}</h3>
+    <div class="comment-heading">
+      <p class="subheading subheading--comment">{% trans "This comment has been reported." %}</p>
+      <p style="color: #FF6600;"><strong>{% trans "It will be reviewed by the team and may be removed if it breaks our Platform rules" %}</strong></p>
+    </div>
     <br/>
 </div>
   <a href="{% pageurl article %}" class="call-to-action__nav-item call-to-action__nav-item--back-home">{% trans "Back to article" %}</a>
