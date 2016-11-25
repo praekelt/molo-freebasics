@@ -7,7 +7,8 @@
 {% block breadcrumbs %}
 <div class="breadcrumbs fb-body">
     <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
-    <span class="active">{{ self.title }}</span>
+    <span><a class="fb-accent-2" href="{% pageurl article %}">{{ article.title }}</a></span> &gt;
+    <span class="active">Reply page</span>
 </div>
 {% endblock %}
 
