@@ -13,7 +13,8 @@
   }
 }
 
-.call-to-action__nav-item {
+.call-to-action__nav-item,
+.btn-wide input[type="button"]  {
   cursor: pointer;
   font-size: 12px;
   padding: 10px 0;
@@ -27,13 +28,19 @@
     padding: 10px 22px;
     text-decoration: none;
     border-radius: 3px;
-    margin: 10px 15px 10px 15px;
+    margin: 10px 15px 10px 0;
     text-align: center;
     &:hover {
       background-color:#c736c0;
     }
   }
 }
+
+.btn-wide input[type="button"] {
+  width: 95%;
+  display: block;
+}
+
 
 .call-to-action__text-item--dir-left,
 .call-to-action__nav-item--back-home {

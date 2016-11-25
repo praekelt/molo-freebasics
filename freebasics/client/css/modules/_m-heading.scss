@@ -9,6 +9,25 @@
   }
 }
 
+
+.heading--profiles,
+.fb-body .block-heading {
+  background-color: #dfdfdf;
+  border-radius: 3px 3px 0 0;
+}
+.fb-body .block-heading-sub-cat {
+  border: 1px solid;
+  border-radius: 0;
+}
+
+.heading--profiles {
+  padding: 10px 15px;
+  margin: 5px 7px;
+  font-size: 15px;
+  border-radius: 3px 3px 0px 0px;
+  color: #69269d;
+}
+
 .block-heading {
   padding: 10px 15px;
   font-size: 15px;
@@ -21,10 +40,6 @@
   font-size: 15px;
 }
 
-.heading--profiles {
-  padding: 10px 15px;
-  margin: 0;
-}
 
 .heading--feeback-title {
   margin-bottom: 0;
