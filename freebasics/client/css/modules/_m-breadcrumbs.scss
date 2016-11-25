@@ -1,8 +1,11 @@
 .breadcrumbs{
-  padding: 5px 15px 0px 15px;
+  padding: 5px;
   font-size: 12px;
   text-decoration: none;
   span {
     text-transform: capitalize;
+  }
+  @media screen and (min-width:320px) {
+   padding: 5px 15px 0px 15px;
   }
 }
