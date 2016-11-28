@@ -5,6 +5,9 @@
     margin: 7px;
     border-radius: 3px;
   }
+  .surveys__title {
+    margin: 5px 0;
+  }
 }
 .surveys__form {
   border-bottom: 1px solid $dove_gray;
@@ -17,7 +20,7 @@
   color: #69269d;
   padding: 10px 15px;
   font-size: $font-small;
-  margin: 5px 0;
+  margin: 5px 7px;
 }
 
 .surveys__intro {

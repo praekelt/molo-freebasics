@@ -1,0 +1,41 @@
+.yourwords {
+  padding: 0 15px;
+}
+
+.heading--yourwords {
+  background-color: #dfdfdf;
+  color: #69269d;
+  padding: 10px 15px;
+  font-size: 15px;
+  margin: 5px 0;
+  @media screen and (min-width: 320px) {
+    border-radius: 3px 3px 0 0;
+  }
+}
+
+.heading--hero-yourwords {
+  background: transparent;
+  font-size: 17px;
+  padding: 0;
+}
+
+.heading--yourwords-description {
+  padding: 0 15px;
+}
+
+.heading--yourwords-subtitle {
+  font-size: 15px;
+  margin: 0;
+}
+
+.competition__title {
+  margin-bottom: 0;
+}
+
+.competition__title--description {
+  margin: 0;
+}
+
+.yourwords-form {
+  padding-top: 20px;
+}
