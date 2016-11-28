@@ -2,19 +2,23 @@
 .header {
   color: #000;
   background: #fff;
-  text-align: right;
   overflow: auto;
+  @media screen and (min-width: 320px) {
+    text-align: right;
+  }
+  img {
+    vertical-align: middle;
+  }
 }
-.header img {
-  vertical-align: middle;
-}
+
 .header__logo {
   display: block;
-  margin: 10px 5px;
-  text-align: left;
+  padding: 10px 8px;
+  text-align: center;
+  vertical-align: middle;
   @media screen and (min-width: 320px) {
+    text-align: left;
     display: inline-block;
-    margin: 10px;
     float: left;
   }
   img {
@@ -22,20 +26,22 @@
     height: auto;
     max-width: 200px;
     max-height: 30px;
-    margin: -2px;
   }
 }
 
+
+.header__menu {
+  display: block;
+  text-align: center;
+  @media screen and (min-width:320px) {
+    display: inline-block;
+  }
+}
 .header__link {
   text-align: center;
   display: inline-block;
-  margin-left: 5px;
-  float: left;
-  line-height: 44px;
-  @media screen and (min-width: 320px) {
-    float: none;
-
-  }
+  padding: 10px 0;
+  vertical-align: middle;
 }
 .header__link--button {
   padding: 0 8px;
