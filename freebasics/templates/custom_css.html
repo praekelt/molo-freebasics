@@ -4,7 +4,9 @@
   background-color: {{body_border_color}};
   border: 1px solid {{body_border_color}};
 }
-.fb-body .block-heading, .heading--profiles, .heading--hero-yourwords{
+.fb-body .block-heading,
+.heading--profiles,
+.surveys__title {
   background-color: {{block_background_color}};
   font-family: {{block_font_family}};
   text-transform: {{text_transform}};
@@ -19,14 +21,14 @@
 .call-to-action__nav-item--surveys,
 .call-to-action__nav-item--login,
 .call-to-action__nav-item--polls,
-.search-form input[type="submit"],
 .call-to-action__nav-item--back-home,
-.surveys__title {
+.search-form input[type="submit"],
+.polls-form input[type="submit"],
+.btn-wide input[type="button"] {
   background-color: {{block_background_color}};
   color: {{accent_1}};
   font-family: {{block_font_family}};
   text-transform: {{text_transform}};
-  border-radius: 3px 3px 0px 0px;
 }
 .flatbutton{
   background-color: {{block_background_color}};
@@ -60,5 +62,12 @@
   font-family: {{body_font_family}};
 }
 
+.call-to-action__nav-item,
+.flatbutton-input {
+ background-color: #dfdfdf;
+ &:hover {
+    background-color: #c736c0;
+  }
+}
 
 </style>

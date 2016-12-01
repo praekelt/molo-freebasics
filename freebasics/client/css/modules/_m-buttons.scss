@@ -21,18 +21,13 @@
   text-decoration: underline;
   text-align: left;
   display: inline-block;
-
   @media screen and (min-width:320px) {
-    //background: #dfdfdf;
     border: 15px;
     padding: 10px 22px;
     text-decoration: none;
     border-radius: 3px;
     margin: 10px 15px 10px 0;
     text-align: center;
-    &:hover {
-      //background-color:#c736c0;
-    }
   }
 }
 
