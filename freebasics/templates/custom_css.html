@@ -1,5 +1,13 @@
 <!-- Free Basics Custom CSS -->
-<style type="text/css">
+<style type="text/css"> 
+.call-to-action__nav-item,
+.flatbutton-input {
+ background-color: #dfdfdf;
+ &:hover {
+    background-color: #c736c0;
+  }
+}
+
 .fb-body .base-bcolor {
   background-color: {{body_border_color}};
   border: 1px solid {{body_border_color}};
@@ -12,7 +20,7 @@
   text-transform: {{text_transform}};
   border-radius: 3px 3px 0px 0px;
 }
-.section-nav__items{
+.section-nav__items {
   background-color: {{block_background_color}};
   font-family: {{block_font_family}};
 }
@@ -51,7 +59,8 @@
 .fb-body .fb-accent-1{
   color: {{accent_1}};
 }
-.fb-body .fb-accent-2{
+.fb-body .fb-accent-2,
+.surveys__title {
   color: {{accent_2}};
 }
 .fb-body .block-heading-sub-cat{
@@ -60,14 +69,6 @@
 }
 .fb-body, .fb-body *:not(.no-fb-body){
   font-family: {{body_font_family}};
-}
-
-.call-to-action__nav-item,
-.flatbutton-input {
- background-color: #dfdfdf;
- &:hover {
-    background-color: #c736c0;
-  }
 }
 
 </style>
