@@ -139,7 +139,6 @@ TEMPLATES = [
 ROOT_URLCONF = 'freebasics.urls'
 WSGI_APPLICATION = 'freebasics.wsgi.application'
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
 # Google analytics
 
