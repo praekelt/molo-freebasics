@@ -12,3 +12,4 @@ gunicorn
 psycopg2
 html5lib==0.9999999
 django_compressor==2.1
+django-google-analytics-app==2.1.4
