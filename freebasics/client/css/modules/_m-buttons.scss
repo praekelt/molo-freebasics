@@ -40,7 +40,10 @@
 .call-to-action__text-item--dir-left,
 .call-to-action__nav-item--back-home {
   margin: 0;
-  background-color: transparent;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  color: #000 !important;
+  text-transform: capitalize !important;
   &:before {
     content: "";
     padding-right: 10px;
@@ -60,5 +63,5 @@
     }
 }
 .call-to-action__nav-item--yourwords {
-  padding: 10px 0;
+  padding: 10px;
 }

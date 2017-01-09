@@ -33,6 +33,7 @@
 .call-to-action__item--forgotten-pass {
   font-weight: bold;
   display: block;
+  padding: 0 15px;
   &:hover {
     text-decoration: underline;
     &:before { text-decoration: none !important; }
