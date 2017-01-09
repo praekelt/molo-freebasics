@@ -4,8 +4,16 @@
   img {
     width: 100%;
   }
-  .heading-container img {
-    width: 100%;
+  .heading-container {
+    img {
+      width: 100%;
+    }
+  }
+  .yourwords--inner-content,
+  .heading-container {
+    .heading--yourwords {
+      padding: 10px 0;
+    }
   }
 }
 
