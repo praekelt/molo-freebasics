@@ -139,6 +139,7 @@ TEMPLATES = [
 ROOT_URLCONF = 'freebasics.urls'
 WSGI_APPLICATION = 'freebasics.wsgi.application'
 
+CUSTOM_UIP_HEADER = 'HTTP_X_IORG_FBS_UIP'
 
 # Google analytics
 
