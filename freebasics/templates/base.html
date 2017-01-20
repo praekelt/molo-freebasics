@@ -27,6 +27,7 @@
   {% endcompress %}
   {% block extra_css %}{% endblock %}
   {% custom_css %}
+
   <!-- Google Fonts -->
   <script src="{{ STATIC_URL }}js/webfont.js"></script>
   <script type="text/javascript">
@@ -72,12 +73,13 @@
     }
     </script>
     <noscript>Your browser does not support JavaScript!</noscript>
+    {% get_current_language as LANGUAGE_CODE %}
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}" {% if LANGUAGE_CODE|language_bidi == True %}dir="rtl"{% endif %}>
 
   {% if settings.core.SiteSettings.ga_tag_manager %}
   <!-- Google Tag Manager -->
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id={{settings.core.SiteSettings.ga_tag_manager}}&client_session_id={{request.session.MOLO_GA_SESSION_FOR_NOSCRIPT}}"
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id={{settings.core.SiteSettings.ga_tag_manager}}&client_session_id={{request.session.MOLO_GA_SESSION_FOR_NOSCRIPT}}{%if request.META.HTTP_X_IORG_FBS_UIP %}&freebasics_uip={{request.META.HTTP_X_IORG_FBS_UIP}}{%endif%}"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -149,7 +151,6 @@
     <p>&copy; 2016 <span id="printsitelabel2"><strong>{% get_site_name %}</strong></span> | All rights reserved.</p>
     {% if languages|length > 1 %}
       <strong>{% trans "Site Language:" %}</strong>
-      {% get_current_language as LANGUAGE_CODE %}
       {% for language in languages %}
         <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" {% if LANGUAGE_CODE == language.locale %} class="active" {% endif %}>{{language}}</a>&nbsp;
       {% endfor %}
