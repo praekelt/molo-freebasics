@@ -1,7 +1,7 @@
 molo.core==4.0.0
 celery<4.0
 molo.profiles==2.0.0
-molo.commenting==2..0
+molo.commenting==2.0.0
 molo.yourwords==1.2.1
 molo.polls==3.0.0
 molo.surveys==1.1.0
