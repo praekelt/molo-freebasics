@@ -16,7 +16,7 @@
       <img class="block-article__image block-article__image--full-width" src="{{ tmp_photo.url }}" alt="{{ self.image.title }}"/>
     {% endif %}
     <h6 class="block-article__subtitle">{{self.subtitle }}</h6>
-
+    {% social_media_article %}
     <article  class="article-content">
     {% for block in self.body %}
         {% if block.block_type == 'heading' %}
@@ -35,6 +35,11 @@
         {% endif %}
     {% endfor %}
     </article>
+    {% if settings.core.SiteSettings.enable_clickable_tags %}
+      {% for tag in self.tags_list %}
+        <a href="{% url 'tags_list' tag %}">{{tag}}</a>
+      {% endfor%}
+    {% endif %}
   </div>
 
   {% include "comments/comment_block.html" %}
