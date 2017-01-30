@@ -201,15 +201,15 @@ CELERYBEAT_SCHEDULE = {
     },
     'demote_articles': {
         'task': 'molo.core.tasks.demote_articles',
-        'schedule': crontab(minute="*"),
+        'schedule': crontab(minute="*/5"),
     },
     'promote_articles': {
         'task': 'molo.core.tasks.promote_articles',
-        'schedule': crontab(minute="*"),
+        'schedule': crontab(minute="*/5"),
     },
     'publish_pages': {
         'task': 'molo.core.tasks.publish_scheduled_pages',
-        'schedule': crontab(minute='*'),
+        'schedule': crontab(minute='*/5'),
     },
 }
 
