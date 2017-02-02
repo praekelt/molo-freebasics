@@ -1,11 +1,29 @@
-.breadcrumbs{
+.breadcrumbs {
   padding: 5px;
-  font-size: 12px;
+  font-size: 13px;
   text-decoration: none;
-  span {
-    text-transform: capitalize;
-  }
   @media screen and (min-width:320px) {
-   padding: 5px 15px 0px 15px;
+   padding: 5px 5px 0;
   }
+}
+
+.breadcrumbs__anchor {
+  display: inline-block;
+  &:after {
+    content: " > ";
+    color: #777;
+    margin: 0 2px 0 5px;
+    font-weight: 700;
+  }
+  &:last-child:after {
+    content: " ";
+    display: inline-block;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.breadcrumbs__anchor-is-active {
+  text-decoration: underline;
 }

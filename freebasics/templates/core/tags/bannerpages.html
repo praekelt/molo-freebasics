@@ -1,6 +1,5 @@
 
 {% load wagtailcore_tags wagtailimages_tags %}
-
 {% if bannerpages %}
 {% for bannerpage in bannerpages %}
   {% if bannerpage.banner %}
@@ -19,7 +18,7 @@
       </a>
     </div>
     {% else %}
-              <div class="fb-card banner-container">
+      <div class="fb-card banner-container">
         {% image bannerpage.banner width-320 as tmp_photo %}
         <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ bannerpage.banner.title }}"/>
       </div>
