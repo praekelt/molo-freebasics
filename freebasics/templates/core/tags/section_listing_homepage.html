@@ -3,7 +3,8 @@
 {% if sections %}
 {% for section in sections %}
 <div class="section-list section-list{{section.get_effective_extra_style_hints}}">
-  <h2 class="section-list__heading">{{section.title}}
+  <h2 class="section-list__heading">
+    {{section.title}}
     <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
   </h2>
 
@@ -12,7 +13,7 @@
   {% for article in featured_articles %}
     <li class="article-list__item">
       <h3 class="article-list__heading">
-        <a href="{% pageurl article %}">{{article.title}}</a>
+        <a href="{% pageurl article %}" class="article-list__anchor">{{article.title}}</a>
       </h3>
 
       <!-- Only show "Read More" when the subtitle is shown. This avoids having listing of "title" + "readmore" only -->
