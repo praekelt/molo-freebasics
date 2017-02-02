@@ -1,36 +1,10 @@
 @import "variables/_variables";
-
 @import "_base";
 @import "layout/_layout";
 @import "modules/_modules";
 @import "state/_state";
 @import "versions";
 
-
-
-/* TODO: Remove this. */
-.row:after, .row:before, .container-fluid:after, .container-fluid:before{
-  display: table;
-  content: " ";
-}
-
-/* TODO: This is terrible?! */
-p,h6 {
-  margin: 0
-}
-
-h6 {
-  font-size:13px;
-}
-
-.active {
-  color: #696969;
-  text-decoration: underline;
-}
-
-
-//Homepage
-.custom-template-container {}
 .custom-template-container__content {
   background-color: #efefef;
   overflow: auto
@@ -38,7 +12,9 @@ h6 {
 
 /*
 To Be Deleted
-default colors*/
+default colors
+Update for Polls,Profiles, YourWords
+*/
 .fb-card {
   margin: 7px 0;
   background-color: #fff;
@@ -51,8 +27,6 @@ default colors*/
 .no-fb-card {
   background-color: #fff;
 }
-
-
 .base-bcolor {
   background-color: #efefef;
 }
@@ -64,6 +38,6 @@ default colors*/
   color: #c736c0;
 }
 
-.padding-no-top{
+.padding-no-top {
   padding: 0px 15px 15px 15px;
 }
