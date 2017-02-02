@@ -1,35 +1,41 @@
 
 {% extends "base.html" %}
-
 {% load wagtailcore_tags wagtailimages_tags poll_votings static core_tags molo_survey_tags mptt_tags i18n %}
-
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-<div class="fb-body fb-card {{self.get_parent_section.get_effective_extra_style_hints}}">
-
-  <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
-
-  <div class="block-article">
+<div class="article-page article-page{{self.get_parent_section.get_effective_extra_style_hints}}">
+  <h1 class="heading heading--article">{{self.title}}</h1>
+  <div class="article-list article-page__inner-content">
     {% if self.image %}
-    {% image self.image width-274 as tmp_photo %}
-      <img class="block-article__image block-article__image--full-width" src="{{ tmp_photo.url }}" alt="{{ self.image.title }}"/>
+      {% image self.image width-274 as tmp_photo %}
+      <img src="{{ tmp_photo.url }}" alt="{{ self.image.title }}" class="article__image"/>
     {% endif %}
-    <h6 class="block-article__subtitle">{{self.subtitle }}</h6>
+    <h2 class="article-list__heading">{{self.subtitle }}</h2>
     {% social_media_article %}
     <article  class="article-content">
     {% for block in self.body %}
         {% if block.block_type == 'heading' %}
-          <h3 class="article-content__title fb-accent-1">{{ block.value }}</h3>
+          <h3 class="heading article__title">{{ block.value }}</h3>
+
         {% elif block.block_type == 'image' %}
           {% image block.value width-274 as tmp_photo %}
-          <img class="article-content__image" src="{{ tmp_photo.url }}" alt="{{ block.value.title }}"/>
+          <img class="article__image" src="{{ tmp_photo.url }}" alt="{{ block.value.title }}"/>
+
         {% elif block.block_type == 'numbered_list' %}
-          <ol>
+          <ol class="ordered-list">
           {% for item in block.value %}
-            <li>{{item}}</li>
+            <li class="ordered-list__item">{{ item|handle_markdown }}</li>
           {% endfor %}
           </ol>
+
+        {% elif block.block_type == 'list' %}
+          <ul class="unordered-list">
+          {% for item in block.value %}
+            <li class="unordered-list__item">{{ item|handle_markdown }}</li>
+          {% endfor %}
+          </ul>
+
         {% else %}
           {{ block }}
         {% endif %}
@@ -41,7 +47,6 @@
       {% endfor%}
     {% endif %}
   </div>
-
   {% include "comments/comment_block.html" %}
 </div>
 
@@ -51,7 +56,6 @@
     {% poll_page_in_section page=self %}
   {% endif %}
 </div>
-
 {% surveys_list_for_pages page=self %}
 
 {% endblock %}
