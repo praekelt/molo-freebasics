@@ -23,8 +23,36 @@
   }
 }
 
+.call-to-action__item-text-read-more {
+  text-decoration: underline;
+  padding: 10px 0;
+  //font-size: 13px;
+}
 
 //Article list
-.article-list {
+.article-list {}
+.article-list__item {
+  border-bottom: 1px #eee solid;
+}
+.article-list__heading {
+  margin: 0 0 8px 0;
+}
+.article-list__subtitle {
+  margin: 0 0 8px 0;
+}
+.article-list__excerpt {
+  margin: 0 0 8px 0;
+}
 
+.article-list__image {
+  margin: 0 0 8px 8px;
+  @media only screen and (min-width: 320px) {
+    float: right;
+  }
+}
+
+.block-article__image--full {
+  float: none;
+  margin: 0 0 8px 0;
+  width: 100%;
 }

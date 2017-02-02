@@ -7,18 +7,20 @@
     <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
   </h6>
 
-  <ul>
+  <ul class="article-list">
   {% load_descendant_articles_for_section section featured_in_homepage=True as featured_articles %}
   {% for article in featured_articles %}
-    <li class="block-article block-article--in-list">
-      <h6 class="block-article__title fb-accent-2">
-        <a href="{% pageurl article %}" class="fb-accent-2">{{article.title}}</a>
+    <li class="article-list__item">
+      <h6 class="article-list__heading">
+        <a href="{% pageurl article %}">{{article.title}}</a>
       </h6>
 
       <!-- Only show "Read More" when the subtitle is shown. This avoids having listing of "title" + "readmore" only -->
       {% if article.subtitle %}
-      <div class="block-article__subtitle">{{article.subtitle}}</div>
-      <a href="{% pageurl article %}" class="fb-accent-2 block-article__read-more">{% trans "Read More" %}</a>
+        <h2 class="article-list__subtitle">{{article.subtitle}}</h2s>
+        <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
+          {% trans "Read More" %}
+        </a>
       {% endif %}
 
     </li>

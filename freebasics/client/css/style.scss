@@ -15,23 +15,12 @@
 }
 
 /* TODO: This is terrible?! */
-p,h6{
+p,h6 {
   margin: 0
 }
-h6{
-  font-size:13px;
-}
 
-.fb-card{
-  margin: 7px 0;
-  background-color: #fff;
-  @media screen and (min-width:320px) {
-    margin: 7px;
-    border-radius: 3px;
-  }
-}
-.no-fb-card{
-  background-color: #fff;
+h6 {
+  font-size:13px;
 }
 
 .active {
@@ -40,23 +29,40 @@ h6{
 }
 
 
-/*default colors*/
-.base-bcolor{
+//Homepage
+.custom-template-container {}
+.custom-template-container__content {
   background-color: #efefef;
 }
-.fb-body .fb-accent-1{
+
+/*
+To Be Deleted
+default colors*/
+.fb-card {
+  margin: 7px 0;
+  background-color: #fff;
+  @media screen and (min-width:320px) {
+    margin: 7px;
+    border-radius: 3px;
+  }
+}
+
+.no-fb-card {
+  background-color: #fff;
+}
+
+
+.base-bcolor {
+  background-color: #efefef;
+}
+
+.fb-body .fb-accent-1 {
   color: #69269d;
 }
 .fb-body .fb-accent-2{
   color: #c736c0;
 }
-.no-underline{
-  text-decoration: none;
-}
 
-.padding15{
-  padding: 15px;
-}
 .padding-no-top{
   padding: 0px 15px 15px 15px;
 }
