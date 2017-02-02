@@ -1,9 +1,13 @@
 .breadcrumbs {
+  background-color: #fff;
   padding: 5px;
   font-size: 13px;
   text-decoration: none;
+  margin: 8px 0;
   @media screen and (min-width:320px) {
    padding: 5px 5px 0;
+   margin: 8px;
+   border-radius: 3px;
   }
 }
 

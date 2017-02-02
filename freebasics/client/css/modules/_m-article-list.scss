@@ -1,35 +1,3 @@
-//Section lists
-.section-list,
-.breadcrumbs {
-  margin: 8px 0;
-  background-color: #fff;
-  @media screen and (min-width:320px) {
-    margin: 8px;
-    border-radius: 3px;
-  }
-}
-
-.section-list__heading {
-  padding: 10px 15px;
-  font-size: 15px;
-}
-
-
-//Buttons
-.call-to-action__item-text-see-more {
-  display: inline-block;
-  font-size: 12px;
-  @media only screen and (min-width: 320px) {
-    float: right;
-    line-height: 1.9;
-  }
-}
-
-.call-to-action__item-text-read-more {
-  text-decoration: underline;
-  padding: 10px 0;
-  //font-size: 13px;
-}
 
 //Article list
 .article-list {}
@@ -51,10 +19,4 @@
   @media only screen and (min-width: 320px) {
     float: right;
   }
-}
-
-.block-article__image--full {
-  float: none;
-  margin: 0 0 8px 0;
-  width: 100%;
 }
