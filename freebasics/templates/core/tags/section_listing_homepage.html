@@ -2,9 +2,9 @@
 
 {% if sections %}
 {% for section in sections %}
-      <div class="fb-card block-category {{section.get_effective_extra_style_hints}}">
-  <h6 class="block-heading fb-accent-1">{{section.title}}
-    <a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a>
+<div class="section-list section-list{{section.get_effective_extra_style_hints}}">
+  <h6 class="section-list__heading">{{section.title}}
+    <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
   </h6>
 
   <ul>
