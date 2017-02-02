@@ -1,19 +1,31 @@
 
-.block-footer{
+.footer {
   color: #000;
   background-color: #eeeeee;
-  padding: 1px 5px 5px 5px;
+  padding: 8px 5px 10px;
   font-size: 11px;
   text-align: center;
 }
-.block-footer li, a{
-  text-decoration: none;
+
+.footer__anchor {
+  color: #000;
+  padding: 0 3px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.footer__anchor-is-active {
+  text-decoration: underline;
+}
+
+
+//Footer Pages Menu List
+.footer-list {
+  margin: 10px 0 0;
+}
+
+.footer-list__anchor {
   color: black;
   list-style-type: none;
-}
-
-.block-footer li, a{
   text-decoration: none;
-  list-style-type: none;
 }
-

@@ -110,12 +110,13 @@
 
   <!-- footer block -->
   {% block footer %}
-  <div class="block-footer no-fb-body">
-    <p>&copy; 2016 <span id="printsitelabel2"><strong>{% get_site_name %}</strong></span> | All rights reserved.</p>
+  <div class="footer">
+    <p>&copy; 2016 <span id="printsitelabel2">
+      <strong>{% get_site_name %}</strong></span> | All rights reserved.</p>
     {% if languages|length > 1 %}
       <strong>{% trans "Site Language:" %}</strong>
       {% for language in languages %}
-        <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" {% if LANGUAGE_CODE == language.locale %} class="active" {% endif %}>{{language}}</a>&nbsp;
+        <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" class="footer__anchor {% if LANGUAGE_CODE == language.locale %} footer__anchor-is-active {% endif %}">{{language}}</a> 
       {% endfor %}
     {% endif %}
       {% social_media_footer %}
