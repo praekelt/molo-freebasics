@@ -1,12 +1,17 @@
-
-.block-img {
-  display: inline;
-  width: 100px; /* I really want to make this 100% */
-  height: auto;
+.banner {
+  overflow: auto;
+  margin: 8px;
+  @media screen and (min-width: 320px) {
+    margin: 0 8px;
+  }
 }
-
-.block-banner{
+.banner__anchor {
   vertical-align: top;
-  width: 100%;
   border-radius: 3px;
+  display:block;
+}
+.banner__image {
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
 }
