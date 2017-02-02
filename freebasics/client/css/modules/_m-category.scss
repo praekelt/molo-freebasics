@@ -28,37 +28,3 @@
   font-weight: 300;
   line-height: 22px;
 }
-
-
-
-/* SECTION NAVIGATION */
-.section-nav input {
-  display: none;
-}
-.section-nav input + * {
-  display: none;
-}
-.section-nav input:checked + * {
- display: block;
-}
-.section-nav__items {
-  font-size: 13px;
-  margin: 0;
-  background: #fff;
-  padding: 0;
-  list-style-type: none;
-}
-.section-nav__item {
-  padding: 8px 16px;
-  border-bottom: 1px #eee solid;
-}
-.section-nav__item a {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-}
-.section-nav__item a:after {
-  content: ">";
-  display: inline-block;
-  float: right;
-}

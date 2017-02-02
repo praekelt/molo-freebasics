@@ -61,7 +61,7 @@
   {% wagtailuserbar %}
 
   <div class="header">
-    <a class="header__logo" href="/" >
+    <a class="header__logo" href="/">
       {% if settings.core.SiteSettings.logo %}
         {% image settings.core.SiteSettings.logo width-200 height-30 %}
       {% else %}
@@ -70,7 +70,7 @@
     </a>
     <div class="header__menu">
       <a class="header__link" href="{% if user.is_authenticated %}{% url 'molo.profiles:view_my_profile' %}{% else %}{% url 'molo.profiles:auth_login' %}{% endif %}">
-        <img alt="" height="20px" src="{% static 'img/profile-2.png' %}">
+        <img alt="Profile" height="20px" src="{% static 'img/profile-2.png' %}">
       </a>
       <label class="header__link header__link--button" for="menu-toggle">{% trans "Menu" %}</label>
     </div>
@@ -79,10 +79,14 @@
   <div class="section-nav">
     <input type="checkbox" id="menu-toggle" />
     <ul class="section-nav__items">
-        <li class="section-nav__item"><a href="/">{% trans "Home" %}</a></li>
+        <li class="section-nav__item">
+          <a href="/">{% trans "Home" %}</a>
+        </li>
         {% load_sections as sections %}
         {% for section in sections %}
-          <li class="section-nav__item"><a href="{% pageurl section %}">{{ section.title }}</a></li>
+          <li class="section-nav__item">
+            <a href="{% pageurl section %}">{{ section.title }}</a>
+          </li>
         {% endfor %}
     </ul>
   </div>
