@@ -5,21 +5,25 @@
 {% get_comments_content_object for form as self %}
 
 {% block breadcrumbs %}
-<div class="breadcrumbs fb-body">
-    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
-    <span><a class="fb-accent-2" href="{% pageurl article %}">{{ article.title }}</a></span> &gt;
+<ul class="breadcrumbs">
+  <li class="breadcrumbs__item">
+      <a class="breadcrumbs__anchor" href="/">{% trans "Home" %}</a></li> &gt;
+  <li class="breadcrumbs__item">
+      <a class="breadcrumbs__anchor" href="{% pageurl article %}">{{ article.title }}</a></li> &gt;
+  <li class="breadcrumbs__item breadcrumbs__is-active">
     <span class="active">Report page</span>
-</div>
+  </li>
+</ul>
 {% endblock %}
 
 {% block content %}
-<div class="fb-body fb-card fb-card--{{article.get_parent_section.get_effective_extra_style_hints}}">
-    <h3 class="block-heading fb-accent-1">{% trans "Thanks!" %}</h3>
-    <div class="comment-heading">
-      <p class="subheading subheading--comment">{% trans "This comment has been reported." %}</p>
+  <div class=" fb-body fb-card comments comments{{article.get_parent_section.get_effective_extra_style_hints}}">
+      <h1 class="heading heading--comment">{% trans "Thanks!" %}</h3>
+      <h6 class="heading comment__description">{% trans "This comment has been reported." %}</h6>
       <p><a href="{% pageurl article %}" class="comment-heading__anchor">{% trans "It will be reviewed by the team and may be removed if it breaks our Platform rules" %}</a></p>
-    </div>
-    <br/>
-</div>
-  <a href="{% pageurl article %}" class="call-to-action__nav-item call-to-action__nav-item--back-home">{% trans "Back to article" %}</a>
+      </div>
+  </div>
+  <a href="{% pageurl article %}" class="call-to-action__nav-item call-to-action__nav-item--back">
+    {% trans "Back to article" %}
+  </a>
 {% endblock %}

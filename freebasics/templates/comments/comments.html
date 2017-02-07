@@ -2,31 +2,30 @@
 {% load wagtailcore_tags wagtailimages_tags comments molo_commenting_tags i18n mptt_tags %}
 
 {% block content %}
-<div class="comment-heading comment-heading--{{self.get_parent_section.get_effective_extra_style_hints}}">
-<h3 class="heading heading--comment-feedback">{% trans "Comments" %}</h3>
-</div>
-<div class="comments-list__all" id="comments-list">
-      {% for node in comments %}
-        {% recursetree node %}
-            {% include "comments/comment.html" %}
-            {{ children }}
-        {% endrecursetree %}
-      {% endfor %}
-</div>
+<div class="comments comments{{self.get_parent_section.get_effective_extra_style_hints}}">
+  <div class="comment-heading">
+    <h1 class="heading heading--comment">{% trans "Comments" %}</h1>
+  </div>
+  <div id="comments-list" class="comments__list">
+    {% for node in comments %}
+      {% recursetree node %}
+          {% include "comments/comment.html" %}
+          {{ children }}
+      {% endrecursetree %}
+    {% endfor %}
+  </div>
 <div class="pagination">
-  <span class="step-links">
   {% if page.has_previous %}
-      <a href="?p={{ page.previous_page_number }}">&larr;</a>
+      <a href="?p={{ page.previous_page_number }}" class="pagination__item pagination__item--prev">&larr;</a>
   {% endif %}
-  <span class="current">
+  <span class="pagination__item pagination__item--current">
       Page {{ page.number }} of {{ page.paginator.num_pages }}
   </span>
   {% if page.has_next %}
-      <a href="?p={{ page.next_page_number }}">&rarr;</a>
+      <a href="?p={{ page.next_page_number }}" class="pagination__item pagination__item--next">&rarr;</a>
   {% endif %}
-  </span>
 </div>
-  <a href="{% pageurl self %}" class="call-to-action__nav-item call-to-action__nav-item--back-home">{% trans "Back to article" %}</a>
-
+  <a href="{% pageurl self %}" class="call-to-action__nav-item call-to-action__nav-item--back">{% trans "Back to article" %}</a>
+</div>
 
 {% endblock %}

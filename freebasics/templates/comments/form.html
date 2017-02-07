@@ -1,15 +1,15 @@
 
 {% load comments i18n wagtailcore_tags wagtailimages_tags %}
 
-<form action="{% url 'molo.commenting:molo-comments-post' %}#comments-list" method="post" class="comment-form">
+<form action="{% url 'molo.commenting:molo-comments-post' %}#comments-list" method="post" class="comment__form comment__form{{self.get_parent_section.get_effective_extra_style_hints}}">
     {% csrf_token %}
     {% if form.errors %}
-      <p class="block-article__subtitle">{% blocktrans count counter=form.errors|length %}
-          Please correct the error below
-          {% plural %}
-            Please correct the errors below
-          {% endblocktrans %}
-      </p>
+      <h6 class="comment__text">{% blocktrans count counter=form.errors|length %}
+        Please correct the error below
+        {% plural %}
+          Please correct the errors below
+        {% endblocktrans %}
+      </h6>
     {% endif %}
 
     {% if form.comment.errors %}<div class="comment__errors">{{ form.comment.errors }}</div>{% endif %}

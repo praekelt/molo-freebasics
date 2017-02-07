@@ -2,31 +2,38 @@
 {% extends "core/article_page.html" %}
 {% load wagtailcore_tags wagtailimages_tags comments mptt_tags molo_commenting_tags i18n %}
 
-
 {% get_comments_content_object for form as self %}
 {% block breadcrumbs %}
-<div class="breadcrumbs fb-body">
-    <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
-    <span><a class="fb-accent-2" href="{% pageurl article %}">{{ article.title }}</a></span> &gt;
-    <span class="active">Reply page</span>
-</div>
+<ul class="breadcrumbs">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__anchor" href="/">{% trans "Home" %}</a>
+    </li> &gt;
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__anchor" href="{% pageurl article %}">{{ article.title }}</a>
+    </li> &gt;
+    <li class="breadcrumbs__item breadcrumbs__is-active">
+      <span>Reply page</span>
+    </li>
+</ul>
 {% endblock %}
 
 {% block content %}
-<div class="block {{self.articlepage.get_parent_section.get_effective_extra_style_hints}}">
-  <div class="comment">
-    <p class="by">{{comment.user_name}} <span class="date">{{comment.submit_date}}</span></p>
-    <p>{{comment.comment}}</p>
+<div class="comments comments{{self.get_parent_section.get_effective_extra_style_hints}} {{self.articlepage.get_parent_section.get_effective_extra_style_hints}}">
+  <div class="heading__container">
+    <h4 class="comment__author by">{{comment.user_name}} <span class="comment__date">{{comment.submit_date}}</span></p>
+    <h6 class="comment__text">{{comment.comment}}</h6>
+    </div>
   </div>
-</div><!-- /title -->
 
-<div class="block {{self.get_parent_section.get_effective_extra_style_hints}}">
-  <div class="article-copy">
+  <div class="comment__post-message {{self.get_parent_section.get_effective_extra_style_hints}}">
     <div class="post-comment">
       {% if request.user.is_authenticated %}
         {% include "comments/form.html" with node=comment %}
       {% else %}
-        <p>{% trans "Please " %}<a href="{% url 'molo.profiles:auth_login' %}">{% trans "log in" %}</a>{% trans " to leave a comment." %}</p>
+          <h6 class="comment__text">{% trans "Please " %}
+            <a href="{% url 'molo.profiles:auth_login' %}" class="call-to-action__nav-item call-to-action__nav-item--login">
+              {% trans "log in" %}</a>
+          {% trans " to leave a comment." %}</h6>
       {% endif %}
 		</div>
   </div>

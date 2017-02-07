@@ -1,28 +1,37 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags wagtailimages_tags comments mptt_tags molo_commenting_tags i18n %}
 {% get_comments_content_object for form as self %}
+
 {% block breadcrumbs %}
-<div class="breadcrumbs fb-body">
-  <span><a class="fb-accent-2" href="/">{% trans "Home" %}</a></span> &gt;
-  <span class="active">{{ self.title }}</span>
-</div>
+  <ul class="breadcrumbs">
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__anchor" href="/">
+        {% trans "Home" %}</a>
+    </li> &gt;
+    <li class="breadcrumbs__item breadcrumbs__is-active">
+      <span>{{ self.title }}</span>
+    </li>
+  </ul>
 {% endblock %}
 
 {% block content %}
-<div class="block-category fb-body fb-card {self.get_effective_extra_style_hints}}">
-  {% with parent_section=self.get_parent_section ancestor=self.get_parent_section.get_ancestors.last %}
-    <div class="icon">
-      {% if self.image %}
-        {% image self.image width-98 %}
-      {% elif parent_section.image %}
-        {% image parent_section.image width-98 %}
-      {% else %}
-        {% image ancestor.sectionpage.image width-98 %}
-      {% endif %}
-    </div>
-    <h6>{{ancestor.sectionpage.title}}</h6>
-    <h6 class="block-heading fb-accent-1">{{parent_section.title}}</h6>
-  {% endwith %}
+  <ul class=" fb-body fb-card section-list-nav {{self.get_effective_extra_style_hints}} section-list-nav{{self.get_parent_section.get_effective_extra_style_hints}}">
+    <li class="section-list-nav__item">
+      {% with parent_section=self.get_parent_section ancestor=self.get_parent_section.get_ancestors.last %}
+        <div class="icon">
+          {% if self.image %}
+            {% image self.image width-98 %}
+          {% elif parent_section.image %}
+            {% image parent_section.image width-98 %}
+          {% else %}
+            {% image ancestor.sectionpage.image width-98 %}
+          {% endif %}
+        </div>
+        <h6>{{ancestor.sectionpage.title}}</h6>
+        <h6 class="block-heading fb-accent-1">{{parent_section.title}}</h6>
+      {% endwith %}
+    </li>
+  </ul>
 
   {% if messages %}
   <ul class="messages">
@@ -31,12 +40,23 @@
       {% endfor %}
   </ul>
   {% endif %}
-    <div class="block-comments">
+
+  <div class="comments comments{{self.get_parent_section.get_effective_extra_style_hints}}">
+    <div class="comment__post-message">
       {% if request.user.is_authenticated %}
         {% include "comments/form.html" with node=comment %}
       {% else %}
-        <p>{% trans "Please " %}<a href="{% url 'molo.profiles:auth_login' %}">{% trans "log in" %}</a>{% trans " to leave a comment." %}</p>
+        <h6 class="comment__text">
+          {% trans "Please " %}
+          <a href="{% url 'molo.profiles:auth_login' %}" class="call-to-action__nav-item call-to-action__nav-item--login">
+            {% trans "log in" %}</a>
+          {% trans " to leave a comment." %}
+        </h6>
       {% endif %}
-		</div>
-</div>
+    </div>
+    <a href="{% pageurl self %}" class="call-to-action__nav-item call-to-action__nav-item--back">
+      {% trans "Back to article" %}
+    </a>
+	</div>
+
 {% endblock %}
