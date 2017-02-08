@@ -1,8 +1,8 @@
 {% load wagtailcore_tags wagtailimages_tags i18n %}
 
 {% if articles %}
-<div class="section-list topic-of-day-section-list">
-  <h1 class="heading topic-of-day-section-list__heading" id="latest">{% trans "Topic of the Day" %}</h1>
+<div class="section-list section-list--stopic-of-day">
+  <h1 class="section-list__heading--topic-of-day-" id="latest">{% trans "Topic of the Day" %}</h1>
   {% for article in articles %}
   <ul class="article-list">
     <li class="article-list__item">

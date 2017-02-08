@@ -3,10 +3,10 @@
 {% if sections %}
 {% for section in sections %}
 <div class="section-list section-list{{section.get_effective_extra_style_hints}}">
-  <h2 class="section-list__heading">
+  <h1 class="section-list__heading">
     {{section.title}}
     <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
-  </h2>
+  </h1>
 
   {% load_descendant_articles_for_section section featured_in_homepage=True as featured_articles %}
     {% if featured_articles %}
