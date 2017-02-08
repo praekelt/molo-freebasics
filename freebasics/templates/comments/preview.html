@@ -15,10 +15,11 @@
 {% endblock %}
 
 {% block content %}
-  <ul class=" fb-body fb-card section-list-nav {{self.get_effective_extra_style_hints}} section-list-nav{{self.get_parent_section.get_effective_extra_style_hints}}">
-    <li class="section-list-nav__item">
+<!-- What does this page do? -->
+  <ul class="section-nav-list {{self.get_effective_extra_style_hints}} section-nav-list{{self.get_parent_section.get_effective_extra_style_hints}}">
+    <li class="section-nav-list__item">
       {% with parent_section=self.get_parent_section ancestor=self.get_parent_section.get_ancestors.last %}
-        <div class="icon">
+        <div class="section-nav-list__icon">
           {% if self.image %}
             {% image self.image width-98 %}
           {% elif parent_section.image %}
@@ -28,7 +29,7 @@
           {% endif %}
         </div>
         <h6>{{ancestor.sectionpage.title}}</h6>
-        <h6 class="block-heading fb-accent-1">{{parent_section.title}}</h6>
+        <h6 class="section-nav-list__title">{{parent_section.title}}</h6>
       {% endwith %}
     </li>
   </ul>

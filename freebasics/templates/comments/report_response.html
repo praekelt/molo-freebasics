@@ -17,7 +17,7 @@
 {% endblock %}
 
 {% block content %}
-  <div class=" fb-body fb-card comments comments{{article.get_parent_section.get_effective_extra_style_hints}}">
+  <div class="comments comments{{article.get_parent_section.get_effective_extra_style_hints}}">
       <h1 class="heading heading--comment">{% trans "Thanks!" %}</h3>
       <h6 class="heading comment__description">{% trans "This comment has been reported." %}</h6>
       <p><a href="{% pageurl article %}" class="comment-heading__anchor">{% trans "It will be reviewed by the team and may be removed if it breaks our Platform rules" %}</a></p>
