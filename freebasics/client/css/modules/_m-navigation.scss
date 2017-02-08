@@ -9,21 +9,24 @@
 .section-nav input:checked + * {
  display: block;
 }
-.section-nav__items {
+
+.section-nav-list {
   font-size: 13px;
   margin: 0;
   background: #fff;
   padding: 0;
   list-style-type: none;
 }
-.section-nav__item {
+.section-nav-list__item {
   padding: 8px 16px;
   border-bottom: 1px #eee solid;
 }
-.section-nav__item a {
+.section-nav-list__anchor {
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   display: block;
+  color: #000;
+  font-weight: bold;
   &:after {
     content: ">";
     display: inline-block;

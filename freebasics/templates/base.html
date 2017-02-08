@@ -78,14 +78,14 @@
 
   <div class="section-nav">
     <input type="checkbox" id="menu-toggle" />
-    <ul class="section-nav__items">
-        <li class="section-nav__item">
-          <a href="/">{% trans "Home" %}</a>
+    <ul class="section-nav-list">
+        <li class="section-nav-list__item">
+          <a href="/" class="section-nav-list__anchor">{% trans "Home" %}</a>
         </li>
         {% load_sections as sections %}
         {% for section in sections %}
-          <li class="section-nav__item">
-            <a href="{% pageurl section %}">{{ section.title }}</a>
+          <li class="section-nav-list__item">
+            <a href="{% pageurl section %}" class="section-nav-list__anchor">{{ section.title }}</a>
           </li>
         {% endfor %}
     </ul>
@@ -116,7 +116,7 @@
     {% if languages|length > 1 %}
       <strong>{% trans "Site Language:" %}</strong>
       {% for language in languages %}
-        <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" class="footer__anchor {% if LANGUAGE_CODE == language.locale %} footer__anchor-is-active {% endif %}">{{language}}</a> 
+        <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" class="footer__anchor {% if LANGUAGE_CODE == language.locale %} footer__anchor-is-active {% endif %}">{{language}}</a>
       {% endfor %}
     {% endif %}
       {% social_media_footer %}
