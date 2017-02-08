@@ -4,7 +4,7 @@
 {% block content %}
 {% if search_results %}
 <div class="block-search fb-body fb-card">
-  <h6 class="block-heading fb-accent-1">{% trans "Search Results" %}</h6>
+  <h6 class="search__heading fb-accent-1">{% trans "Search Results" %}</h6>
   <h6 class="sub-heading">{% trans "Search results for" %}: {{search_query}}</h6>
 
   {% for page in search_results %}
@@ -48,13 +48,11 @@
       <p>{% trans "No search results for " %}{{search_query}}.</p>
     </div>
   </div>
-  <div class="block-search fb-body fb-card">
-    <div class="padding15">
-      <form action="{% url 'search' %}" class="search-form">
-        <input placeholder="{% trans "Looking for something?" %}" name="q" type="text" value="{{search_query}}">
-        <input type="submit" value="{% trans "Search"%}">
-      </form>
-    </div>
+  <div class="block-search">
+    <form action="{% url 'search' %}" class="search__form">
+      <input placeholder="{% trans "Looking for something?" %}" name="q" type="text" value="{{search_query}}">
+      <input type="submit" value="{% trans "Search"%}" class="call-to-action__item call-to-action__item--search">
+    </form>
   </div>
 {% endif %}
 {% endblock %}

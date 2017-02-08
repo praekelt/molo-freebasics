@@ -3,6 +3,9 @@
 -->
 <style type="text/css">
 
+.custom-template-container *:not(.custom-template-container__no-font) {
+  font-family: {{body_font_family}};
+}
 /*
   MENU
 */
@@ -23,8 +26,10 @@
 
 
 /*
-  SECTION
+  LATEST ARTICLE
+  SECTION LISTING
 */
+.article-list__heading--latest,
 .section-list__heading {
   background-color: {{block_background_color}};
   font-family: {{block_font_family}};
@@ -46,7 +51,7 @@
   color: {{accent_2}};
 }
 
-.latest-section-list__link,
+.article-list__heading__link,
 .call-to-action__item-text-see-more,
 .call-to-action__item-text-read-more {
   color: {{accent_2}};
@@ -156,8 +161,6 @@
   border-color: {{block_background_color}};
   color: {{accent_2}};
 }
-.custom-template-container, .custom-template-container *:not(.no-fb-body) {
-  font-family: {{body_font_family}};
-}
+
 */
 </style>

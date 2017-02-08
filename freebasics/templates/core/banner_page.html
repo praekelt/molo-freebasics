@@ -4,7 +4,7 @@
 {% load core_tags wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-<div class="banner">
+<div class="banner custom-template-container__no-font">
   {% if self.banner %}
     {% if self.banner_link_page %}
       <a href="{% pageurl self.banner_link_page %}" class="banner__anchor">
