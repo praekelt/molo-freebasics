@@ -6,7 +6,7 @@
 }
 .article-list__heading {
   margin: 0 0 8px 0;
-  padding: 10px 15px;
+  padding: 10px 15px 0;
   a {
     text-decoration: none;
   }
@@ -27,6 +27,7 @@
 
 .article-list__heading--latest {
   font-size: 15px;
+  padding: 10px 15px;
 }
 .article-list__inner-content {
   padding: 0 15px;

@@ -11,26 +11,32 @@
 
 .search__form {
   text-align: center;
-  input[type="text"]{
+  input[type="text"] {
     padding: 8px 25px 8px 5px;
     margin: 0 auto;
     @media screen and (min-width: 320px) {
       width: auto;
     }
   }
+  .call-to-action__item--search {
+    padding: 10px 5px;
+    @media screen and (min-width: 320px) {
+      padding: 8px 20px;
+    }
+  }
 }
 
 .call-to-action__item--search {
   display: block;
-  padding: 10px 5px;
   margin: 7px auto;
   width: 95%;
   @media screen and (min-width: 320px) {
     display: inline-block;
-    padding: 8px 20px;
     width: auto;
   }
 }
+
+
 
 .block-search {
   ul li{
