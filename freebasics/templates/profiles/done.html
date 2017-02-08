@@ -5,8 +5,6 @@
 <div class="profile">
 <div class="block-default fb-body fb-card">
   <h6 class="block-heading fb-accent-1">{% trans "Thank you for joining! " %}</h6><br>
-  <div class="padding-no-top">
-
   <p>{% trans "Let us know your birthday to get access to exclusive content." %}</p><br>
   <form method="post" action="{% url 'molo.profiles:registration_done' %}">{% csrf_token %}
       {{ form.date_of_birth }}
@@ -15,7 +13,6 @@
       <input type="submit" value='{% trans "Update" %}' />
       <a href="/" class="call-to-action__text-item">{% trans "Skip" %}</a>
   </form>
-</div>
 </div>
 </div>
 
