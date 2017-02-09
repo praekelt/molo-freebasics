@@ -2,18 +2,18 @@
 {% load i18n %}
 
 {% block content %}
-<div class="profile">
-<div class="block-default fb-body fb-card">
-  <h6 class="block-heading fb-accent-1">{% trans "Thank you for joining! " %}</h6><br>
+<div class="profiles">
+  <h1 class="heading--profiles">{% trans "Thank you for joining! " %}</h1>
   <p>{% trans "Let us know your birthday to get access to exclusive content." %}</p><br>
-  <form method="post" action="{% url 'molo.profiles:registration_done' %}">{% csrf_token %}
+  <form method="post" action="{% url 'molo.profiles:registration_done' %}" class="profiles__form">
+  {% csrf_token %}
+    <fieldset>
+      <label for="id_date_of_birth_year">Select date of birth</label>
       {{ form.date_of_birth }}
-      <br>
-      <br>
-      <input type="submit" value='{% trans "Update" %}' />
-      <a href="/" class="call-to-action__text-item">{% trans "Skip" %}</a>
+    </fieldset>
+    <input type="submit" value='{% trans "Update" %}' />
+    <a href="/" class="call-to-action__text-item">{% trans "Skip" %}</a>
   </form>
-</div>
 </div>
 
 {% endblock %}
