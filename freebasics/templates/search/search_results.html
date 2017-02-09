@@ -3,52 +3,44 @@
 
 {% block content %}
 {% if search_results %}
-<div class="block-search fb-body fb-card">
-  <h6 class="search__heading fb-accent-1">{% trans "Search Results" %}</h6>
-  <h6 class="sub-heading">{% trans "Search results for" %}: {{search_query}}</h6>
+<div class="search search-results">
+  <h1 class="heading--search">{% trans "Search Results" %}</h1>
+  <h3 class="sub-heading--search">{% trans "Search results for" %}: {{search_query}}</h3>
 
   {% for page in search_results %}
-  <ul class="list-block">
     {% with parent_section=page.get_parent_section ancestor=page.get_parent_section.get_ancestors.last %}
     {% if ancestor.sectionpage.image %}
-    <li>
-          <h6 class="fb-accent-2">{{ancestor.title}}</h6>
-          <p>{{page.title}}</p>
-          <a href={{page.url}} class="fb-accent-2 link-button">{% trans "View" %}</a>
-    </li>
+    <div class="search-results__list">
+      <h4 class="search--result__section-title">{{ancestor.title}}</h4>
+      <h3 class="search--result__article-title">{{page.title}}</h3>
+      <a href={{page.url}} class="call-to-action__nav-item call-to-action__nav-item--view-more">{% trans "View" %}</a>
+    </div>
     {% else %}
-    <li>
-          <h6 class="fb-accent-2">{{parent_section.title}}</h6>
-          <p>{{page.title}}</p>
-          <a href={{page.url}} class="fb-accent-2 link-button">{% trans "View" %}</a>
-    </li>
+    <div class="search-results__list">
+      <h4 class="search--result__section-title">{{parent_section.title}}</h4>
+      <h3 class="search--result__article-title">{{page.title}}</h3>
+      <a href={{page.url}} class="call-to-action__nav-item call-to-action__nav-item--view-more">{% trans "View" %}</a>
+    </div>
     {% endif %}
     {% endwith %}
   {% endfor %}
-<li>
-  <div class="step-links">
+  <div class="pagination">
     {% if search_results.has_previous %}
-        <a class="fb-accent-2" href="?p={{ search_results.previous_page_number }}&amp;q={{search_query}}">&larr;</a>
+        <a class="pagination__link" href="?p={{ search_results.previous_page_number }}&amp;q={{search_query}}">&larr;</a>
     {% endif %}
-    <span class="current fb-accent-2">
+    <span class="pagination__link pagination__link--current">
         Page {{ search_results.number }} of {{ search_results.paginator.num_pages }}
     </span>
     {% if search_results.has_next %}
-        <a class="fb-accent-2" href="?p={{ search_results.next_page_number }}&amp;q={{search_query}}">&rarr;</a>
+        <a class="pagination__link" href="?p={{ search_results.next_page_number }}&amp;q={{search_query}}">&rarr;</a>
     {% endif %}
   </div>
-  </li>
-</ul>
 </div>
 
 {% else %}
-  <div class="block-search fb-body fb-card">
-    <h6 class="block-heading fb-accent-1">{% trans "Search Results" %}</h6>
-    <div class="padding15">
-      <p>{% trans "No search results for " %}{{search_query}}.</p>
-    </div>
-  </div>
-  <div class="block-search">
+  <div class="search">
+    <h2 class="heading--search">{% trans "Search Results" %}</h2>
+    <p>{% trans "No search results for " %}{{search_query}}.</p>
     <form action="{% url 'search' %}" class="search__form">
       <input placeholder="{% trans "Looking for something?" %}" name="q" type="text" value="{{search_query}}">
       <input type="submit" value="{% trans "Search"%}" class="call-to-action__item call-to-action__item--search">

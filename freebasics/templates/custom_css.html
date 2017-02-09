@@ -40,6 +40,7 @@
 .heading--polls,
 .heading--yourwords,
 .surveys__title,
+.heading--search,
 .heading--article  {
   background-color: {{block_background_color}};
   font-family: {{block_font_family}};
@@ -88,7 +89,8 @@
 .heading--polls,
 .heading--yourwords,
 .article__title,
-.surveys__title {
+.surveys__title,
+.heading--search {
   color: {{accent_1}};
 }
 
@@ -113,8 +115,16 @@ input[type="submit"],
 
 /*
   POLLS
+  SEARCH
 */
-.choice-result__percent-bar {
+.choice-result__percent-bar,
+.pagination__link {
+  color: {{accent_2}};
+}
+
+.search--result__section-title,
+.search--result__article-title,
+.call-to-action__nav-item--view-more {
   color: {{accent_2}};
 }
 

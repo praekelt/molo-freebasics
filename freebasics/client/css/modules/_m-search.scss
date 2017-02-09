@@ -7,6 +7,9 @@
     margin: 7px;
     border-radius: 3px;
   }
+  .call-to-action__nav-item--view-more {
+    margin: 10px 0;
+  }
 }
 
 .search__form {
@@ -25,7 +28,10 @@
     }
   }
 }
-
+.search-results__list,
+.sub-heading--search {
+  padding: 0 15px;
+}
 .call-to-action__item--search {
   display: block;
   margin: 7px auto;
@@ -35,8 +41,6 @@
     width: auto;
   }
 }
-
-
 
 .block-search {
   ul li{
