@@ -119,7 +119,6 @@
         <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" class="footer__anchor {% if LANGUAGE_CODE == language.locale %} footer__anchor-is-active {% endif %}">{{language}}</a>
       {% endfor %}
     {% endif %}
-      {% social_media_footer %}
     {% footer_page %}
   </div>
   {% endblock %}

@@ -6,7 +6,7 @@
 {% block content %}
 <div class="article-page article-page{{self.get_parent_section.get_effective_extra_style_hints}}">
   <h1 class="heading heading--article">{{self.title}}</h1>
-  <div class="article-list article-page__inner-content">
+  <div class="article-list">
     {% if self.image %}
       {% image self.image width-274 as tmp_photo %}
       <img src="{{ tmp_photo.url }}" alt="{{ self.image.title }}" class="article__image"/>

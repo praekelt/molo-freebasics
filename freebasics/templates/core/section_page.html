@@ -7,27 +7,29 @@
 {% block content %}
 {% your_words_competition_in_section self %}
 <div class="section-list section-list{{section.get_effective_extra_style_hints}}">
-  <h2 class="heading section-list__heading">{{self.title}}</h2>
+  <h1 class="heading section-list__heading">{{self.title}}</h1>
   <ul class="article-list">
     {% load_child_articles_for_section self count=None as articles %}
     {% for article in articles %}
     <li class="article-list__item">
-      <h3 class="article-list__heading">
+      <h2 class="article-list__heading">
         <a href="{% pageurl article %}" class="article-list__anchor">
           {{article.title}}
         </a>
-      </h3>
-      {% if article.image %}
-        {% image article.image width-100 as tmp_photo %}
-        <img src="{{ tmp_photo.url }}" alt="{{ article.image.title }}" class="article-list__image" />
-      {% endif %}
-      <h4 class="article-list__subtitle">{{article.subtitle}}</h4>
-      <div class="article-list__excerpt">
-        <p>{{ article.body|striptags|truncatewords:30 }}</p>
+      </h2>
+      <div class="article-list__inner-content">
+        {% if article.image %}
+          {% image article.image width-100 as tmp_photo %}
+          <img src="{{ tmp_photo.url }}" alt="{{ article.image.title }}" class="article-list__image" />
+        {% endif %}
+        <h4 class="article-list__subtitle">{{article.subtitle}}</h4>
+        <div class="article-list__excerpt">
+          <p>{{ article.body|striptags|truncatewords:30 }}</p>
+        </div>
+        <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
+          {% trans "Read More" %}
+        </a>
       </div>
-      <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
-        {% trans "Read More" %}
-      </a>
     </li>
     {% endfor %}
   </ul>
@@ -35,10 +37,10 @@
 
   {% load_child_sections_for_section self as sections %}
     {% for section in sections %}
-      <h2 class="section-list__heading section-list__heading--subsection">
+      <h1 class="section-list__heading section-list__heading--subsection">
         {{section.title}}
         <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
-      </h6>
+      </h1>
       {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
       {% if featured_articles %}
       <ul class="article-list">
@@ -48,10 +50,12 @@
               <a href="{% pageurl article %}" class="article-list__anchor">
                 {{article.title}}</a>
             </h3>
-            <h4 class="article-list__subtitle">{{article.subtitle|striptags|truncatewords:30}}</h4>
-            <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
-              Read More
-            </a>
+            <div class="article-list__inner-content">
+              <h4 class="article-list__subtitle">{{article.subtitle|striptags|truncatewords:30}}</h4>
+              <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
+                Read More
+              </a>
+            </div>
           </li>
         {% endfor %}
       </ul>
