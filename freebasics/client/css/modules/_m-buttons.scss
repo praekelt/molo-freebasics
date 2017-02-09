@@ -13,11 +13,10 @@
   }
 }
 
-.call-to-action__nav-item,
-.btn-wide input[type="button"]  {
+.call-to-action__nav-item {
   cursor: pointer;
   font-size: 12px;
-  padding: 10px 0;
+  padding: 10px 15px;
   text-decoration: underline;
   text-align: left;
   display: inline-block;
@@ -26,16 +25,10 @@
     padding: 10px 22px;
     text-decoration: none;
     border-radius: 3px;
-    margin: 10px 15px 10px 0;
+    margin: 10px 15px;
     text-align: center;
   }
 }
-
-.btn-wide input[type="button"] {
-  width: 95%;
-  display: block;
-}
-
 
 .call-to-action__text-item--dir-left,
 .call-to-action__nav-item--back,

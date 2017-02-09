@@ -1,34 +1,22 @@
-.profile {
-  .block-heading  {
-    text-transform: capitalize;
-  }
-  .label-wide {
-    display: block;
-  }
-
-  .signin-form p {
-    padding-bottom: 10px;
-  }
+.heading--profiles {}
+.profiles__feedback-message {
+  padding: 5px 15px;
+  margin: 0;
+  font-size: 12px;
 }
-.profile__security-labels {
-  padding: 0 0 15px;
-}
-
-.profile--view-edit {
-  .btn-wide,
-  .btn-wide input[type="button"] {
-    margin: 10px auto;
+.profiles {
+  margin: 7px 0;
+  background-color: #fff;
+  @media screen and (min-width:320px) {
+    border-radius: 3px;
   }
-}
-
-.profile__user-info,
-.profiles__form {
-  padding: 10px 15px;
 }
 .call-to-action__text-item {
   text-transform: capitalize;
 }
-
+.call-to-action--profile {
+  padding: 0 0 15px;
+}
 .call-to-action__text-item,
 .call-to-action__item--forgotten-pass {
   font-weight: bold;
@@ -40,16 +28,19 @@
   }
 }
 
-.profile-icon{
-  padding: 10px 10px 0px 10px;
-}
-.pull-right{
-  float:right!important;
-}
-.pull-left{
-  float:left!important;
-}
 
+
+// TO REMOVE
+.profiles {
+  .label-wide {
+    display: block;
+  }
+
+  .signin-form p {
+    padding-bottom: 10px;
+  }
+}
+.profile__user-info,
 .profiles__form {
-
+  padding: 10px 15px;
 }

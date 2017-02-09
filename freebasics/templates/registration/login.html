@@ -3,33 +3,39 @@
 
 
 {% block content %}
-<div class="profile">
-<div class="block-default fb-body fb-card">
-	<h6 class="block-heading fb-accent-1">{% trans "Login to your account" %}</h6>
-	<div class="signin-form fb-body">
-		<p>{% trans "We're excited to have you..." %}</p>
-		<form method="post" action=".">{% csrf_token %}
-				{% if form.errors %}
-				    <p class="error errorlist">{% trans "Your username and password does not match. Please try again." %}</p>
-				{% endif %}
-        <fieldset>
-  				<label>{% trans "Username" %}</label>
-  				{{form.username}}
-        </fieldset>
+<div class="profiles">
+	<h1 class="heading--profiles">{% trans "Login to your account" %}</h1>
+	<h6 class="profiles__feedback-message">
+    {% trans "We're excited to have you..." %}
+  </h6>
+		<form method="post" action="" class="profiles__form">
+    {% csrf_token %}
+      {% if form.errors %}
+        <span class="error">
+          {% trans "Your username and password do not match. Please try again." %}
+        </span>
+      {% endif %}
+      <fieldset>
+				<label for="id_username">{% trans "Username" %}</label>
+				{{form.username}}
+      </fieldset>
 
-        <fieldset>
-  				<label>{% trans "Password" %}</label>
-  				{{form.password}}
-        </fieldset>
+      <fieldset>
+				<label for="id_password">{% trans "Password" %}</label>
+				{{form.password}}
+        <span class="input-hint">({% trans "Eg.: 2086" %})</span>
+      </fieldset>
 
-				<input type="submit" value="{% trans 'Sign in' %}">
-				<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
-				<a href="{% url 'molo.profiles:user_register' %}" class="btn btn-wide">
-          <input type="button" value='{% trans "Register" %}'/>
-        </a><br>
+			<input type="submit" value="{% trans 'Sign in' %}">
+			<input type="hidden" name="next" value="{% if request.GET.next %}{{ request.GET.next }}{% else %}{{request.site.root_page.url}}{% endif %}" />
 		</form>
+
+    <div class="call-to-action call-to-action--profile">
+    	<h6 class="profiles__feedback-message">
+        {% trans "Not a member yet?" %}
+      </h6>
+    	<a href="{% url "molo.profiles:user_register" %}" class="call-to-action__nav-item">{% trans "Register" %}</a>
+    </div>
 		<a href="{% url 'molo.profiles:forgot_password' %}" class="call-to-action__text-item call-to-action__text-item--forgotten-pass">{% trans 'Forgotten your password?' %}</a>
-	</div>
-</div>
 </div>
 {% endblock %}
