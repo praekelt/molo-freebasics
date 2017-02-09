@@ -1,8 +1,36 @@
-.sub-heading--polls {
+
+.polls {
+  margin: 7px 0;
+  background-color: #fff;
+  @media screen and (min-width:320px) {
+    border-radius: 3px;
+    margin: 7px;
+  }
+  .heading--polls {
+    margin: 0;
+  }
 }
-.polls-form {
+
+.polls__form {
+  padding: 0 15px;
+  .call-to-action__nav-item {
+    margin: 10px 0;
+  }
+}
+.polls__question--title {
   padding: 0 15px;
 }
+
+.polls-question-list {
+  padding: 0 15px;
+}
+.polls--homepage {
+  .polls-question-list {
+    padding: 0;
+  }
+}
+
+//TO BE DELETED
 .post-comment textarea {
   box-sizing: border-box;
   width: 100%;
