@@ -41,9 +41,13 @@
     width: auto;
     text-align: left;
     @media screen and (min-width:320px) {
-      margin: 10px 15px 10px 0;
+      margin: 10px 15px;
       border: none;
       word-break: keep-all;
+    }
+
+    input[type="submit"] {
+      margin: 10px 0;
     }
   }
 }
