@@ -2,6 +2,7 @@
 .heading--profiles,
 .heading--comment,
 .heading--article,
+.heading--polls,
 .section-list__heading,
 .article-list__heading--latest {
   padding: 10px 15px;
@@ -9,6 +10,11 @@
   margin: 0 7px;
 }
 
+.heading--polls,
+.section-list__heading,
+.article-list__heading--latest {
+    margin: 0;
+}
 .block-poll {
   .sub-heading {
     padding: 10px;
