@@ -1,28 +1,18 @@
-
-
-//COMMENT FORM
 .comment__form {
   padding: 0 15px;
 }
-
 .comments-counter--heading {
   padding: 0 15px;
+  color: #000;
 }
-.comments-count {
-  padding-bottom:10px;
-}
-
-.post-comment {
-  p{
-    padding: 0;
-  }
+.comments__counter {
+  color: #000;
+  text-decoration: none;
 }
 
-.comment-form,
-.comment-heading {
-  padding: 0 15px;
-}
+.comment__post-message {}
 
+//TO DELETE
 .comment-heading__anchor {
   color: #000;
 }

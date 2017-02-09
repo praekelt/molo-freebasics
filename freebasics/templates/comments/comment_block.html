@@ -5,14 +5,18 @@
     {% if self.allow_commenting %}
       {% get_comment_count for self as comment_count %}
       {% if comment_count > 0 %}
-        <h5 class="comments-counter--heading">{% trans "Comment" %}<a href="#" class="pull-right">{{comment_count}} <span>{% trans "comment" %}{{comment_count|pluralize}}</span></a></h5>
+        <h5 class="comments-counter--heading">{% trans "Comment" %}
+          <a href="#" class="comments__counter">{{comment_count}}
+            <span>{% trans "comment" %}{{comment_count|pluralize}}</span>
+          </a>
+        </h5>
       {% endif %}
 
       <div class="comment__post-message">
         {% if request.user.is_authenticated %}
           {% render_comment_form for self %}
         {% else %}
-          <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}"lass="call-to-action__nav-item call-to-action__nav-item--login">
+          <a href="{% url 'molo.profiles:auth_login' %}?next={{request.path}}" class="call-to-action__nav-item call-to-action__nav-item--login">
             {% trans "Log in to comment" %}
           </a>
         {% endif %}

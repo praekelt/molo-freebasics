@@ -11,24 +11,24 @@
         {{node.user.profile.alias}}
       {% endif %}
     {% endif %}
-  </H4>
-    <span class="date">{{node.submit_date|date:"j F Y"}}</span>
-  </p>
+    <span class="comment-list__date">{{node.submit_date|date:"j F Y"}}</span>
+  </h4>
+
   {% if node.is_removed %}
     <h6 class="comment__description">
       {% trans "This comment has been removed by the community. Please read our platform rules." %}</h6>
   {% else %}
-    <p>{{node.comment}}</p>
-    	{% if node.parent == None %}
-        <a href="{% url 'molo.commenting:molo-comments-report' node.pk %}?next={% url 'molo.commenting:report_response' node.pk %}" class="call-to-action__nav-item call-to-action__nav-item--response">
-          {% trans "Report" %}
-        </a>
-        {% if request.user|is_in_group:'Expert' and not node.user|is_in_group:'Expert' %}
-        <a href="{% url 'molo.commenting:molo-comments-reply' node.pk %}" class="call-to-action__nav-item call-to-action__nav-item--response">
-          {% trans "Reply"%}
-        </a>
-        {% endif %}
+  <p>{{node.comment}}</p>
+</div>
+  {% if node.parent == None %}
+    <a href="{% url 'molo.commenting:molo-comments-report' node.pk %}?next={% url 'molo.commenting:report_response' node.pk %}" class="call-to-action__nav-item call-to-action__nav-item--response">
+      {% trans "Report" %}
+    </a>
+    {% if request.user|is_in_group:'Expert' and not node.user|is_in_group:'Expert' %}
+    <a href="{% url 'molo.commenting:molo-comments-reply' node.pk %}" class="call-to-action__nav-item call-to-action__nav-item--response">
+      {% trans "Reply"%}
+    </a>
     {% endif %}
   {% endif %}
-</div>
+  {% endif %}
 <hr>
