@@ -5,24 +5,29 @@
 <div class="profiles">
   <h6 class="heading heading--profiles">{% trans "Hello " %}{{ user.username }}</h6>
   <fieldset>
-    <label>
       <label>{% trans "Display Name: " %}</label>
       <p class="profile__alias">{{ user.profile.alias | default:'Anonymous' }}</p>
   </fieldset>
 
   <fieldset>
     <label>{% trans "Date of Birth: " %}</label>
-    <p class="profile__dob">{{ user.profile.date_of_birth | date:"M d, Y" }}</p>
+    <p class="profile__dob">
+      {% if user.profile.date_of_birth %}
+        {{ user.profile.date_of_birth | date:"M d, Y" }}
+      {% else %}
+        {% trans " Not set." %}
+      {% endif %}
+    </p>
   </fieldset>
 
   <fieldset>
     <label>{% trans "Mobile Number: " %}</label>
-    <p class="profile__mobile-number">{{ user.profile.mobile_number | default:' '}}</p>
+    <p class="profile__mobile-number">{{ user.profile.mobile_number | default:"Not set" }}</p>
   </fieldset>
 
   <fieldset>
     <label>{% trans "Email Address: " %}</label>
-    <p class="profile__email">{{ user.email | default:' '}}</p>
+    <p class="profile__email">{{ user.email | default:"Not set" }}</p>
   </fieldset>
 
   <div class="call-to-action call-to-action--profile call-to-action--view-profile">

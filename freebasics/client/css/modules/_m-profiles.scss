@@ -2,7 +2,7 @@
 .profiles__feedback-message {
   padding: 5px 15px;
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 .profiles {
   margin: 7px 0;
@@ -10,37 +10,30 @@
   @media screen and (min-width:320px) {
     border-radius: 3px;
   }
+
+  fieldset {
+    padding: 5px 15px;
+  }
+  .call-to-action__nav-item {
+    display: block;
+  }
+  input[type=submit] {
+    margin: 0 15px;
+  }
 }
 .call-to-action__text-item {
   text-transform: capitalize;
 }
 .call-to-action--profile {
-  padding: 0 0 15px;
+  padding: 10px 0 15px;
 }
 .call-to-action__text-item,
 .call-to-action__item--forgotten-pass {
   font-weight: bold;
   display: block;
-  padding: 0 15px;
+  padding: 5px 15px;
   &:hover {
     text-decoration: underline;
     &:before { text-decoration: none !important; }
   }
-}
-
-
-
-// TO REMOVE
-.profiles {
-  .label-wide {
-    display: block;
-  }
-
-  .signin-form p {
-    padding-bottom: 10px;
-  }
-}
-.profile__user-info,
-.profiles__form {
-  padding: 10px 15px;
 }
