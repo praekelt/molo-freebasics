@@ -76,20 +76,22 @@
     </div>
   </div>
 
-  <div class="section-nav">
-    <input type="checkbox" id="menu-toggle" />
-    <ul class="section-nav-list">
-        <li class="section-nav-list__item">
-          <a href="/" class="section-nav-list__anchor">{% trans "Home" %}</a>
-        </li>
-        {% load_sections as sections %}
-        {% for section in sections %}
+  {% block section_nav %}
+    <div class="section-nav">
+      <input type="checkbox" id="menu-toggle" />
+      <ul class="section-nav-list">
           <li class="section-nav-list__item">
-            <a href="{% pageurl section %}" class="section-nav-list__anchor">{{ section.title }}</a>
+            <a href="/" class="section-nav-list__anchor">{% trans "Home" %}</a>
           </li>
-        {% endfor %}
-    </ul>
-  </div>
+          {% load_sections as sections %}
+          {% for section in sections %}
+            <li class="section-nav-list__item">
+              <a href="{% pageurl section %}" class="section-nav-list__anchor">{{ section.title }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+  {% endblock %}
 
   {% block breadcrumbs %}
     {% breadcrumbs %}
