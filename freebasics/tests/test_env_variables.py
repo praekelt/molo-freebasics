@@ -37,6 +37,6 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
     def test_custom_css(self):
         response = self.client.get('/')
         self.assertContains(response, 'Free Basics Custom CSS')
-        self.assertContains(response, '.custom-template-container__content')
+        self.assertContains(response, '.base-bcolor')
         self.assertContains(response, '.heading')
         self.assertContains(response, '.article-list__item')
