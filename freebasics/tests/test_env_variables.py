@@ -39,4 +39,4 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
         self.assertContains(response, 'Free Basics Custom CSS')
         self.assertContains(response, '.custom-template-container__content')
         self.assertContains(response, '.heading')
-        self.assertContains(response, '.section-nav__items')
+        self.assertContains(response, '.article-list__item')
