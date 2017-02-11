@@ -39,4 +39,4 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
         self.assertContains(response, 'Free Basics Custom CSS')
         self.assertContains(response, '.fb-body .base-bcolor')
         self.assertContains(response, '.heading')
-        self.assertContains(response, '.article-list__item')
+        self.assertContains(response, '.article-list__heading')
