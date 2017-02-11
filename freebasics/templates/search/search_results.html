@@ -4,7 +4,7 @@
 {% block content %}
 {% if search_results %}
 <div class="search search-results">
-  <h1 class="heading--search">{% trans "Search Results" %}</h1>
+  <h1 class="heading heading--search">{% trans "Search Results" %}</h1>
   <h3 class="sub-heading--search">{% trans "Search results for" %}: {{search_query}}</h3>
 
   {% for page in search_results %}

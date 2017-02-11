@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="profiles">
-	<h1 class="heading--profiles">{% trans "Edit Profile" %}</h1>
+	<h1 class="heading heading--profiles">{% trans "Edit Profile" %}</h1>
 	<form method="post" id="frmProfileEdit" action="{% url 'molo.profiles:edit_my_profile' %}" class="profiles__form">
   {% csrf_token %}
 

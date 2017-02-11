@@ -11,7 +11,7 @@
 {% block content %}
 <div class="polls">
 	{% if question.get_main_language_page.show_results and not question.freetextquestion %}
-		<h1 class="heading--polls">{% trans "Poll" %}</h1>
+		<h1 class="heading heading--polls">{% trans "Poll" %}</h1>
 
 		<ul class="polls-question-list">
       <h3 class="sub-heading--polls">{{ question.title }}</h3>

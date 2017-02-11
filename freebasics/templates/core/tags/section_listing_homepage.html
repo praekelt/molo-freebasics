@@ -3,7 +3,7 @@
 {% if sections %}
 {% for section in sections %}
 <div class="section-list section-list{{section.get_effective_extra_style_hints}}">
-  <h1 class="section-list__heading">
+  <h1 class="heading section-list__heading">
     {{section.title}}
     <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
   </h1>

@@ -10,7 +10,7 @@
 
 {% block content %}
 <div class="polls">
-	<h1 class="heading--polls">{{ question.title }}</h1>
+	<h1 class="heading heading--polls">{{ question.title }}</h1>
 	{% if form.choice.errors %}
     <h3 class="sub-heading--polls">{{form.choice.errors|join:", " }}</h3>
   {% endif %}

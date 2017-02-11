@@ -5,7 +5,7 @@
     <ul class="article-list">
     {% for article in articles %}
       <li class="article-list__item">
-        <h2 class="article-list__heading article-list__heading--latest">
+        <h2 class="heading article-list__heading article-list__heading--latest">
           <a href="{% pageurl article %}" class="article-list__heading__link">{{article.title}}</a>
         </h2>
         <div class="article-list__inner-content">
