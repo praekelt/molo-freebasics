@@ -14,6 +14,22 @@ ul, ol, li {
   padding:0;
 }
 
+.unordered-list, .ordered-list {
+  margin: 1em 0;
+}
+.unordered-list, .unordered-list__item,
+.ordered-list, .ordered-list__item {
+  padding: 0 15px;
+}
+.unordered-list, .unordered-list__item {
+  list-style-type: disc;
+}
+
+.ordered-list, .ordered-list__item {
+  margin: auto;
+  list-style-type: decimal;
+}
+
 fieldset {
   border: none;
   padding: 0;
