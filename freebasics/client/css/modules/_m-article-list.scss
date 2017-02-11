@@ -26,5 +26,10 @@
 }
 
 .article-list__inner-content {
-  padding: 5px 15px;
+  padding: 10px 15px;
+  overflow: auto;
+  .article-list__heading {
+    padding: 0;
+    display: inline-block;
+  }
 }

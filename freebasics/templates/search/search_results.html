@@ -40,7 +40,9 @@
 {% else %}
   <div class="search">
     <h2 class="heading--search">{% trans "Search Results" %}</h2>
-    <p>{% trans "No search results for " %}{{search_query}}.</p>
+      <div class="search-results__list">
+        <p>{% trans "No search results for " %}{{search_query}}.</p>
+      </div>
     <form action="{% url 'search' %}" class="search__form">
       <input placeholder="{% trans "Looking for something?" %}" name="q" type="text" value="{{search_query}}">
       <input type="submit" value="{% trans "Search"%}" class="call-to-action__item call-to-action__item--search">

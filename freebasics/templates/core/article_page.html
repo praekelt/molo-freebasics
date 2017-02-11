@@ -42,9 +42,15 @@
     {% endfor %}
     </article>
     {% if settings.core.SiteSettings.enable_clickable_tags %}
-      {% for tag in self.tags_list %}
-        <a href="{% url 'tags_list' tag %}">{{tag}}</a>
-      {% endfor%}
+      <div class="tags">
+        <ul class="tags-list">
+          {% for tag in self.tags_list %}
+            <li class="tags-list__item">
+                <a href="{% url 'tags_list' tag %}" class="tag__item-anchor">{{tag}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endif %}
   </div>
   {% include "comments/comment_block.html" %}
