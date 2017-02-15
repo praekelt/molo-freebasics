@@ -25,8 +25,16 @@
   color: #69269d;
 }
 .heading--feeback-title {
-  margin-bottom: 0;
+  margin: 0;
+  font-size: 16px;
 }
+
+.heading--subtitle {
+  padding: 5px 15px;
+  margin: 0;
+  font-size: 15px;
+}
+
 
 .csrf--heading {
   padding: 5px 15px;

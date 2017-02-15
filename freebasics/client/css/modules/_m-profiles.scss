@@ -10,6 +10,11 @@
     border-radius: 3px;
   }
 
+  a {
+    padding: 10px 15px;
+    display: block;
+  }
+
   fieldset {
     padding: 5px 15px;
   }
@@ -35,4 +40,8 @@
     text-decoration: underline;
     &:before { text-decoration: none !important; }
   }
+}
+
+.profiles__description {
+  padding: 0 15px;
 }
