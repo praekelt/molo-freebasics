@@ -2,21 +2,21 @@
   padding: 0 15px;
 }
 .comments-counter--heading {
-  padding: 0 15px;
-  color: #000;
+  padding: 0 15px 5px;
+  //color: #000;
+  color: #ff0000;
+  font-weight: bold;
 }
 .comments__counter {
   color: #000;
   text-decoration: none;
 }
-.comment__post-message {}
 .comment__description {
   padding: 0 15px;
 }
 .comments__inner-content {
   padding: 0 15px;
 }
-//TO DELETE
 .comment-heading__anchor {
   color: #000;
 }
@@ -31,11 +31,9 @@
     margin: 10px 0;
   }
 }
-
 .comments-list__all {
   padding: 10px 15px 10px;
 }
-
 .comment-list__item {
   padding: 0 15px;
 }

@@ -9,28 +9,3 @@
   background-color: #efefef;
   overflow: auto
 }
-
-/*
-To Be Deleted
-default colors
-Update for Polls,Profiles, YourWords
-*/
-.fb-card {
-  margin: 7px 0;
-  background-color: #fff;
-  @media screen and (min-width:320px) {
-    margin: 7px;
-    border-radius: 3px;
-  }
-}
-
-.no-fb-card {
-  background-color: #fff;
-}
-
-.fb-body .fb-accent-1 {
-  color: #69269d;
-}
-.fb-body .fb-accent-2 {
-  color: #c736c0;
-}

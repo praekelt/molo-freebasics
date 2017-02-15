@@ -10,7 +10,6 @@
 {% endblock %}
 
 {% block content %}
-<!-- What does this page do? -->
   <ul class="section-nav-list {{self.get_effective_extra_style_hints}} section-nav-list{{self.get_parent_section.get_effective_extra_style_hints}}">
     <li class="section-nav-list__item">
       {% with parent_section=self.get_parent_section ancestor=self.get_parent_section.get_ancestors.last %}

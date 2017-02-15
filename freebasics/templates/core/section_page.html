@@ -6,7 +6,7 @@
 
 {% block content %}
 {% your_words_competition_in_section self %}
-<div class="section-list section-list{{section.get_effective_extra_style_hints}}">
+<div class="section-list section-list{{self.get_effective_extra_style_hints}}">
   <h1 class="heading section-list__heading">{{self.title}}</h1>
   <ul class="article-list">
     {% load_child_articles_for_section self count=None as articles %}
