@@ -53,8 +53,7 @@ urlpatterns += patterns(
 
     url(r'', include('django_comments.urls')),
 
-    url(r'^yourwords/',
-        include('molo.yourwords.urls',
+    url(r'^yourwords/', include('molo.yourwords.urls',
                 namespace='molo.yourwords',
                 app_name='molo.yourwords')),
 
