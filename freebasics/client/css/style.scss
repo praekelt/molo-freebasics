@@ -1,9 +1,9 @@
 @import "variables/_variables";
 @import "_base";
+@import "versions";
 @import "layout/_layout";
 @import "modules/_modules";
 @import "state/_state";
-@import "versions";
 
 .custom-template-container__content {
   background-color: #efefef;
