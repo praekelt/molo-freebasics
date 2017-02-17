@@ -1,15 +1,12 @@
-
 {% extends "base.html" %}
-
 {% load static core_tags poll_votings %}
-
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-<div class="fb-body">
-  <div class="base-bcolor">
+<div class="custom-template-container"
+  <div class="custom-template-container__content">
     {% for template_name, position in blocks %}
-    {% include template_name %}
+      {% include template_name %}
     {% endfor %}
   </div>
 </div>

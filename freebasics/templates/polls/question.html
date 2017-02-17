@@ -2,9 +2,9 @@
 {% load static core_tags i18n %}
 
 {% block content %}
-  <div class="block-poll fb-body fb-card">
-		<h6 class="block-heading fb-accent-1">{% trans "What's your opinion?" %}</h6>
-    <h6 class="sub-heading">{{ self.title }}</h6>
+  <div class="polls">
+		<h1 class="heading heading--polls">{% trans "What's your opinion?" %}</h1>
+    <h3 class="sub-heading--polls">{{ self.title }}</h3>
     {% if self.freetextquestion %}
       {% include 'polls/includes/poll_free_text_form.html' with question=self %}
     {% else %}

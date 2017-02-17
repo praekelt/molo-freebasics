@@ -1,22 +1,22 @@
 
-
-.block-poll {
-  .sub-heading {
-    padding: 10px;
-    @media screen and (min-width: 320px) {
-      padding: 15px 15px 10px;
-    }
-  }
-}
-
-
 .heading--profiles,
-.fb-body .block-heading {
-  border-radius: 3px 3px 0 0;
+.heading--comment,
+.heading--article,
+.heading--polls,
+.section-list__heading,
+.heading--search,
+.heading--topic-of-day,
+.article-list__heading--latest {
+  padding: 10px 15px;
+  font-size: 15px;
+  margin: 0 7px;
 }
-.fb-body .block-heading-sub-cat {
-  border: 1px solid;
-  border-radius: 0;
+
+.section-list__heading,
+.heading--search,
+.heading--topic-of-day,
+.article-list__heading--latest {
+  margin: 0;
 }
 
 .heading--profiles {
@@ -26,26 +26,21 @@
   border-radius: 3px 3px 0px 0px;
   color: #69269d;
 }
-
-.block-heading {
-  padding: 10px 15px;
-  font-size: 15px;
-  overflow: auto;
-  text-transform: capitalize;
-}
-
-.block-heading-sub-cat {
-  padding: 10px 15px;
-  font-size: 15px;
-}
-
-
 .heading--feeback-title {
-  margin-bottom: 0;
+  margin: 0;
+  font-size: 16px;
 }
 
-.subheading--comment {
-  padding-bottom: 5px;
-  color: #ff0000;
-  font-weight: bold;
+.heading--subtitle {
+  padding: 5px 15px;
+  margin: 0;
+  font-size: 15px;
+}
+
+
+.csrf--heading {
+  padding: 5px 15px;
+}
+.message-notification--csrf {
+  padding: 0 15px;
 }

@@ -4,21 +4,16 @@
 {% load core_tags wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
-
-<div class="header">
+<div class="banner custom-template-container__no-font">
   {% if self.banner %}
     {% if self.banner_link_page %}
-    <div class="no-fb-body fb-card banner-container">
-      <a href="{% pageurl self.banner_link_page %}">
+      <a href="{% pageurl self.banner_link_page %}" class="banner__anchor">
         {% image self.banner width-320 as tmp_photo %}
-        <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ self.banner.title }}"/>
+        <img src="{{ tmp_photo.url }}" alt="{{ self.banner.title }}" class="banner__image"/>
       </a>
-    </div>
     {% else %}
-      <div class="no-fb-body fb-card banner-container">
         {% image self.banner width-320 as tmp_photo %}
-        <img class="block-banner" src="{{ tmp_photo.url }}" alt="{{ self.banner.title }}"/>
-      </div>
+        <img src="{{ tmp_photo.url }}" alt="{{ self.banner.title }}" class="banner__image"/>
     {% endif %}
   {% endif %}
 </div>

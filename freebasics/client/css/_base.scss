@@ -1,14 +1,10 @@
-
 body {
+  background-color: #fff;
   padding: 0;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   line-height: 1.5;
-}
-
-label {
-  font-size: $font-small;
 }
 
 ul, ol, li {
@@ -17,9 +13,35 @@ ul, ol, li {
   padding:0;
 }
 
+.unordered-list, .ordered-list {
+  margin: 1em 0;
+}
+.unordered-list, .unordered-list__item,
+.ordered-list, .ordered-list__item {
+  padding: 0 15px;
+}
+.unordered-list, .unordered-list__item {
+  list-style-type: disc;
+}
+
+.ordered-list, .ordered-list__item {
+  margin: auto;
+  list-style-type: decimal;
+}
+
 fieldset {
   border: none;
   padding: 0;
+}
+
+label {
+  font-size: $font-small;
+  font-weight: bold;
+  display: block;
+}
+
+label[for="id_terms_and_conditions"] {
+  display: inline-block;
 }
 
 .alert-error {
@@ -37,7 +59,7 @@ input[type="url"] {
   padding: 8px 15px 8px 5px;
   width: 90%;
   border: 1px solid #eeeeee;
-  margin-bottom:15px;
+  margin: 5px 0;
 }
 
 textarea {

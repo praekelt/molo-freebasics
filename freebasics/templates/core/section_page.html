@@ -1,56 +1,65 @@
 
 {% extends "base.html" %}
-
 {% load static core_tags molo_survey_tags %}
 {% load wagtailcore_tags wagtailimages_tags poll_votings competition_tag i18n %}
-
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
 {% your_words_competition_in_section self %}
-<div class="block-category fb-body fb-card {self.get_effective_extra_style_hints}}">
-  <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
-  <ul class="list-block">
+<div class="section-list section-list{{self.get_effective_extra_style_hints}}">
+  <h1 class="heading section-list__heading">{{self.title}}</h1>
+  <ul class="article-list">
     {% load_child_articles_for_section self count=None as articles %}
     {% for article in articles %}
-    <li class="block-article block-article--in-list">
-      <h6 class="fb-accent-2 block-article__title">
-        <a href="{% pageurl article %}" class="fb-accent-2 link-button">
-          {{article.title}}
+    <li class="article-list__item">
+      <div class="article-list__inner-content">
+        <h2 class="article-list__heading">
+          <a href="{% pageurl article %}" class="article-list__anchor">
+            {{article.title}}
+          </a>
+        </h2>
+        {% if article.image %}
+          {% image article.image width-100 as tmp_photo %}
+          <img src="{{ tmp_photo.url }}" alt="{{ article.image.title }}" class="article-list__image" />
+        {% endif %}
+        <h4 class="article-list__subtitle">{{article.subtitle}}</h4>
+        <div class="article-list__excerpt">
+          <p>{{ article.body|striptags|truncatewords:30 }}</p>
+        </div>
+        <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
+          {% trans "Read More" %}
         </a>
-      </h6>
-      {% if article.image %}
-      {% image article.image width-100 as tmp_photo %}
-      <img class="block-article__image" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
-      {% endif %}
-      <div class="block-article__subtitle">{{article.subtitle}}</div>
-      <div class="block-article__content">
-        {{ article.body|striptags|truncatewords:30 }}
       </div>
-      <a href="{% pageurl article %}" class="fb-accent-2 link-button block-article__read-more">{% trans "Read More" %}</a>
     </li>
     {% endfor %}
   </ul>
 
 
   {% load_child_sections_for_section self as sections %}
-  {% for section in sections %}
-    <h6 class="block-heading-sub-cat fb-accent-1">
-      {{section.title}}
-      <a href="{% pageurl section %}" class="pull-right see-more fb-accent-2">See more</a>
-    </h6>
-    {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
-    {% if featured_articles %}
-    <ul>
-      {% for article in featured_articles %}
-        <li class="block-article block-article--in-list">
-          <a href="{% pageurl article %}" class="fb-accent-2 link-button"><h6 class="fb-accent-2">{{article.title}}</h6></a>
-          <div class="block-article__subtitle">{{article.subtitle|striptags|truncatewords:30}}</div>
-          <a href="{% pageurl article %}" class="fb-accent-2 link-button">Read More</a>
-        </li>
-      {% endfor %}
-    </ul>
-    {% endif %}
+    {% for section in sections %}
+      <h1 class="section-list__heading section-list__heading--subsection">
+        {{section.title}}
+        <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
+      </h1>
+      {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}
+      {% if featured_articles %}
+      <ul class="article-list">
+        {% for article in featured_articles %}
+          <li class="article-list__item">
+            <h3 class="article-list__heading">
+              <a href="{% pageurl article %}" class="article-list__anchor">
+                {{article.title}}</a>
+            </h3>
+            <div class="article-list__inner-content">
+              <h4 class="article-list__subtitle">{{article.subtitle|striptags|truncatewords:30}}</h4>
+              <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
+                Read More
+              </a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
     {% endfor %}
 </div>
 
@@ -60,7 +69,6 @@
   {% poll_page_in_section page=self %}
 </div>
 {% endif %}
-
 {% surveys_list_for_pages page=self %}
 
 {% endblock %}
