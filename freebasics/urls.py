@@ -15,6 +15,13 @@ from django.views.generic import TemplateView
 from .views import (HomeView, FreeBasicsRegistrationView,
                     FreeBasicsProfilePasswordChangeView)
 
+from molo.core.views import upload_file, download_file
+
+# Path to a custom template that will be used by the admin
+# site main index view.
+admin.site.index_template = 'django_admin/index.html'
+admin.autodiscover()
+
 # implement CAS URLs in a production setting
 if settings.ENABLE_SSO:
     urlpatterns = patterns(
@@ -28,9 +35,16 @@ else:
 
 urlpatterns += patterns(
     '',
+    url(r'^django-admin/upload_media/', upload_file,
+        name='molo_upload_media'),
+    url(r'^django-admin/download_media/', download_file,
+        name='molo_download_media'),
     url(r'^django-admin/', include(admin.site.urls)),
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^robots\.txt$', TemplateView.as_view(
+        template_name='robots.txt', content_type='text/plain')),
+    url(r'^sitemap\.xml$', 'wagtail.contrib.wagtailsitemaps.views.sitemap'),
     url(
         r'^profiles/register/$',
         FreeBasicsRegistrationView.as_view(),
