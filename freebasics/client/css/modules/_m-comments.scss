@@ -1,38 +1,44 @@
-.comment__form {
-  padding: 0 15px;
-}
-.comments-counter--heading {
-  padding: 0 15px 5px;
-  color: #ff0000;
-  font-weight: bold;
-}
-.comments__counter {
-  color: #000;
-  text-decoration: none;
-}
-.comment__description {
-  padding: 0 15px;
-}
-.comments__inner-content {
-  padding: 0 15px;
-}
-.comment-heading__anchor {
-  color: #000;
-}
-.heading--comment-feedback {
-  font-size: 16px;
-  margin: 10px 0 10px;
-}
 
-.comments-list {
-  padding: 30px 0 10px;
-  .comment p{
-    margin: 10px 0;
+.comments {
+  p {
+    padding: 0 15px;
   }
 }
-.comments-list__all {
-  padding: 10px 15px 10px;
+.comment__form {
+  padding: 0 15px;
+  color: #000;
+}
+
+
+
+.comment__title {
+  padding: 0 15px;
+}
+.comment__text {
+  font-size: 14px;
+  margin: 0;
+  padding: 0 40% 0 15px;
+  display: inline-block;
+}
+.comment__counter {
+  padding: 0 0 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.comment__counter--plural {
+  padding: 0;
+  font-weight: normal;
+  text-transform: capitalize;
 }
 .comment-list__item {
-  padding: 0 15px;
+  padding: 0 15px 10px;
+  border-bottom: 1px solid #eee;
+  .call-to-action__nav-item--response {
+    margin: 0;
+  }
+}
+.comment__description {
+  padding: 10px 15px 0;
+  font-size: 14px;
+  margin: 0;
 }

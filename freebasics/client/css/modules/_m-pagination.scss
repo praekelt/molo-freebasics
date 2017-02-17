@@ -1,6 +1,15 @@
 .pagination{
-  padding: 10px 15px;
+  padding: 0;
   .pagination__link {
     font-weight: bold;
+    padding: 10px 15px;
   }
+}
+
+.pagination__item {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #000;
+  padding: 10px 15px;
+  display: block;
 }
