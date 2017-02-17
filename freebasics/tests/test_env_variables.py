@@ -10,10 +10,10 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
         self.mk_main()
 
     def test_block_ordering(self):
-        with self.settings(BLOCK_POSITION_BANNER=4,
+        with self.settings(BLOCK_POSITION_BANNER=1,
                            BLOCK_POSITION_LATEST=3,
-                           BLOCK_POSITION_QUESTIONS=2,
-                           BLOCK_POSITION_SECTIONS=1):
+                           BLOCK_POSITION_QUESTIONS=4,
+                           BLOCK_POSITION_SECTIONS=7):
             factory = RequestFactory()
             request = factory.get('/')
             request.site = self.site
