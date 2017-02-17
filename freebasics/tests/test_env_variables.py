@@ -21,7 +21,7 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
             home.request = request
             context = home.get_context_data()
             self.assertEquals(context['blocks'][0], (
-                'blocks/sections.html', 4))
+                'blocks/sections.html', 1))
             self.assertEquals(context['blocks'][1], (
                 'blocks/questions.html', 2))
             self.assertEquals(context['blocks'][2], ('blocks/latest.html', 3))
