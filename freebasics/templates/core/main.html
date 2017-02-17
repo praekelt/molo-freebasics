@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 
-{% load static core_tags poll_votings molo_survey_tags %}
+{% load static core_tags poll_votings molo_survey_tags competition_tag i18n %}
 
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
@@ -10,6 +10,7 @@
     {% bannerpages %}
     {% topic_of_the_day %}
     {% latest_listing_homepage num_count=10 %}
+    {% your_words_competition %}
     {% poll_page %}
     {% section_listing_homepage %}
     {% surveys_list %}

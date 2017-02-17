@@ -80,10 +80,10 @@ INSTALLED_APPS = [
     'wagtail.contrib.wagtailsitemaps',
 
     'mptt',
+    'molo.yourwords',
     'molo.surveys',
     'molo.profiles',
     'molo.commenting',
-    'molo.yourwords',
     'django_comments',
     'raven.contrib.django.raven_compat',
     'molo.polls',
@@ -474,11 +474,13 @@ SITE_NAME = environ.get('SITE_NAME', "Molo Free Basics")
 WAGTAIL_SITE_NAME = SITE_NAME
 
 BLOCK_POSITION_BANNER = int(environ.get('BLOCK_POSITION_BANNER', 1))
-BLOCK_POSITION_LATEST = int(environ.get('BLOCK_POSITION_LATEST', 2))
-BLOCK_POSITION_QUESTIONS = int(environ.get('BLOCK_POSITION_QUESTIONS', 3))
-BLOCK_POSITION_SECTIONS = int(environ.get('BLOCK_POSITION_SECTIONS', 4))
 BLOCK_POSITION_TOPIC_OF_THE_DAY = int(environ.get(
-    'BLOCK_POSITION_TOPIC_OF_THE_DAY', 5))
+    'BLOCK_POSITION_TOPIC_OF_THE_DAY', 2))
+BLOCK_POSITION_LATEST = int(environ.get('BLOCK_POSITION_LATEST', 3))
+BLOCK_POSITION_QUESTIONS = int(environ.get('BLOCK_POSITION_QUESTIONS', 4))
+BLOCK_POSITION_SURVEYS = int(environ.get('BLOCK_POSITION_SURVEYS', 5))
+BLOCK_POSITION_YOURWORDS = int(environ.get('BLOCK_POSITION_YOURWORDS', 6))
+BLOCK_POSITION_SECTIONS = int(environ.get('BLOCK_POSITION_SECTIONS', 7))
 
 UNICORE_DISTRIBUTE_API = 'http://localhost:6543'
 
