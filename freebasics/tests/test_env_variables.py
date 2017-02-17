@@ -21,11 +21,11 @@ class EnvTestCase(TestCase, MoloTestCaseMixin):
             home.request = request
             context = home.get_context_data()
             self.assertEquals(context['blocks'][0], (
-                'blocks/sections.html', 1))
+                'blocks/sections.html', 4))
             self.assertEquals(context['blocks'][1], (
-                'blocks/questions.html', 2))
-            self.assertEquals(context['blocks'][2], ('blocks/latest.html', 3))
-            self.assertEquals(context['blocks'][3], ('blocks/banners.html', 4))
+                'blocks/questions.html', 3))
+            self.assertEquals(context['blocks'][2], ('blocks/latest.html', 2))
+            self.assertEquals(context['blocks'][3], ('blocks/banners.html', 1))
 
     def test_css_vars(self):
         with self.settings(CUSTOM_CSS_BLOCK_TEXT_TRANSFORM="lowercase",
