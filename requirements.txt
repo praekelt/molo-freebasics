@@ -4,7 +4,7 @@ molo.profiles==2.0.2
 molo.commenting==2.0.1
 molo.yourwords==2.0.0
 molo.polls==3.0.1
-molo.surveys==2.0.0
+molo.surveys==2.1.0
 django-contrib-comments
 django-overextends
 gunicorn
