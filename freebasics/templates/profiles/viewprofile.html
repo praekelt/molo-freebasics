@@ -8,7 +8,9 @@
     <fieldset class="profile__user-info">
       <label class="label-wide">{% trans "Display Name: " %}{{ user.profile.alias | default:'Anonymous' }}</label>
       <label class="label-wide">{% trans "Date of Birth: " %}{{ user.profile.date_of_birth | date:"M d, Y" }}</label>
-      <label class="label-wide">{% trans "Mobile Number: " %}{{ user.profile.mobile_number | default:' '}}</label>
+      {% if settings.profiles.UserProfilesSettings.show_mobile_number_field and settings.profiles.UserProfilesSettings.country_code %}
+        <label class="label-wide">{% trans "Mobile Number: " %}{{ user.profile.mobile_number | default:' '}}</label>
+      {% endif %}
       <label class="label-wide">{% trans "Email Address: " %}{{ user.email | default:' '}}</label>
     </fieldset>
       <a href="{% url 'molo.profiles:auth_logout' %}" class="btn btn-wide">

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static core_tags %}
+{% load i18n static core_tags wagtailcore_tags %}
 
 {% block content %}
 <div class="profile">
@@ -18,7 +18,7 @@
           {{ form.password.errors}}
           <br>
 
-          {% if settings.profiles.UserProfilesSettings.show_mobile_number_field %}
+          {% if settings.profiles.UserProfilesSettings.show_mobile_number_field and settings.profiles.UserProfilesSettings.country_code %}
              <p><strong>{% trans "Enter your mobile number" %}</strong></p>
              <p>{% trans "(e.g. +260979000001)" %}</p>
              {{ form.mobile_number }}
@@ -35,7 +35,11 @@
           {% endif %}
 
           {{ form.terms_and_conditions }}
-          <span>{% trans "I accept the Terms and Conditions" %}</span>
+          {% if settings.profiles.UserProfilesSettings.terms_and_conditions %}
+          <a href="{% pageurl settings.profiles.UserProfilesSettings.terms_and_conditions %}" for="id_terms_and_conditions" class="profiles__terms">{% trans "I accept the Terms and Conditions" %}</a>
+          {% else %}
+          <label for="id_terms_and_conditions" class="profiles__terms">{% trans "I accept the Terms and Conditions" %}</label>
+          {% endif %}
           {% if form.terms_and_conditions.errors %}
             <p class="error">{% trans "Please accept the T&amp;Cs in order to complete the registration" %}</p>
           {% endif %}
