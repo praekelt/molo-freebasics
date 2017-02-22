@@ -1,25 +1,29 @@
 {% load wagtailcore_tags wagtailimages_tags i18n %}
 
 {% if articles %}
-      <div class="fb-card">
-  {% for article in articles %}
-    <h6 class="block-heading fb-accent-1">
-      <a href="{% pageurl article %}" class="no-underline">{{article.title}}</a>
-    </h6>
-    <div class="block-article">
-      {% if article.image %}
-        {% image article.image width-100 as tmp_photo %}
-        <img class="block-article__image" src="{{ tmp_photo.url }}" alt="{{ article.image.title }}"/>
-      {% endif %}
-
-      <div class="block-article__subtitle">{{article.subtitle}}</div>
-
-      <div class="block-article__content">
-        {{article.body|striptags|truncatewords:30}}
-      </div>
-      <a href="{% pageurl article %}" class="fb-accent-2 link-button block-article__read-more">{% trans "Read More" %}</a>
-    </div>
-  {% endfor %}
+<div class="section-list section-list--latest">
+    <ul class="article-list">
+    {% for article in articles %}
+      <li class="article-list__item">
+        <h2 class="heading article-list__heading article-list__heading--latest">
+          <a href="{% pageurl article %}" class="article-list__heading__link">{{article.title}}</a>
+        </h2>
+        <div class="article-list__inner-content">
+          {% if article.image %}
+            {% image article.image width-100 as tmp_photo %}
+            <img src="{{ tmp_photo.url }}" alt="{{ article.image.title }}" class="article-list__image" />
+          {% endif %}
+          <h3 class="article-list__subtitle">{{article.subtitle}}</h3>
+          <div class="article-list__excerpt">
+            <p>{{article.body|striptags|truncatewords:30}}</p>
+          </div>
+          <a href="{% pageurl article %}" class="call-to-action__item-text-read-more">
+            {% trans "Read More" %}
+          </a>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
 </div>
 
 {% endif %}

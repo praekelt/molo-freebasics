@@ -1,40 +1,45 @@
 
 {% extends "base.html" %}
-
 {% load static core_tags %}
 {% load wagtailcore_tags wagtailimages_tags %}
-
 {% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
 
 {% block content %}
-<div class="fb-body fb-card {{self.get_parent_section.get_effective_extra_style_hints}}">
-
-  <h6 class="block-heading fb-accent-1">{{self.title}}</h6>
-    <div class="block-article">
-      {% if self.image %}
-      {% image self.image width-274 as tmp_photo %}
-      <img class="block-article__image block-article__image--full-width" src="{{ tmp_photo.url }}" alt="{{ self.image.title }}"/>
-      {% endif %}
-  <div class="block-article__subtitle">{{self.subtitle}}</div>
-
+<div class="footer-page footer-page{{self.get_parent_section.get_effective_extra_style_hints}}">
+  <h1 class="heading heading--article">{{self.title}}</h1>
+  <div class="article-list article-page__inner-content">
+  {% if self.image %}
+    {% image self.image width-274 as tmp_photo %}
+    <img src="{{ tmp_photo.url }}" alt="{{ self.image.title }}"/>
+  {% endif %}
+  <h4 class="footer__subtitle">{{self.subtitle}}</h4>
   <article  class="article-content">
   {% for block in self.body %}
       {% if block.block_type == 'heading' %}
-        <h3 class="article-content__title fb-accent-1">{{ block.value }}</h3>
+        <h2 class="heading article-list__heading">{{ block.value }}</h2>
+
       {% elif block.block_type == 'image' %}
         {% image block.value width-274 as tmp_photo %}
-        <img class="article-content__image" src="{{ tmp_photo.url }}" alt="{{ block.value.title }}"/>
+        <img src="{{ tmp_photo.url }}" alt="{{ block.value.title }}"/>
+
       {% elif block.block_type == 'numbered_list' %}
-        <ol>
-        {% for item in block.value %}
-          <li>{{item}}</li>
-        {% endfor %}
+        <ol class="ordered-list">
+          {% for item in block.value %}
+            <li class="ordered-list__item">{{ item|handle_markdown }}</li>
+          {% endfor %}
         </ol>
+      {% elif block.block_type == 'list' %}
+        <ul class="unordered-list">
+        {% for item in block.value %}
+          <li class="unordered-list__item">{{ item|handle_markdown }}</li>
+        {% endfor %}
+        </ul>
+
       {% else %}
         {{ block }}
       {% endif %}
   {% endfor %}
   </article>
-</div>
+  </div>
 </div>
 {% endblock %}
