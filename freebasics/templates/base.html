@@ -1,4 +1,4 @@
-{% load wagtailcore_tags compress static wagtailuserbar core_tags freebasics_tags i18n %}
+ {% load wagtailcore_tags compress static wagtailuserbar core_tags freebasics_tags i18n %}
 {% load wagtailsettings_tags wagtailimages_tags %}
 {% load google_analytics_tags %}
 {% get_settings %}
@@ -9,7 +9,6 @@
   <meta charset="utf-8">
   <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="twitter:card" content="summary"/>
@@ -22,61 +21,20 @@
   {% image self.social_media_image width-300 as tmp_photo %}
   <meta property="og:image" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
   <meta property="og:image:url" content="{% if self.social_media_image %}{{request.site.root_url}}{{ tmp_photo.url }}{% endif %}"/>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:400,700" rel="stylesheet">
   {% compress css %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/style.css">
   {% endcompress %}
-  {% block extra_css %}{% endblock %}
   {% custom_css %}
-
-  <!-- Google Fonts -->
-  <script src="{{ STATIC_URL }}js/webfont.js"></script>
-  <script type="text/javascript">
-      var CutsTheMustard = 'querySelector' in document && 'localStorage' in window && 'addEventListener' in window,
-      LargeScreen = ((window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) >= 200);
-
-      var smartStyles = '{% spaceless %}
-        {% compress css %}
-         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/enhanced.css">
-        {% endcompress %}
-      {% endspaceless %}';
-
-      if(CutsTheMustard === true) {
-      if(LargeScreen) {
-        document.write(smartStyles);
-        }
-      }
-
-      WebFontConfig = {
-        google: { families: [ 'Exo+2:400,700:latin' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })();
-      /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
-    function loadJS( src, cb ){
-      "use strict";
-      var ref = window.document.getElementsByTagName( "script" )[ 0 ];
-      var script = window.document.createElement( "script" );
-      script.src = src;
-      script.async = true;
-      ref.parentNode.insertBefore( script, ref );
-      if (cb && typeof(cb) === "function") {
-        script.onload = cb;
-      }
-      return script;
-    }
-    </script>
-    <noscript>Your browser does not support JavaScript!</noscript>
-    {% get_current_language as LANGUAGE_CODE %}
+  <noscript>Your browser does not support JavaScript!</noscript>
+  {% get_current_language as LANGUAGE_CODE %}
+  {% if LANGUAGE_CODE|language_bidi == True %}
+    {% compress css %}
+      <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/{{ ENV }}/style-rtl.css">
+    {% endcompress %}
+  {% endif %}
 </head>
 <body class="{% block body_class %}{% endblock %}" {% if LANGUAGE_CODE|language_bidi == True %}dir="rtl"{% endif %}>
-
   {% if settings.core.SiteSettings.ga_tag_manager %}
   <!-- Google Tag Manager -->
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id={{settings.core.SiteSettings.ga_tag_manager}}&client_session_id={{request.session.MOLO_GA_SESSION_FOR_NOSCRIPT}}{%if request.META.HTTP_X_IORG_FBS_UIP %}&freebasics_uip={{request.META.HTTP_X_IORG_FBS_UIP}}{%endif%}"
@@ -102,7 +60,7 @@
   {% wagtailuserbar %}
 
   <div class="header">
-    <a class="header__logo" href="/" >
+    <a class="header__logo" href="/">
       {% if settings.core.SiteSettings.logo %}
         {% image settings.core.SiteSettings.logo width-200 height-30 %}
       {% else %}
@@ -111,22 +69,28 @@
     </a>
     <div class="header__menu">
       <a class="header__link" href="{% if user.is_authenticated %}{% url 'molo.profiles:view_my_profile' %}{% else %}{% url 'molo.profiles:auth_login' %}{% endif %}">
-        <img alt="" height="20px" src="{% static 'img/profile-2.png' %}">
+        <img alt="Profile" height="20px" src="{% static 'img/profile-2.png' %}">
       </a>
       <label class="header__link header__link--button" for="menu-toggle">{% trans "Menu" %}</label>
     </div>
   </div>
 
-  <div class="section-nav">
-    <input type="checkbox" id="menu-toggle" />
-    <ul class="section-nav__items">
-        <li class="section-nav__item"><a href="/">{% trans "Home" %}</a></li>
-        {% load_sections as sections %}
-        {% for section in sections %}
-          <li class="section-nav__item"><a href="{% pageurl section %}">{{ section.title }}</a></li>
-        {% endfor %}
-    </ul>
-  </div>
+  {% block section_nav %}
+    <div class="section-nav">
+      <input type="checkbox" id="menu-toggle" />
+      <ul class="section-nav-list">
+          <li class="section-nav-list__item">
+            <a href="/" class="section-nav-list__anchor">{% trans "Home" %}</a>
+          </li>
+          {% load_sections as sections %}
+          {% for section in sections %}
+            <li class="section-nav-list__item">
+              <a href="{% pageurl section %}" class="section-nav-list__anchor">{{ section.title }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+    </div>
+  {% endblock %}
 
   {% block breadcrumbs %}
     {% breadcrumbs %}
@@ -147,15 +111,15 @@
 
   <!-- footer block -->
   {% block footer %}
-  <div class="block-footer no-fb-body">
-    <p>&copy; 2016 <span id="printsitelabel2"><strong>{% get_site_name %}</strong></span> | All rights reserved.</p>
+  <div class="footer custom-template-container__no-font">
+    <p>&copy; 2016 <span id="printsitelabel2">
+      <strong>{% get_site_name %}</strong></span> | All rights reserved.</p>
     {% if languages|length > 1 %}
       <strong>{% trans "Site Language:" %}</strong>
       {% for language in languages %}
-        <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" {% if LANGUAGE_CODE == language.locale %} class="active" {% endif %}>{{language}}</a>&nbsp;
+        <a href="{% url 'locale_set' language.locale %}?next={{request.path}}" class="footer__anchor {% if LANGUAGE_CODE == language.locale %} footer__anchor-is-active {% endif %}">{{language}}</a>
       {% endfor %}
     {% endif %}
-      {% social_media_footer %}
     {% footer_page %}
   </div>
   {% endblock %}

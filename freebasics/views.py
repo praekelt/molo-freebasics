@@ -16,6 +16,8 @@ class HomeView(TemplateView):
             ('blocks/latest.html', settings.BLOCK_POSITION_LATEST),
             ('blocks/questions.html', settings.BLOCK_POSITION_QUESTIONS),
             ('blocks/sections.html', settings.BLOCK_POSITION_SECTIONS),
+            ('blocks/surveys.html', settings.BLOCK_POSITION_SURVEYS),
+            ('blocks/yourwords.html', settings.BLOCK_POSITION_YOURWORDS),
             ('blocks/topic_of_the_day.html',
                 settings.BLOCK_POSITION_TOPIC_OF_THE_DAY),
         ]

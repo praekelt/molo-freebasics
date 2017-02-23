@@ -1,36 +1,44 @@
-.comments-counter--heading {
-  padding: 0 15px;
-}
-.comments-count {
-  padding-bottom:10px;
-}
 
-.post-comment {
-  p{
-    padding: 0;
+.comments {
+  p {
+    padding: 0 15px;
   }
 }
-
-.comment-form,
-.comment-heading {
+.comment__form {
   padding: 0 15px;
-}
-
-.comment-heading__anchor {
   color: #000;
 }
-.heading--comment-feedback {
-  font-size: 16px;
-  margin: 10px 0 10px;
-}
 
-.comments-list {
-  padding: 30px 0 10px;
-  .comment p{
-    margin: 10px 0;
+
+
+.comment__title {
+  padding: 0 15px;
+}
+.comment__text {
+  font-size: 14px;
+  margin: 0;
+  padding: 0 40% 0 15px;
+  display: inline-block;
+}
+.comment__counter {
+  padding: 0 0 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.comment__counter--plural {
+  padding: 0;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+.comment-list__item {
+  padding: 0 15px 10px;
+  border-bottom: 1px solid #eee;
+  .call-to-action__nav-item--response {
+    margin: 0;
   }
 }
-
-.comments-list__all {
-  padding: 10px 15px 10px;
+.comment__description {
+  padding: 10px 15px 0;
+  font-size: 14px;
+  margin: 0;
 }

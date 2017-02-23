@@ -1,1 +1,0 @@
-{"version":3,"sources":["enhanced.scss"],"names":[],"mappings":"AACA,cACE,KACE,iBAAkB,KAClB,UAAW,KACX,OAAQ,EAAA,KAGV,KACE,iBAAkB","file":"../enhanced.css","sourcesContent":["\n@media screen {\n  html {\n    background-color: #333;\n    max-width: 35em;\n    margin: 0 auto;\n  }\n\n  body {\n    background-color: #fff;\n  }\n}\n"]}
