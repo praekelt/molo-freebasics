@@ -31,7 +31,7 @@ ul, ol, li {
 
 fieldset {
   border: none;
-  padding: 0;
+  padding: 10px 0 0;
 }
 
 label {
@@ -73,7 +73,7 @@ select {
 input[type="submit"] {
   display: inline-block;
   margin: 10px 15px 10px 0;
-  padding: 12px 55px;
+  padding: 12px 15px;
   word-break: keep-all;
   border-radius: 3px;
   border: none;
