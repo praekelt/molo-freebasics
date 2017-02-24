@@ -62,6 +62,12 @@ input[type="url"] {
   margin: 5px 0;
 }
 
+input[type="checkbox"],
+input[type="radio"] {
+  font-size: 20px;
+  padding: 0;
+}
+
 textarea {
   padding: 5px;
   width: 95%;
