@@ -10,7 +10,18 @@
       max-width: 320px;
     }
 
+    input[type="submit"] {
+      padding: 12px 55px;
+    }
+
+    .article-list {
+      background-color: #fff;
+      margin-bottom: 7px;
+      border-radius: 3px 3px 0px 0px;
+    }
+
   @import "_s-buttons";
   @import "_s-social-media-buttons";
   @import "_s-comments";
+  @import "_s-heading";
 }

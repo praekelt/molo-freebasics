@@ -38,7 +38,7 @@
   {% load_child_sections_for_section self as sections %}
     {% for section in sections %}
       <h1 class="section-list__heading section-list__heading--subsection">
-        {{section.title}}
+        <span class="section-list__heading-title">{{section.title}}</span>
         <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
       </h1>
       {% load_descendant_articles_for_section section featured_in_section=True as featured_articles %}

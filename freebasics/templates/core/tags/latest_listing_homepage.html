@@ -2,8 +2,8 @@
 
 {% if articles %}
 <div class="section-list section-list--latest">
-    <ul class="article-list">
     {% for article in articles %}
+    <ul class="article-list">
       <li class="article-list__item">
         <h2 class="heading article-list__heading article-list__heading--latest">
           <a href="{% pageurl article %}" class="article-list__heading__link">{{article.title}}</a>
@@ -22,8 +22,8 @@
           </a>
         </div>
       </li>
-    {% endfor %}
     </ul>
+    {% endfor %}
 </div>
 
 {% endif %}
