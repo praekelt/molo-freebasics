@@ -2,7 +2,7 @@
 <div class="section-list section-list{{section.get_effective_extra_style_hints}}">
 {% for section in sections %}
   <h1 class="heading section-list__heading">
-    {{section.title}}
+    <span class="section-list__heading-title">{{section.title}}</span>
     <a href="{% pageurl section %}" class="call-to-action__item-text-see-more">See more</a>
   </h1>
 
