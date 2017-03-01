@@ -9,7 +9,9 @@
   @media screen and (min-width:320px) {
     border-radius: 3px;
   }
-
+  p {
+    padding: 0 15px;
+  }
   a {
     padding: 10px 15px;
     display: block;
@@ -17,6 +19,9 @@
 
   fieldset {
     padding: 5px 15px;
+    p {
+      padding: 0;
+    }
   }
   .call-to-action__nav-item {
     display: block;
