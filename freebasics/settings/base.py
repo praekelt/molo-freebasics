@@ -156,6 +156,8 @@ GOOGLE_ANALYTICS_IGNORE_PATH = [
     # when using nginx, we handle statics and media
     # but including them here just incase
     '/media/', '/static/',
+    # metrics URL used by promethius monitoring system
+    '/metrics/',
 ]
 
 CUSTOM_GOOGLE_ANALYTICS_IGNORE_PATH = environ.get(
@@ -200,17 +202,9 @@ CELERYBEAT_SCHEDULE = {
         'task': 'molo.core.tasks.rotate_content',
         'schedule': crontab(minute=0),
     },
-    'demote_articles': {
-        'task': 'molo.core.tasks.demote_articles',
-        'schedule': crontab(minute="*/5"),
-    },
-    'promote_articles': {
-        'task': 'molo.core.tasks.promote_articles',
-        'schedule': crontab(minute="*/5"),
-    },
-    'publish_pages': {
-        'task': 'molo.core.tasks.publish_scheduled_pages',
-        'schedule': crontab(minute='*/5'),
+    'molo_consolidated_minute_task': {
+        'task': 'molo.core.tasks.molo_consolidated_minute_task',
+        'schedule': crontab(minute='*'),
     },
 }
 
