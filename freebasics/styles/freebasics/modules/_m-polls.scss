@@ -46,4 +46,10 @@
 
 .choice-result__percent {
   text-transform: capitalize;
+  &-bar {
+    background: #c5bdbf;
+    padding: 3px 10px;
+    border-radius: 5px;
+    display: block;
+  }
 }
