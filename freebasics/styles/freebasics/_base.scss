@@ -41,15 +41,15 @@ label {
   font-weight: bold;
   display: block;
 }
-
 label[for="id_terms_and_conditions"] {
   display: inline-block;
 }
-
+input[type="checkbox"], label[for="checkbox"]{
+  display: inline;
+}
 .alert-error {
   color: red;
 }
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
