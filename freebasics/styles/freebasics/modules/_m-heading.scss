@@ -1,9 +1,10 @@
-
-
-.section-list__heading-title {
-  padding: 10px 25% 15px 0;
+.section-list__heading {
+  position: relative;
+  &-title {
+    padding: 0;
+    display: block;
+  }
 }
-
 .heading--profiles,
 .heading--comment,
 .heading--article,
@@ -25,7 +26,6 @@
 .article-list__heading--latest {
   margin: 0 0 7px;
 }
-
 .heading--profiles {
   padding: 10px 15px;
   margin: 5px 7px;
@@ -37,14 +37,11 @@
   margin: 0;
   font-size: 16px;
 }
-
 .heading--subtitle {
   padding: 5px 15px;
   margin: 0;
   font-size: 15px;
 }
-
-
 .csrf--heading {
   padding: 5px 15px;
 }
