@@ -1,39 +1,37 @@
-
-.surveys__item {
-  background-color: #fff;
-  @media screen and (min-width: 320px) {
-    margin: 7px;
-    border-radius: 3px;
-  }
-  .surveys__title {
-    margin: 5px 0;
-  }
-}
-.surveys__form {
-  border-bottom: 1px solid $dove_gray;
-  padding: 0 15px 10px;
-}
-
-.surveys__title {
-  border-radius: 3px 3px 0px 0px;
-  color: #69269d;
-  padding: 10px 15px;
-  font-size: $font-small;
-  margin: 5px 7px;
-}
-
-.surveys__intro {
-  font-weight: 400;
-  font-size: 16px;
-  margin: 10px 0;
-  padding: 0 10px;
-  font-weight: normal;
-  @media screen and (min-width:320px) {
-    padding: 0 15px;
-  }
-}
-
 .surveys {
+  &__title {
+    border-radius: 3px 3px 0px 0px;
+    color: #69269d;
+    padding: 10px 15px;
+    font-size: $font-small;
+    margin: 5px 7px;
+  }
+  &__intro {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 0 10px;
+    font-weight: normal;
+    @media screen and (min-width:320px) {
+      padding: 0 15px;
+    }
+  }
+  &__item {
+    background-color: #fff;
+    @media screen and (min-width: 320px) {
+      margin: 7px;
+      border-radius: 3px;
+    }
+    .surveys__title {
+      margin: 0;
+    }
+  }
+
+  //FORM
+  &__form {
+    border-bottom: 1px solid $dove_gray;
+    padding: 0 15px 10px;
+  }
   input[type="submit"],
   .call-to-action__nav-item--surveys {
     padding: 10px;
@@ -42,47 +40,43 @@
     text-align: left;
     margin: 0 0 15px 5px;
     @media screen and (min-width:320px) {
-      margin: 10px 15px;
+      margin: 10px 0;
       border: none;
       word-break: keep-all;
     }
+  }
+  .call-to-action__nav-item--surveys {
+    margin: 10px 15px;
+  }
+  &__helptext {
+    color: #999;
+    font-size: $font-x-small;
+    padding-bottom: 10px;
+    display: block;
+  }
 
-    input[type="submit"] {
-      margin: 10px 0;
+  //RESULTS
+  &__thank-you {
+    padding: 0 16px;
+    font-size: $font-x-medium;
+    margin: 0;
+  }
+  &__results {
+    padding: 5px 16px;
+    margin: 15px 0;
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+  }
+  &__answer {
+    background: #DEDEDE;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    word-wrap: break-all;
+    span {
+      display: block;
     }
   }
 }
-
-
 p.error--surveys {
   padding: 5px 15px;
-}
-
-.surveys__helptext {
-  color: #999;
-  font-size: $font-x-small;
-  padding-bottom: 10px;
-  display: block;
-}
-
-.surveys__thank-you {
-  padding: 10px 16px;
-  font-size: $font-x-medium;
-}
-
-.surveys__results {
-  padding: 5px 16px;
-  margin: 15px 0;
-  border-top: 1px solid #DEDEDE;
-  border-bottom: 1px solid #DEDEDE;
-}
-
-.surveys__answer {
-  background: #DEDEDE;
-  padding: 10px 5px;
-  margin: 10px 5px;
-  word-wrap: break-all;
-  span {
-    display: block;
-  }
 }
