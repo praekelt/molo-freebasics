@@ -13,16 +13,25 @@
     margin: 10px 15px;
     text-align: center;
   }
+  &:hover {
+    background-color:#c736c0;
+    color: #000;
+  }
+
+  &--challenge {
+    padding: 0 15px;
+    margin: 0;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 0;
+  }
+  &--yourwords {
+    padding: 10px;
+  }
 }
 
-.call-to-action__nav-item--challenge {
-  padding: 0 15px;
-  margin: 0;
-  display: block;
-  text-align: left;
-  font-size: 14px;
-  border-radius: 0;
-}
+.call-to-action__nav-item
 
 .call-to-action__text-item--dir-left,
 .call-to-action__nav-item--back,
@@ -42,8 +51,4 @@
        content: "❮";
     }
   }
-}
-
-.call-to-action__nav-item--yourwords {
-  padding: 10px;
 }
