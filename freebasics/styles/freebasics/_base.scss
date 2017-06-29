@@ -33,6 +33,13 @@ ul, ol {
   margin: auto;
   list-style-type: decimal;
 }
+form {
+  ul, ol, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
 
 fieldset {
   border: none;
