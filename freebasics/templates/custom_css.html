@@ -92,7 +92,11 @@ input[type="submit"],
   font-family: {{block_font_family}};
   text-transform: {{text_transform}};
 }
-
+input[type="submit"]:hover,
+.call-to-action__nav-item:hover {
+  background-color: {{accent_1}};
+  color: {{block_background_color}};
+}
 .call-to-action__nav-item--challenge {
   background-color: transparent;
   color: #000;
