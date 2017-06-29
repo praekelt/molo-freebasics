@@ -18,7 +18,12 @@
 .call-to-action__item-share--footer {
   margin: 10px 0;
   padding: 0;
+  text-align: center;
+  display: inline-block;
   .call-to-action__item-share-title {
     color: #a3a3a3;
+  }
+  .call-to-action__item-share-title {
+    display: none;
   }
 }

@@ -1,0 +1,38 @@
+.article-list {
+  background-color: #fff;
+  padding: 0;
+  list-style-type: none;
+  &__item {
+    border-bottom: 1px #eee solid;
+    padding: 0 0 10px;
+  }
+  &__heading {
+    margin: 0;
+    padding: 10px 15px 0;
+    font-size: $font-x-medium;
+    a {
+      text-decoration: none;
+    }
+  }
+  &__subtitle {
+    margin: 0 0 8px 0;
+  }
+  &__excerpt {
+    margin: 0 0 8px 0;
+  }
+  &__image {
+    margin: 0 10px 8px 8px;
+    @media only screen and (min-width: 320px) {
+      float: right;
+      margin: 15px 15px 8px 8px;
+    }
+  }
+  &__inner-content {
+    padding: 10px 15px;
+    overflow: auto;
+    .article-list__heading {
+      padding: 0;
+      display: inline-block;
+    }
+  }
+}

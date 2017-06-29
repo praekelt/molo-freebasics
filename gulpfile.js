@@ -11,8 +11,8 @@ var gulp              =   require('gulp'),
     livereload        =   require('gulp-livereload');
 
 var sassPaths = [
-    'freebasics/client/css/style.scss',
-    'freebasics/client/css/style-rtl.scss',
+    'freebasics/styles/freebasics/style.scss',
+    'freebasics/styles/freebasics/style-rtl.scss',
 ];
 
 var sassDest = {
@@ -48,7 +48,7 @@ gulp.task('styles:dev', function() {
 
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch('freebasics/client/css/*.scss', ['styles']);
+    gulp.watch('freebasics/styles/freebasics/*.scss', ['styles']);
 });
 
 gulp.task('styles', ['styles:dev', 'styles:prd']);

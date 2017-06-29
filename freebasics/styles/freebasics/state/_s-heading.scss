@@ -1,0 +1,12 @@
+
+.section-list__heading {
+  &-title {
+    padding: 0 25% 0 0;
+    display: inline-block;
+  }
+  .call-to-action__item-text-see-more {
+    position: absolute;
+    right: 10px;
+    top: 31%;
+  }
+}

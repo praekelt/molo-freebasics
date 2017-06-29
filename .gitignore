@@ -44,4 +44,4 @@ local.py
 db.sqlite3
 docs/_build
 .DS_Store
-node_modules/
+node_modules/*
