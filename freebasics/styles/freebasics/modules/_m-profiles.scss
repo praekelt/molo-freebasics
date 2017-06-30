@@ -23,8 +23,15 @@
       padding: 0;
     }
   }
+  .profiles__terms {
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 5px;
+    font-size: 14px;
+  }
   .call-to-action__nav-item {
     display: block;
+
   }
   input[type=submit] {
     margin: 0 15px;
