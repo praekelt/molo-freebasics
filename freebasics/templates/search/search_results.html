@@ -12,13 +12,43 @@
     {% if ancestor.sectionpage.image %}
     <div class="search-results__list">
       <h4 class="search--result__section-title">{{ancestor.title}}</h4>
-      <h3 class="search--result__article-title">{{page.title}}</h3>
+      {% if page.title_highlight %}
+        <h3 class="search--result__article-title search--result__article-title-highlight">{{page.title_highlight|safe}}</h3>
+      {% else %}
+        <h3 class="search--result__article-title">{{page.title}}</h3>
+      {% endif %}
+      {% if page.subtitle_highlight or page.body_highlight %}
+        <p class="search--result__article-subtitle highlight-description">
+          {% if page.subtitle_highlight %}
+            {{page.subtitle_highlight|safe}}
+          {% elif page.body_highlight %}
+            {{page.body_highlight|safe}}
+          {% endif %}
+        </p>
+      {% else %}
+        <p class="search--result__subtitle">{{page.subtitle}}</p>
+      {% endif %}
       <a href={{page.url}} class="call-to-action__nav-item call-to-action__nav-item--view-more">{% trans "View" %}</a>
     </div>
     {% else %}
     <div class="search-results__list">
       <h4 class="search--result__section-title">{{parent_section.title}}</h4>
-      <h3 class="search--result__article-title">{{page.title}}</h3>
+      {% if page.title_highlight %}
+        <h3 class="search--result__article-title search--result__article-title-highlight">{{page.title_highlight|safe}}</h3>
+      {% else %}
+        <h3 class="search--result__article-title">{{page.title}}</h3>
+      {% endif %}
+      {% if page.subtitle_highlight or page.body_highlight %}
+        <p class="search--result__article-subtitle highlight-description">
+          {% if page.subtitle_highlight %}
+            {{page.subtitle_highlight|safe}}
+          {% elif page.body_highlight %}
+            {{page.body_highlight|safe}}
+          {% endif %}
+        </p>
+      {% else %}
+        <p class="search--result__article-subtitle">{{page.subtitle}}</p>
+      {% endif %}
       <a href={{page.url}} class="call-to-action__nav-item call-to-action__nav-item--view-more">{% trans "View" %}</a>
     </div>
     {% endif %}

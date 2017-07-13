@@ -28,9 +28,14 @@
     }
   }
 }
-.search-results__list,
-.sub-heading--search {
-  padding: 0 15px;
+.search-results {
+  &__list,
+  .sub-heading--search {padding: 0 15px;}
+  .search--result__article-title {margin: 0;}
+  .search--result__article-title-highlight,
+  .highlight-description {
+    font-style: italic;
+  }
 }
 .call-to-action__item--search {
   display: block;
