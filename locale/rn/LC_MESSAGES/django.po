@@ -1,0 +1,514 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-25 11:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: freebasics/forms.py:15 freebasics/templates/registration/login.html:24
+msgid "Password"
+msgstr ""
+
+#: freebasics/forms.py:28
+msgid "Old Password"
+msgstr ""
+
+#: freebasics/forms.py:38
+msgid "New Password"
+msgstr ""
+
+#: freebasics/forms.py:48
+msgid "Confirm Password"
+msgstr ""
+
+#: freebasics/forms.py:58
+msgid "New passwords do not match."
+msgstr ""
+
+#: freebasics/settings/base.py:224
+msgid "Zulu"
+msgstr ""
+
+#: freebasics/settings/base.py:225
+msgid "Xhosa"
+msgstr ""
+
+#: freebasics/settings/base.py:226
+msgid "Sotho"
+msgstr ""
+
+#: freebasics/settings/base.py:227
+msgid "Venda"
+msgstr ""
+
+#: freebasics/settings/base.py:228
+msgid "Tswana"
+msgstr ""
+
+#: freebasics/settings/base.py:229
+msgid "Tsonga"
+msgstr ""
+
+#: freebasics/settings/base.py:230
+msgid "Swati"
+msgstr ""
+
+#: freebasics/settings/base.py:231
+msgid "Ndebele"
+msgstr ""
+
+#: freebasics/settings/base.py:232
+msgid "Wolof"
+msgstr ""
+
+#: freebasics/settings/base.py:233
+msgid "Yoruba"
+msgstr ""
+
+#: freebasics/settings/base.py:234
+msgid "Igbo"
+msgstr ""
+
+#: freebasics/settings/base.py:235
+msgid "Hausa"
+msgstr ""
+
+#: freebasics/settings/base.py:236
+msgid "Amharic"
+msgstr ""
+
+#: freebasics/settings/base.py:237
+msgid "Malay"
+msgstr ""
+
+#: freebasics/settings/base.py:238
+msgid "Guarani"
+msgstr ""
+
+#: freebasics/settings/base.py:239
+msgid "Gujarati"
+msgstr ""
+
+#: freebasics/settings/base.py:240
+msgid "Filipino"
+msgstr ""
+
+#: freebasics/settings/base.py:241
+msgid "N'ko"
+msgstr ""
+
+#: freebasics/settings/base.py:242
+msgid "Syriac"
+msgstr ""
+
+#: freebasics/settings/base.py:243
+msgid "Dhivehi"
+msgstr ""
+
+#: freebasics/settings/base.py:244
+msgid "Berber"
+msgstr ""
+
+#: freebasics/settings/base.py:245
+msgid "Kurdish"
+msgstr ""
+
+#: freebasics/settings/base.py:246
+msgid "Aramaic"
+msgstr ""
+
+#: freebasics/settings/base.py:247
+msgid "Creole Haitian"
+msgstr ""
+
+#: freebasics/settings/base.py:248
+msgid "Chichewa"
+msgstr ""
+
+#: freebasics/settings/base.py:249
+msgid "Kirundi"
+msgstr ""
+
+#: freebasics/templates/403.html:6
+msgid "Access Denied"
+msgstr ""
+
+#: freebasics/templates/403.html:7
+msgid ""
+"The user you are currently logged in as does not have permssion to access "
+"this site."
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:7
+msgid "Unable to Login"
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:9
+msgid "Hi"
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:10
+msgid ""
+"Sorry, you are having trouble accessing this feature! Due to a temporary "
+"technical issue, login and registrations are not available on the Free "
+"Basics app for now. To login or register for a profile, visit our free "
+"mobisite through your mobile browser at"
+msgstr ""
+
+#: freebasics/templates/403_csrf.html:10
+msgid " We're working hard to get this problem resolved. Thank you."
+msgstr ""
+
+#: freebasics/templates/404.html:7
+msgid "Page not found"
+msgstr ""
+
+#: freebasics/templates/404.html:8
+msgid "Sorry, this page could not be found."
+msgstr ""
+
+#: freebasics/templates/500.html:13
+msgid "Whoops!"
+msgstr ""
+
+#: freebasics/templates/500.html:14
+msgid ""
+"We're sorry! We're having problems with our technology. We have been "
+"notified, and will look into it ASAP."
+msgstr ""
+
+#: freebasics/templates/500.html:15
+msgid "Return to the homepage."
+msgstr ""
+
+#: freebasics/templates/admin/import_from_git.html:8
+msgid "Import content"
+msgstr ""
+
+#: freebasics/templates/admin/import_from_git.html:11
+msgid "Import content from a Universal Core site"
+msgstr ""
+
+#: freebasics/templates/admin/versions.html:7
+msgid "Plugin"
+msgstr ""
+
+#: freebasics/templates/admin/versions.html:8
+msgid "PyPI Version"
+msgstr ""
+
+#: freebasics/templates/admin/versions.html:9
+msgid "Runing Version"
+msgstr ""
+
+#: freebasics/templates/admin/versions.html:10
+#: freebasics/templates/wagtailadmin/pages/edit.html:19
+msgid "Status"
+msgstr ""
+
+#: freebasics/templates/admin/versions.html:18
+msgid "UpToDate"
+msgstr ""
+
+#: freebasics/templates/admin/versions.html:21
+msgid "Not installed"
+msgstr ""
+
+#: freebasics/templates/admin/versions.html:23
+msgid "Compare"
+msgstr ""
+
+#: freebasics/templates/base.html:74
+msgid "Menu"
+msgstr ""
+
+#: freebasics/templates/base.html:83
+#: freebasics/templates/core/tags/breadcrumbs.html:6
+#: freebasics/templates/polls/detail.html:6
+#: freebasics/templates/polls/results.html:6
+msgid "Home"
+msgstr ""
+
+#: freebasics/templates/base.html:118
+msgid "Site Language:"
+msgstr ""
+
+#: freebasics/templates/core/section_page.html:30
+#: freebasics/templates/core/tags/latest_listing_homepage.html:21
+#: freebasics/templates/core/tags/section_listing_homepage.html:24
+msgid "Read More"
+msgstr ""
+
+#: freebasics/templates/core/tags/topic_of_the_day.html:5
+msgid "Topic of the Day"
+msgstr ""
+
+#: freebasics/templates/polls/detail.html:32
+#: freebasics/templates/polls/includes/poll_question_form.html:37
+msgid "Vote"
+msgstr ""
+
+#: freebasics/templates/polls/free_text_detail.html:17
+#: freebasics/templates/polls/includes/poll_free_text_form.html:18
+msgid "Submit"
+msgstr ""
+
+#: freebasics/templates/polls/includes/poll_free_text_form.html:21
+msgid "Thank you! Your response has already been submitted."
+msgstr ""
+
+#: freebasics/templates/polls/includes/poll_free_text_form.html:26
+#: freebasics/templates/polls/includes/poll_question_form.html:22
+msgid "Log in to vote"
+msgstr ""
+
+#: freebasics/templates/polls/includes/poll_question_form.html:40
+msgid "Show Results"
+msgstr ""
+
+#: freebasics/templates/polls/includes/poll_question_form.html:44
+msgid "You voted: "
+msgstr ""
+
+#: freebasics/templates/polls/poll_page.html:6
+#: freebasics/templates/polls/poll_page_in_section.html:6
+#: freebasics/templates/polls/question.html:6
+#: freebasics/templates/polls/results.html:34
+msgid "What's your opinion?"
+msgstr ""
+
+#: freebasics/templates/polls/results.html:14
+msgid "Poll"
+msgstr ""
+
+#: freebasics/templates/polls/results.html:18
+msgid "Your answers:"
+msgstr ""
+
+#: freebasics/templates/polls/results.html:35
+msgid "Thank you for voting!"
+msgstr ""
+
+#: freebasics/templates/polls/results.html:37
+msgid "Back to home page"
+msgstr ""
+
+#: freebasics/templates/registration/login.html:7
+msgid "Login to your account"
+msgstr ""
+
+#: freebasics/templates/registration/login.html:9
+msgid "We're excited to have you..."
+msgstr ""
+
+#: freebasics/templates/registration/login.html:15
+msgid "Your username and password do not match. Please try again."
+msgstr ""
+
+#: freebasics/templates/registration/login.html:19
+msgid "Username"
+msgstr ""
+
+#: freebasics/templates/registration/login.html:26
+msgid "Eg.: 2086"
+msgstr ""
+
+#: freebasics/templates/registration/login.html:29
+msgid "Sign in"
+msgstr ""
+
+#: freebasics/templates/registration/login.html:35
+msgid "Not a member yet?"
+msgstr ""
+
+#: freebasics/templates/registration/login.html:37
+msgid "Register"
+msgstr ""
+
+#: freebasics/templates/registration/login.html:39
+#: freebasics/templates/registration/password_reset_form.html:6
+msgid "Forgotten your password?"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_complete.html:7
+#: freebasics/templates/registration/password_reset_confirm.html:7
+msgid "Password Change"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_complete.html:8
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_complete.html:10
+msgid "Back to Login page"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_confirm.html:9
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_confirm.html:15
+msgid "New password:"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_confirm.html:21
+msgid "Confirm password:"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_confirm.html:24
+msgid "Change my password"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_confirm.html:27
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a new password reset."
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_done.html:6
+msgid "Instructions"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_done.html:7
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive them shortly."
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_done.html:8
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_form.html:7
+msgid ""
+"Enter your email address below, and we'll email instructions for setting a "
+"new one."
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_form.html:12
+msgid "Email address:"
+msgstr ""
+
+#: freebasics/templates/registration/password_reset_form.html:15
+msgid "Reset my password"
+msgstr ""
+
+#: freebasics/templates/search/search_block.html:5
+#: freebasics/templates/search/search_results.html:77
+msgid "Looking for something?"
+msgstr ""
+
+#: freebasics/templates/search/search_block.html:6
+#: freebasics/templates/search/search_results.html:78
+msgid "Search"
+msgstr ""
+
+#: freebasics/templates/search/search_results.html:7
+#: freebasics/templates/search/search_results.html:72
+msgid "Search Results"
+msgstr ""
+
+#: freebasics/templates/search/search_results.html:8
+msgid "Search results for"
+msgstr ""
+
+#: freebasics/templates/search/search_results.html:31
+#: freebasics/templates/search/search_results.html:52
+msgid "View"
+msgstr ""
+
+#: freebasics/templates/search/search_results.html:74
+msgid "No search results for "
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/home.html:3
+#, python-format
+msgid "Welcome to the %(site_name)s CMS"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:6
+#, python-format
+msgid "Editing %(page_type)s: %(title)s"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:16
+#, python-format
+msgid "Editing %(page_type)s <span>%(title)s</span>"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:42
+msgid "Saving..."
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:42
+msgid "Page locked"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:42
+msgid "Replace current draft"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:42
+msgid "Save draft"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:48
+msgid "Unpublish"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:60
+msgid "Delete"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:67
+msgid "Publishing..."
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:67
+msgid "Publish this revision"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:67
+msgid "Publish"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:71
+msgid "Submit for moderation"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:79
+msgid "Preview"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:100
+#, python-format
+msgid "Last modified: %(last_mod)s"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:102
+#, python-format
+msgid "by %(modified_by)s"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/edit.html:107
+msgid "Revisions"
+msgstr ""
+
+#: freebasics/templates/wagtailadmin/pages/listing/_page_title_explore.html:7
+msgid "Edit this page"
+msgstr ""
