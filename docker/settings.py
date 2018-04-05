@@ -19,6 +19,9 @@ RAVEN_CONFIG = {'dsn': RAVEN_DSN} if RAVEN_DSN else {}
 
 CAS_SERVER_URL = environ.get('CAS_SERVER_URL') or ''
 UNICORE_DISTRIBUTE_API = environ.get('UNICORE_DISTRIBUTE_API') or ''
+FROM_EMAIL = environ.get('FROM_EMAIL', "support@moloproject.org")
+CONTENT_IMPORT_SUBJECT = environ.get(
+    'CONTENT_IMPORT_SUBJECT', 'Molo Content Import')
 
 COMPRESS_OFFLINE = True
 
